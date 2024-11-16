@@ -72,15 +72,67 @@ nav {
     transition: all 0.3s ease;
 }
 
+#perfil{
+    background-color: #F2F7EF;
+}
+
+.perfil{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10vh 5vw;
+}
 
 .imgcontainer {
     position: relative;
     display: inline-block;
+    margin: 0 10vw;  
+
+}
+
+/*foto del usuario*/
+.foto-usuario{
+    width: 25vw;
+    height: 25vw;
+    border-radius: 100%;
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+h2{
+    font-family: 'Spiny Lobster', Verdana;
+    font-size: 5vh;
+    margin: 0 0 2vh 0;
+    display: flex;
+    justify-content: center;
+}
+
+.forms{
+    font-family: 'Cookies', Verdana;
+    font-size: 2vh;
+}
+
+/*el input del perfil pa editar*/
+input[type=text], input[type=password], input[type=email] {
+    width: 100%;
+    padding: 2vh;
+    margin: 1vh 0 3vh 0;
+    display: inline-block;
+    border: 1px solid #bfd9d1;
+    box-sizing: border-box;
+  }
+
+.formulario{
+width: 50vw;
+margin-right: 10vw;
 }
 
 
 /*SUBIR FOTO Y ELIMINAR FOTO*/
-
 .profile-edit-btn{
     width: 2vw;
     height: auto;
@@ -88,7 +140,7 @@ nav {
 #profile-dropdown-btn {
     position: absolute;
     top: 0;
-    right: 8vw;
+    right: 0;
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -98,8 +150,8 @@ nav {
 .profile-dropdown-menu {
     position: absolute;
     top: 2vw; /* Ajusta la posición según sea necesario */
-    right: 2vw;
-    background-color: #bfd9d1; /* Color de fondo del menú */
+    right: 0;
+    background-color: #CBDFBD; /* Color de fondo del menú */
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1;
@@ -120,6 +172,31 @@ nav {
 }
 
 .profile-dropdown-menu button:hover {
-    background-color: #606D69;
+    background-color: #99A88E;
     color: white;
+}
+
+/*botones principales*/
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-button {
+    font-family: 'Cookies', Verdana;
+    background-color: #99A88E;
+    font-size: 2vh;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    padding: 2vh 5vw;
+    border-radius: 10vw;
+    margin: 5vh 0 7vh 0;
+}
+
+.main-button:hover {
+    opacity: 0.8;
 }

@@ -1,0 +1,150 @@
+// FUNCIÓN PARA PREVISUALIZAR LA IMAGEN DE PERFIL
+function previewImagePerfil(event) {
+    const reader = new FileReader();
+
+    reader.onload = function () {
+        $('#profile-edit-foto').attr('src', reader.result); // actualizar la imagen previsualizada en el perfil
+    };
+
+    if (event.target.files && event.target.files[0]) {
+        reader.readAsDataURL(event.target.files[0]);
+    } else {
+        $('#profile-edit-foto').attr('src', 'images/foto-usuario.svg'); // imagen por defecto si no se selecciona ninguna
+    }
+}
+
+// FUNCIÓN PARA SUBIR FOTO DE PERFIL
+function subirFoto(event) {
+    event.preventDefault(); // Evita la recarga de la página
+    event.stopPropagation(); // Evita que el clic cierre el dropdown
+    document.getElementById('profile-edit-foto-input').click(); // Abre el selector de archivos
+}
+
+// FUNCIÓN PARA ELIMINAR FOTO DE PERFIL
+function eliminarFotoPerfil(event) {
+    event.preventDefault(); // Evita la recarga de la página
+    event.stopPropagation(); // Evita que el clic cierre el dropdown
+
+    const loggedInUser = localStorage.getItem('loggedInUser');
+    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || {};
+
+    if (!loggedInUser || !usuarios[loggedInUser]) {
+        alert("No se encontraron datos del usuario. Por favor, inicia sesión nuevamente.");
+        return;
+    }
+
+    // Actualizar la imagen en el formulario a la imagen predeterminada
+    $('#profile-edit-foto').attr('src', '.images/usuario.svg');
+
+    // Eliminar la foto del usuario en los datos almacenados
+    usuarios[loggedInUser].foto = ''; // O bien, eliminar la propiedad `foto`
+    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+
+    alert("La foto de perfil ha sido eliminada y se ha restaurado la imagen predeterminada.");
+}
+
+
+
+// FUNCION PARA MOSTRAR EL PERFIL DEL USUARIO
+function mostrarPerfil() {
+    const loggedInUser = localStorage.getItem('loggedInUser');
+    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || {};
+
+    if (!loggedInUser || !usuarios[loggedInUser]) {
+        alert("No hay datos de usuario disponibles.");
+        return;
+    }
+
+    const userData = usuarios[loggedInUser];
+
+    // rellenamos los campos del formuario con los datos del usuario
+    $('#profile-edit-foto').attr('src', userData.foto || 'images/foto-usuario.svg');
+    $('#edit-username').val(userData.username);
+    $('#edit-password').val(userData.password);
+    $('#edit-email').val(userData.email);
+}
+
+// FUNCION PARA GUARDAR LOS CAMBIOS DEL PERFIL
+function guardarCambiosPerfil() {
+    const loggedInUser = localStorage.getItem('loggedInUser');
+    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || {};
+
+    if (!loggedInUser || !usuarios[loggedInUser]) {
+        alert("No se encontraron datos del usuario. Por favor, inicia sesión nuevamente.");
+        return;
+    }
+
+    // actualizar los datos del usuario con los nuevos valores
+    const userData = usuarios[loggedInUser];
+    userData.foto = $('#profile-edit-foto').attr('src');
+    userData.username = $('#edit-username').val();
+    userData.password = $('#edit-password').val();
+    userData.email = $('#edit-email').val();
+
+    // verificar si todos los campos son válidos
+    if (!userData.username || !userData.password || !userData.email) {
+        alert("Por favor, rellena todos los campos.");
+        return;
+    }
+
+    if (userData.username.length < 3) {
+        alert("El nombre de usuario, ciudad y país deben tener al menos 3 caracteres.");
+        return;
+    }
+
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d{2})(?=.*\W{1}).{12,}$/;
+    if (!passwordRegex.test(userData.password)) {
+        alert("La contraseña debe tener al menos 12 caracteres, una mayúscula, una minúscula, dos números y un símbolo.");
+        return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(userData.email)) {
+        alert("Por favor, introduce un email válido.");
+        return;
+    }
+
+    // guardar los datos actualizados del usuario en localStorage
+    usuarios[loggedInUser] = userData;
+    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+
+    alert("Cambios guardados con éxito.");
+
+    // actualizar la imagen de perfil si ha cambiado
+    if (userData.foto) {
+        $('#perfil-imagen').attr('src', userData.foto);
+    }
+}
+
+window.onload = function() {
+    mostrarPerfil();
+}
+
+
+function toggleProfileDropdown(event) {
+    event.preventDefault(); // Evita el comportamiento por defecto del enlace o botón
+    event.stopPropagation(); // Evita que el clic cierre el menú inmediatamente
+    const profileDropdownMenu = document.getElementById("profile-dropdown-menu");
+    profileDropdownMenu.style.display = profileDropdownMenu.style.display === "block" ? "none" : "block";
+}
+
+
+// Escuchar clics en el documento para cerrar el dropdown si el usuario hace clic fuera de él
+document.addEventListener('click', function(event) {
+    const profileDropdownMenu = document.getElementById("profile-dropdown-menu");
+    const profileDropdownBtn = document.getElementById("profile-dropdown-btn");
+
+    // Si el dropdown está abierto y el clic no fue en el botón ni en el menú, cierra el dropdown
+    if (profileDropdownMenu.style.display === "block" &&
+        event.target !== profileDropdownMenu &&
+        event.target !== profileDropdownBtn &&
+        !profileDropdownMenu.contains(event.target)) {
+        profileDropdownMenu.style.display = "none";
+    }
+});
+
+
+if (sessionStorage.getItem('loadProfile') === 'true') {
+    mostrarPerfil(); // Llamar a la función para mostrar el perfil del usuario
+    sessionStorage.removeItem('loadProfile'); // Limpiar la bandera para que no vuelva a cargar automáticamente
+}

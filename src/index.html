@@ -58,7 +58,7 @@
                 <li class="main-menu_item" id="perfil-img" style="display: none;">
                     <img id="perfil-imagen" src="images/foto-usuario.svg" alt="Foto de perfil" onclick="toggleDropdown(event)" data-dropdown="dropdown-menu-perfil">                    
                     <div id="dropdown-menu-perfil" class="dropdown-content" style="display: none;">
-                        <a href="miPerfil.html" onclick="mostrarPerfil()">Mi Perfil</a>
+                        <a href="miPerfil.html" onclick="sessionStorage.setItem('loadProfile', 'true');">Mi Perfil</a>
                         <a href="misCartas.html" onclick="mostrarCartas()">Mis Cartas</a>
                         <a href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
                     </div>
