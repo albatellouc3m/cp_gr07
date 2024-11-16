@@ -1,0 +1,384 @@
+body {
+    font-family: Verdana;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: black;
+}
+
+img.icono{
+    width: 2vw;
+    height: auto;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+/*fuentes*/
+@font-face {
+    font-family: 'Spiny Lobster';
+    src: url(../fonts/SpinyLobster.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cookies';
+    src: url(../fonts/Cookies\ Magis.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+/* el menú hamburguesa */
+.menuhamb{
+    width: 5vw;
+    height: auto;
+}
+
+.toggle-menu {
+    width: 30px;
+    position: fixed; /*para que no se mueva en la pantalla*/
+    margin-left: 20px;
+    top: 10px;
+    z-index: 1;
+}
+
+
+/*TODO ESTO ES PARA MOBILE FIRST*/
+/*navegador principal*/
+.main-menu{
+    list-style: none;
+    margin-top: 0;
+    padding: 70px 0 0 0;
+    display: flex;
+    flex-direction: column; /*columna*/
+    background-color: #CBDFBD;
+    align-items: center;
+
+    position: fixed; /*para que no se mueva */
+    width: 30%; /*ancho del nav*/
+    height: 100vh; /*alto del nav que ocupe la página entera*/
+    transform: translateY(-100%); /*esto es para que se oculte el menu arriba y no se vea jeje*/
+    transition: transform 0.3s ease; /*transicion para que se vea guay*/
+}
+
+/*los items del menu*/
+.main-menu_item{
+    padding: 20px 0;
+    background-color: transparent;
+    transition: all 0.3s ease; /* transición */    
+}
+
+/*los links de referencia de las páginas*/
+.main-menu_link{
+    font-family: 'cookies', Verdana;
+    color: black;
+    font-size: 1.5vh;
+    text-decoration: none;
+    text-align: center; 
+    display: block;
+}
+
+.main-menu_item {
+    position: relative; /* Posiciona cada <li> como relativo para que el dropdown sea relativo a este */
+    margin: 0.5vw 0;
+    display: inline-block; /* Asegura que los <li> se alineen correctamente */
+    padding: 10px 20px;
+    height: 5vh;
+}
+
+.main-menu_item a:hover{
+    text-decoration: underline; /*decoración para cuando se pase el ratón por encima de los links*/
+
+}
+
+/*botones de inicio de sesion y registro*/
+.main-menu_item button {
+    color: white;
+    padding: 1vw 4vw;
+    border-radius: 10vw;
+    height: 5vh; /* igual que los enlaces */
+    background-color: #99A88E;
+    transition: all 0.3s ease; /*transicion guapisima para que se hagan mas grandes las letras*/ 
+    display: flex; /* flexbox para centrar el contenido */
+    align-items: center; /* centra verticalmente */
+    justify-content: center; /* centra horizontalmente */
+}
+
+.main-menu_item button:hover{
+    text-decoration: none; /*para que a los botones no les salga el underline*/
+    background-color: #737E6B;
+} 
+
+
+.toggle-menu__checkbox {
+    display: none; /*para que no salga el checkbox este del menu*/
+}
+
+.toggle-menu__checkbox:checked + .main-menu{
+    transform: translateY(0); /*aqui cuando se pulsa al checkbox el menu sale*/
+
+}
+
+#perfil-img {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    padding-bottom: 4vh;
+    margin-right: 0;
+    position: absolute;
+    bottom: 0; /* coloca el perfil al fondo DALE AL F11*/
+}
+
+#perfil-imagen {
+    width: 60px;
+    height: 60px;
+    align-self: center;
+}
+
+/* el dropwdown en movil se despliega hacia arriba*/
+.dropdown-content {
+    bottom: 100%;
+    top: -8vh;
+    transform: translateX(100%); /* desplazar tambien hacia la izquierda un poco */
+}
+
+.dropdown-content a{
+    background-color:#CBDFBD;
+}
+
+/*DESKTOP Y TABLET*/
+@media screen and (min-width: 850px) {
+    .toggle-menu{
+        display: none; /*renito fuera*/
+
+    }
+    /*barra de Navegación*/
+    nav {
+        position: sticky; /*posicion para que solo se quede la barra en la primera página*/
+        top: 0;
+    }
+
+    .main-menu {
+        padding: 0;
+        padding: 1vh 0;
+        width: auto;
+        height: auto;
+        background-color: #CBDFBD;
+        display: flex; 
+        justify-content: flex-end; /* para la derecha*/
+        align-items: center;
+        list-style-type: none;
+        position: sticky;
+        top: 0;
+        flex-direction: row;
+        transform: translateY(0); /*esto es para que el menu de antes no se vea jeje*/
+        transition: transform 0.3s ease; /*transicion para que se vea guay*/
+    
+    }
+
+    .main-menu_item {
+        margin: 0.5vw 0;
+        float: left;
+        display: flex;
+        padding: 10px 20px;
+        align-items: center;
+        height: 5vh; /*que vaya variando la height y eso*/
+        transition: all 0.3s ease; /* transición */                
+    }
+
+    .main-menu_link {
+        font-family: 'Spiny Lobster', Verdana;
+        display: flex;
+        font-size: 1.1vw;
+        color: black;
+        background-color: transparent;
+        align-items: center;        
+        justify-content: center;        
+        transition: all 0.3s ease;
+    }
+
+    .main-menu_link:hover {
+        text-decoration: underline;
+        transform: scale(1.1);
+        
+    }
+
+    /*Botones INICIAR SESIÓN/REGISTRARSE*/
+    .main-menu_item button {
+        color: white;
+        padding: 1vw 1.25vw;
+        border-radius: 10vw;
+        height: 5vh;
+        background-color: #99A88E;
+        transition: all 0.3s ease;
+    }
+
+    .main-menu_item button:hover{
+        text-decoration: none;
+        background-color: #737E6B;
+        transform: scale(1);
+    } 
+
+    /* Dropdown */
+    .dropdown-content {
+        position: absolute;
+        top: 100%; /* Coloca el dropdown justo debajo del enlace */
+        right: 100%; /* Alinea el dropdown al borde izquierdo del elemento padre */
+        background-color: #CBDFBD;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        width: 150px;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        display: none; /* Por defecto, oculta el dropdown */
+    }
+
+    .dropdown-content a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: black;
+        text-align: left;
+        transition: all 0.3s ease;
+    }
+
+    .dropdown-content a:hover {
+        color: white;
+        text-decoration: none;
+        background-color:#86937D;
+    }
+
+    /*Imagen de Perfil*/
+    #perfil-img {
+        margin: 0;
+        padding: 0;
+        padding-left: 1vw;
+        margin-right: 1vw;
+    }
+
+    #perfil-imagen {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-self: center;
+        align-items: center;
+        justify-content: center;
+    }
+    
+}
+
+
+
+/*FORMULARIOS*/
+input[type=text], input[type=password], input[type=email], input[type=number], #genero, #edit-genero {
+    width: 100%;
+    padding: 2vh;
+    margin: 1vh 0 3vh 0;
+    display: inline-block;
+    border: 1px solid #bfd9d1;
+    box-sizing: border-box;
+  }
+
+/*CONTENENDORES GLOBALES DE LOS POPUPS*/
+.modal-content {
+    background-color: #E5EFDE;
+    margin: 5% auto 15% auto;
+    border: 1px solid #888;
+    width: 30%;
+}
+
+/*w3 schools*/
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+  
+  @-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+  @keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+
+/*POPUP DEL REGISTRO*/
+#register-form {
+    position: relative; /*esto es para que los botones de cancelar y limpiar formularios se queden en las esquinas de los popups*/
+}
+
+.register-popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+  
+/*POPUP DEL LOGIN*/
+#login-form{
+    position: relative;
+}
+
+.login-popup {
+    display: none;
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+#home{
+    height: 100vh;
+    width: auto;
+    background-color: #F2F7EF;
+    background-image: url(../images/portada.svg);
+    background-position: bottom;
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+}
+
+.home-text{
+    font-family: 'Spiny Lobster', Verdana;
+    font-size: 3vw;
+    color: #BC4749;
+    text-align: center;
+    padding-top: 10vh;
+}
+
+.home-text p{
+    font-family: Verdana;
+    font-size: 1.5vw;
+    color: black;
+    text-align: center;
+
+}
+
+#countdown{
+    font-family: 'Cookies', Verdana;
+    font-size: 2vw;
+    color: #BC4749;
+    text-align: center;
+}

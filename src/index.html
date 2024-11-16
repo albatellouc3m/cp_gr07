@@ -1,0 +1,143 @@
+<!-- PÁGINA INICIAL-->
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <title>PAPA NOEl</title>
+    <link rel="stylesheet" href="style/index.css">
+    <link rel="icon" href="images/arboldeco.svg" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> <!-- jQuery -->
+</head>
+
+<body>
+    <!-- HOME -->
+    <section id="home" class="home">
+    <!-- BARRA DE NAVEGACIÓN -->
+    <nav>
+        <div id="toggle-menu" class="toggle-menu"> 
+            <label for="toggle-menu-checkbox">
+                <img class="menuhamb" src="images/menuhamb.svg" alt="">
+            </label>
+        </div>
+        <input type="checkbox" class="toggle-menu__checkbox" id="toggle-menu-checkbox">
+        <ul id="main-menu" class="main-menu">
+            <li class="main-menu_item">
+                <a href="calendario.html" class="main-menu_link">
+                <img src="images/regalo.svg" alt="Calendario" class="icono">
+                </a></li>
+            <li class="main-menu_item">
+                <a class="main-menu_link"  onclick="toggleDropdown(event)" data-dropdown="dropdown-menu-papaNoel">PAPÁ NOEL</a>
+                <div id="dropdown-menu-papaNoel" class="dropdown-content" style="display: none;">
+                    <a href="papaNoel.html">Papá Noel</a>
+                    <a href="localiza.html">Localiza</a>
+                </div>
+            </li>
+            <li class="main-menu_item">
+                <a class="main-menu_link"  onclick="toggleDropdown(event)" data-dropdown="dropdown-menu-cartas">CARTAS</a>
+                <div id="dropdown-menu-cartas" class="dropdown-content" style="display: none;">
+                    <a href="enviaCarta.html">Envía tu Carta</a>
+                    <a href="verCartas">Ver Cartas</a>
+                </div>
+            </li>
+            <li class="main-menu_item">
+                <a class="main-menu_link"  onclick="toggleDropdown(event)" data-dropdown="dropdown-menu-juega">¡JUEGA!</a>
+                <div id="dropdown-menu-juega" class="dropdown-content" style="display: none;">
+                    <a href="creaElfo.html">Crea tu Elfo</a>
+                    <a href="karaoke.html">Karaoke</a>
+                    <a href="juega.html">Juega</a>
+                </div>
+            </li>
+            <li class="main-menu_item" id="login-button">
+                <button class="main-menu_link" onclick="document.getElementById('login-popup-id').style.display='block'">INICIA SESIÓN</button></li>
+            <li class="main-menu_item" id="register-button">
+                <button class="main-menu_link" onclick="document.getElementById('register-popup-id').style.display='block'">REGÍSTRATE</button></li>
+            <li class="main-menu_item" id="perfil-img" style="display: none;">
+                <img id="perfil-imagen" src="images/foto-usuario.svg" alt="Foto de perfil" onclick="toggleDropdown(event)" data-dropdown="dropdown-menu-perfil">                    
+                <div id="dropdown-menu-perfil" class="dropdown-content" style="display: none;">
+                    <a href="miPerfil.html" onclick="mostrarPerfil()">Mi Perfil</a>
+                    <a href="misCartas.html" onclick="mostrarCartas()">Mis Cartas</a>
+                    <a href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
+                </div>
+            </li>
+        </ul>
+        <script src="script/nav.js"></script>
+    </nav>
+
+    <!-- POPUP DE REGISTRO -->
+    <div id="register-popup-id" class="register-popup">
+        <form id="register-form" class="modal-content animate">
+            <div class="otherbtn">
+                <button type="button" onclick="limpiarCamposReg()">
+                    <img src="images/limpiar.svg" alt="Limpiar campos" class="cleanbtn">
+                </button>
+                <button type="button" onclick="cerrarPopupReg()">
+                    <img src="images/cerrar.svg" alt="Cancelar" class="closebtn">
+                </button>
+            </div>
+            <h4>REGÍSTRATE</h4>
+            <div class="imgcontainer">
+                <img id="preview-avatar" src="images/foto-usuario.svg" alt="Avatar" class="foto-usuario">
+                <input type="file" id="foto" accept="image/*" onchange="previewImage(event)">
+            </div>
+    
+            <div class="container">
+                <label for="username"><b>Usuario</b></label>
+                <input type="text" placeholder="Inserte su nombre de usuario" id="username" name="username" required minlength="3">
+    
+                <label for="password"><b>Contraseña</b></label>
+                <input type="password" placeholder="Inserte su Contraseña" id="password" name="password" required minlength="12">
+    
+                <label for="password2"><b>Repita la Contraseña</b></label>
+                <input type="password" placeholder="Repita la contraseña" id="password2" name="password2" required minlength="12">
+    
+                <label for="email"><b>Correo electrónico</b></label>
+                <input type="email" placeholder="Inserte su email" id="email" name="email">
+                
+                <div class="button-container">
+                    <button type="button" onclick="registrarUsuario()" class="main-button">Registrarse</button>
+                </div>  
+            </div>
+        </form>
+    </div>
+    <script src="script/register.js"></script>
+
+    <!-- POPUP DE INICIO DE SESIÓN -->
+    <div id="login-popup-id" class="login-popup">
+        <form id="login-form" class="modal-content animate">
+            <div class="otherbtn">
+                <button type="button" onclick="limpiarCamposLog()">
+                    <img src="images/limpiar.svg" alt="Limpiar campos" class="cleanbtn">
+                </button>
+                <button type="button" onclick="cerrarPopupLog()">
+                    <img src="images/cerrar.svg" alt="Cancelar" class="closebtn">
+                </button>
+            </div>
+            <h4>INICIA SESIÓN</h4>      
+            <div class="container">
+                <label for="usernameLogin"><b>Usuario</b></label>
+                <input type="text" placeholder="Nombre de usuario" id="usernameLogin" name="usernameLogin" required minlength="3">
+    
+                <label for="passwordLogin"><b>Contraseña</b></label>
+                <input type="password" placeholder="Contraseña" id="passwordLogin" name="passwordLogin" required minlength="12">
+
+                <div class="button-container">
+                    <button type="button" onclick="validarLogin()" class="main-button">Iniciar Sesión</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="script/login.js"></script>
+
+    <!-- CONTENIDO DE LA PÁGINA -->
+    <div class="home-content">
+        <div class="home-text">
+            <h1>PAPÁ NOEL</h1>
+            <p>Entra en el mundo de Papá Noel y </p>
+            <p>disfruta de la magia de la Navidad en...</p>
+            <h3 id="countdown">112 días 01h 04min 32s</h3>
+        </div>
+    </div>
+    </section>
+
+</body>
+</html>
