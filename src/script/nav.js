@@ -53,4 +53,13 @@ let x = setInterval(function() {
   }
 }, 1000);
 
+// FUNCION PARA CERRAR SESION
+function cerrarSesion() {
+    if (confirm("¿Estás seguro de que deseas cerrar sesión?")) {
+        localStorage.setItem("isLoggedIn", false);
+        localStorage.removeItem('loggedInUser');
+        alert("Has cerrado sesión exitosamente.");
+        location.reload(); // recargar la página para volver al estado inicial
+    }
+}
 

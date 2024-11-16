@@ -46,13 +46,14 @@ function registrarUsuario() {
             return;
         }
     }
-    // no hay foto :( pero guardamos los datos igual solo que sin foto
+    const fotoURL = "./images/usuario.svg"; // Valor predeterminado si no sube una foto
+
     const nuevoUsuario = {
         username: username,
         password: password,
         email: email,
         cartas: [],
-        foto: img(src = 'images/usuario.png')
+        foto: fotoURL
     };
     usuarios[username] = nuevoUsuario;
 

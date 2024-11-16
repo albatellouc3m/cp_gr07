@@ -26,8 +26,9 @@ body {
 }
 
 /*navegador principal*/
-
 .main-menu {
+    padding-top: 0;
+    margin-top: 0;
     padding: 1vh 0;
     width: auto;
     height: auto;
@@ -36,12 +37,7 @@ body {
     justify-content: space-between; /* para la derecha*/
     align-items: center;
     list-style-type: none;
-    position: sticky;
-    top: 0;
     flex-direction: row;
-    transform: translateY(0); /*esto es para que el menu de antes no se vea jeje*/
-    transition: transform 0.3s ease; /*transicion para que se vea guay*/
-
 }
 
 .main-menu_item {

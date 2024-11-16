@@ -80,6 +80,7 @@ img.calendario{
     background-color: #CBDFBD;
     align-items: center;
 
+
     position: fixed; /*para que no se mueva */
     width: 30%; /*ancho del nav*/
     height: 100vh; /*alto del nav que ocupe la página entera*/
@@ -152,22 +153,6 @@ img.calendario{
 
 }
 
-#perfil-img {
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    padding-bottom: 4vh;
-    margin-right: 0;
-    position: absolute;
-    bottom: 0; /* coloca el perfil al fondo DALE AL F11*/
-}
-
-#perfil-imagen {
-    width: 60px;
-    height: 60px;
-    align-self: center;
-}
-
 /* el dropwdown en movil se despliega hacia arriba*/
 .dropdown-content {
     bottom: 100%;
@@ -198,7 +183,7 @@ img.calendario{
         height: auto;
         background-color: #CBDFBD;
         display: flex; 
-        justify-content: flex-end; /* para la derecha*/
+        justify-content: space-between; /* para la derecha*/
         align-items: center;
         list-style-type: none;
         position: sticky;
@@ -242,6 +227,20 @@ img.calendario{
         
     }
 
+    #perfil-img {
+        display: flex;
+        margin-left: 2vw;
+        margin-right: 2vw;
+        justify-content: center;
+        position: relative;
+    }
+
+    #perfil-imagen {
+        width: 3vw;
+        height: auto;
+        align-self: center;
+    }
+
     /*Botones INICIAR SESIÓN/REGISTRARSE*/
     .main-menu_item button {
         color: white;
@@ -257,6 +256,7 @@ img.calendario{
         background-color: #737E6B;
         transform: scale(1);
     } 
+
 
     /* Dropdown */
     .dropdown-content {
@@ -287,25 +287,6 @@ img.calendario{
         background-color:#86937D;
     }
 
-    /*Imagen de Perfil*/
-    #perfil-img {
-        margin: 0;
-        padding: 0;
-        padding-left: 1vw;
-        margin-right: 1vw;
-    }
-
-    #perfil-imagen {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        cursor: pointer;
-        display: flex;
-        align-self: center;
-        align-items: center;
-        justify-content: center;
-    }
-    
 }
 
 

@@ -1,0 +1,66 @@
+<!-- ENVIA TU CARTA-->
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <title>PAPA NOEl</title>
+    <link rel="stylesheet" href="style/enviaCarta.css">
+    <link rel="icon" href="images/arboldeco.svg" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> <!-- jQuery -->
+</head>
+
+<body>
+
+    <section id="envia">
+        <!-- BARRA DE NAVEGACIÓN -->
+        <nav>
+            <ul id="main-menu" class="main-menu">
+                <li class="main-menu_item casa-item">
+                    <a href="index.html" class="main-menu_link">
+                    <img src="images/casa.svg" alt="casa" class="casa">
+                    </a></li>
+                <li class="main-menu_item">
+                    <h3 class="main-menu_link">ENvía tu Carta</h3>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <h2>ESCRIBE TU CARTA</h2>
+        <form>
+            <!-- nombre y email -->
+            <div class="row">
+                <div class="column-half">
+                    <label for="nombreCarta" class="forms">Nombre:</label>
+                    <input type="text" id="nombreCarta" name="nombreCarta" placeholder="Inserta tu nombre..." required>
+                </div>
+                <div class="column-half">
+                    <label for="emailCarta" class="forms">Email:</label>
+                    <input type="email" id="emailCarta" name="emailCarta" placeholder="Inserta tu email..." required>
+                </div>
+            </div>
+
+            <!-- ciudad y país -->
+            <div class="row">
+                <div class="column-half">
+                    <label for="ciudadCarta" class="forms">Ciudad:</label>
+                    <input type="text" id="ciudadCarta" name="ciudadCarta" placeholder="Inserta tu ciudad...">
+                </div>
+                <div class="column-half">
+                    <label for="paisCarta" class="forms">País:</label>
+                    <input type="text" id="paisCarta" name="paisCarta" placeholder="Inserta tu país...">
+                </div>
+            </div>
+
+            <!-- carta -->
+            <div class="row-full">
+                <label for="carta" class="forms">Carta:</label>
+                <textarea id="carta" name="carta" placeholder="Querido Papá Noel..." style="height:200px"></textarea>
+            </div>
+
+            <!-- botón de enviar -->
+            <div class="row-full">
+                <button type="button" class="enviar" onclick="enviarCarta()">ENVIAR</button>
+            </div>
+        </form>
+    </section>
+    <script src="script/cartas.js"></script>

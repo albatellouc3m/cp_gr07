@@ -21,44 +21,49 @@
         </div>
         <input type="checkbox" class="toggle-menu__checkbox" id="toggle-menu-checkbox">
         <ul id="main-menu" class="main-menu">
-            <li class="main-menu_item calendario-item">
-                <a href="calendario.html" class="main-menu_link">
-                <img src="images/regalo.svg" alt="Calendario" class="calendario">
-                </a></li>
-            <li class="main-menu_item">
-                <a class="main-menu_link"  onclick="toggleDropdown(event)" data-dropdown="dropdown-menu-papaNoel">PAPÁ NOEL</a>
-                <div id="dropdown-menu-papaNoel" class="dropdown-content" style="display: none;">
-                    <a href="papaNoel.html">Papá Noel</a>
-                    <a href="localiza.html">Localiza</a>
-                </div>
-            </li>
-            <li class="main-menu_item">
-                <a class="main-menu_link"  onclick="toggleDropdown(event)" data-dropdown="dropdown-menu-cartas">CARTAS</a>
-                <div id="dropdown-menu-cartas" class="dropdown-content" style="display: none;">
-                    <a href="enviaCarta.html">Envía tu Carta</a>
-                    <a href="verCartas.html">Ver Cartas</a>
-                </div>
-            </li>
-            <li class="main-menu_item">
-                <a class="main-menu_link"  onclick="toggleDropdown(event)" data-dropdown="dropdown-menu-juega">¡JUEGA!</a>
-                <div id="dropdown-menu-juega" class="dropdown-content" style="display: none;">
-                    <a href="creaElfo.html">Crea tu Elfo</a>
-                    <a href="karaoke.html">Karaoke</a>
-                    <a href="juega.html">Juega</a>
-                </div>
-            </li>
-            <li class="main-menu_item" id="login-button">
-                <button class="main-menu_link" onclick="document.getElementById('login-popup-id').style.display='block'">INICIA SESIÓN</button></li>
-            <li class="main-menu_item" id="register-button">
-                <button class="main-menu_link" onclick="document.getElementById('register-popup-id').style.display='block'">REGÍSTRATE</button></li>
-            <li class="main-menu_item" id="perfil-img" style="display: none;">
-                <img id="perfil-imagen" src="images/foto-usuario.svg" alt="Foto de perfil" onclick="toggleDropdown(event)" data-dropdown="dropdown-menu-perfil">                    
-                <div id="dropdown-menu-perfil" class="dropdown-content" style="display: none;">
-                    <a href="miPerfil.html" onclick="mostrarPerfil()">Mi Perfil</a>
-                    <a href="misCartas.html" onclick="mostrarCartas()">Mis Cartas</a>
-                    <a href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
-                </div>
-            </li>
+            <div class="main-division">
+                <li class="main-menu_item calendario-item">
+                    <a href="calendario.html" class="main-menu_link">
+                    <img src="images/regalo.svg" alt="Calendario" class="calendario">
+                    </a>
+                </li>
+            </div>
+            <div class="main-division">
+                <li class="main-menu_item">
+                    <a class="main-menu_link"  onclick="toggleDropdown(event)" data-dropdown="dropdown-menu-papaNoel">PAPÁ NOEL</a>
+                    <div id="dropdown-menu-papaNoel" class="dropdown-content" style="display: none;">
+                        <a href="papaNoel.html">Papá Noel</a>
+                        <a href="localiza.html">Localiza</a>
+                    </div>
+                </li>
+                <li class="main-menu_item">
+                    <a class="main-menu_link"  onclick="toggleDropdown(event)" data-dropdown="dropdown-menu-cartas">CARTAS</a>
+                    <div id="dropdown-menu-cartas" class="dropdown-content" style="display: none;">
+                        <a href="enviaCarta.html">Envía tu Carta</a>
+                        <a href="verCartas.html">Ver Cartas</a>
+                    </div>
+                </li>
+                <li class="main-menu_item">
+                    <a class="main-menu_link"  onclick="toggleDropdown(event)" data-dropdown="dropdown-menu-juega">¡JUEGA!</a>
+                    <div id="dropdown-menu-juega" class="dropdown-content" style="display: none;">
+                        <a href="creaElfo.html">Crea tu Elfo</a>
+                        <a href="karaoke.html">Karaoke</a>
+                        <a href="juega.html">Juega</a>
+                    </div>
+                </li>
+                <li class="main-menu_item" id="login-button">
+                    <button class="main-menu_link" onclick="document.getElementById('login-popup-id').style.display='block'">INICIA SESIÓN</button></li>
+                <li class="main-menu_item" id="register-button">
+                    <button class="main-menu_link" onclick="document.getElementById('register-popup-id').style.display='block'">REGÍSTRATE</button></li>
+                <li class="main-menu_item" id="perfil-img" style="display: none;">
+                    <img id="perfil-imagen" src="images/foto-usuario.svg" alt="Foto de perfil" onclick="toggleDropdown(event)" data-dropdown="dropdown-menu-perfil">                    
+                    <div id="dropdown-menu-perfil" class="dropdown-content" style="display: none;">
+                        <a href="miPerfil.html" onclick="mostrarPerfil()">Mi Perfil</a>
+                        <a href="misCartas.html" onclick="mostrarCartas()">Mis Cartas</a>
+                        <a href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
+                    </div>
+                </li>
+            </div>
         </ul>
         <script src="script/nav.js"></script>
     </nav>
@@ -75,6 +80,10 @@
                 </button>
             </div>
             <h4>REGÍSTRATE</h4>    
+            <div class="imgcontainer">
+                <img style="display: none" id="preview-avatar" src="images/foto-usuario.svg" alt="Avatar" class="foto-usuario">
+                <input style="display: none" type="file" id="foto" accept="image/*" onchange="previewImage(event)">
+            </div>
             <div class="container">
                 <label for="username"><b>Usuario</b></label>
                 <input type="text" placeholder="Inserte su nombre de usuario" id="username" name="username" required minlength="3">
@@ -127,8 +136,9 @@
     <div class="home-content">
         <div class="home-text">
             <h1>PAPÁ NOEL</h1>
+            <!--
             <p>Entra en el mundo de Papá Noel y </p>
-            <p>disfruta de la magia de la Navidad en...</p>
+            <p>disfruta de la magia de la Navidad en...</p>-->
             <h3 id="countdown">112 días 01h 04min 32s</h3>
         </div>
     </div>
