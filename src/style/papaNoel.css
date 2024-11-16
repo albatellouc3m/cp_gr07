@@ -1,0 +1,186 @@
+body {
+    font-family: Verdana;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: black;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/*fuentes*/
+@font-face {
+    font-family: 'Spiny Lobster';
+    src: url(../fonts/SpinyLobster.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cookies';
+    src: url(../fonts/Cookies\ Magis.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*navegador principal*/
+
+.main-menu {
+    padding: 1vh 0;
+    width: auto;
+    height: auto;
+    background-color: #CBDFBD;
+    display: flex; 
+    justify-content: space-between; /* para la derecha*/
+    align-items: center;
+    list-style-type: none;
+    position: sticky;
+    top: 0;
+    flex-direction: row;
+    transform: translateY(0); /*esto es para que el menu de antes no se vea jeje*/
+    transition: transform 0.3s ease; /*transicion para que se vea guay*/
+
+}
+
+.main-menu_item {
+    margin: 0.5vw 0;
+    float: left;
+    display: flex;
+    padding-right: 3vw;
+    padding-left: 2vw;
+    align-items: center;
+    height: 5vh; /*que vaya variando la height y eso*/
+    transition: all 0.3s ease; /* transición */                
+}
+
+.casa{
+    width: 2vw;
+    height: auto;
+}
+
+.main-menu_link {
+    font-family: 'Spiny Lobster', Verdana;
+    display: flex;
+    font-size: 1.1vw;
+    color: #737E6B;
+    background-color: transparent;
+    align-items: center;        
+    justify-content: center;        
+    transition: all 0.3s ease;
+}
+
+
+/*PAPA NOEL*/
+#papaNoel{
+    background-color: #E5EFDE;
+}
+/*DESKTOP*/
+#historia {
+    background-color: #E5EFDE;
+
+}
+
+/*contenedor que engloba la parte de la imagen y la foto*/
+.outer-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 10px 10px 10px 10px;
+    gap: 20px;
+    text-align: center;
+    max-width: 100%;
+
+}
+
+/*columna de la imagen de papa noel*/
+.column1 {
+    display: flex;              
+    justify-content: center;    
+    align-items: center; 
+    padding: 0 10px;
+    padding-left: 4vw;
+    
+}
+
+/*columna para el texto de papa noel*/
+.column2 {
+    padding-left: 10vw;
+    font-size: 1.5vw;
+    padding-bottom: 10vh;
+    
+}
+
+.column2 p{
+    text-align: justify; /*justifica texto*/
+}
+
+/*mini titulito sabias que*/
+.sabias{
+    font-family: 'Spiny Lobster', Verdana;
+    font-style: italic;
+    color: black; 
+}
+
+/*esto es para el arbol que sale de decoración en la parte del movil*/
+.arbol img{
+    display: none; /*por ahora no queremos que se despliegue*/
+}
+
+
+/*responsive*/
+/*TABLET*/
+@media screen and (max-width: 810px){
+    #PapaNoel{
+        background-image: none;
+        background-color: #dfece8;
+    } 
+}
+
+/*MOVIL*/
+@media screen and (max-width: 500px) {
+    #historia{
+        background-color: #dfece8;
+    }
+    
+    /*se hace solo una columna*/
+    .outer-box {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        margin: 20px 0;
+        gap: 20px;
+    }
+    
+    /*columna de la imagen de papa noel no se ve que queda muy cargado*/
+    .column1 {
+        display: none;
+    }
+
+    /*decoracion de arbolito que queda bonita en movil, ahora si queremos que se despliegue*/
+    .arbol img {
+        display: inline; /*para que se ponga en linea con el sabias que*/
+        width: 15vw; 
+        height: auto; 
+        vertical-align: middle; /* alinea la imagen verticalmente con el texto */
+        margin-left: 5vw; /* espacio entre el texto y la imagen */
+    }
+    
+    /*para ajustarlo con el arbolito mono*/
+    .sabias {
+        display: inline;
+    }
+    
+    /*columna sobre el texto de papa noel*/
+    .column2 {
+        font-size: 3.5vw;
+        padding: 0 10vw;
+        padding-bottom: 10vh;
+    }
+}
+
+/*GALERIA DE FOTOS*/
+/*DESKTOP*/
+#galeria {
+    background-color: #FFFFFF;
+    padding: 10px 10px 10px 10px;
+}

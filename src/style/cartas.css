@@ -1,3 +1,14 @@
+body {
+    font-family: Verdana;
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 /*fuentes*/
 @font-face {
     font-family: 'Spiny Lobster';
@@ -13,4 +24,188 @@
     font-style: normal;
 }
 
+/*DESKTOP*/
+#cartas {
+    background-color: #F2F7EF;
+    padding-bottom: 10%;
+}
+
+
+/*CARTITAS*/
+/*contenendor global de las cartas*/
+.contenedor {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    
+}
+
+/*cada carta individual*/
+.carta {
+    background-color: white;
+    margin: 10%;
+    padding: 10%;
+    color: black;
+    border-width: 3vh;
+    border-radius: 2vw;
+    border-style: solid;
+    border-color: #A8B99C;
+    transition: transform 1s ease;
+}
+
+/*texto de las cartas*/
+.carta p{
+    font-size: 1vw;
+}
+
+/*para las imagenes de las cartas y el nombre de los niños*/
+.icon-container {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    text-align: center;
+    margin-bottom: 10px; 
+    
+}
+
+/*la foto de perfil*/
+.icon{
+    border-radius: 100%;
+    width: 80px;
+    height: 80px;
+}
+
+/*nombre del niño*/
+h5{
+    font-family: 'cookies', Verdana;
+    font-size: 1vw;
+    font-weight: bold;
+    margin-left: 2vw;
+    word-wrap: break-word;
+    
+}
+
+/*para la decoración de abajo con la imagen y la ciudad del niño*/
+.icon-decoration {
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; 
+    width: 100%;
+}
+
+/*imagen de decoracion*/
+.decoration {
+    width: 3vw;
+    margin-left: 1vw; 
+}
+
+/*ciudad del niño*/
+.icon-decoration p {
+    margin-right: 1vw; 
+    white-space: nowrap; 
+    
+}
+
+/*para que cuando pases el raton por encima de la carta se haga mas grande y salga una sombrita*/
+.carta:hover{
+    transform: scale(1.05);
+    box-shadow: 12px 4px 12px rgba(105, 105, 105, 0.6);
+}
+
+/*RESPONSIVE*/
+/*TABLET*/
+@media (max-width: 880px) {
+    .contenedor {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .icon-container {
+        display: flex;
+        flex-direction: column; 
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px; 
+        word-wrap: break-word;
+    }
+    
+    .icon{
+        width: 60px;
+        height: 60px;
+    }
+
+    h5{
+        font-size: 1.5vh;
+        text-align: center; 
+        margin-left: 0; 
+        margin-bottom: 0;
+    }
+
+    .icon-decoration{
+        display: block;
+    }
+
+    /*que se borre la decoracion que queda muy cargado*/
+    .decoration{
+        display: none;
+    }
+
+    .carta{
+        display: block;
+        border-width: 2vh;
+        justify-content: center;
+        text-align: center;  
+    }
+    .carta p{
+        margin-top: 0;
+        font-size: 1.25vh;
+    }
+}
+
+/*MOVIL*/
+@media (max-width: 480px) {
+    .contenedor {
+        grid-template-columns: repeat(2, 1fr); /*que se quede en dos columnas, que si lo ponemos en una quita protagonsimo a Papa Noel*/
+    }
+
+    .carta{
+        border-width: 1vh;
+    }
+
+    h5{
+        font-size: 3vw;
+        margin: 0;
+        margin-top: 4vh;
+    
+    }
+
+    .icon{
+        width: 50px;
+        height: 50px;
+    }
+
+    .carta p{
+        font-size: 2.5vw;
+    }
+
+}
+
+
+/*boton para borrar las cartitas del perfil*/
+.borrarbtn{
+    background-color: #Bf3f34;
+    font-size: 2vh;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    padding: 2vh 5vw;
+    border-radius: 10vw;
+    margin: 5vh 0 2vh 0;
+}
 

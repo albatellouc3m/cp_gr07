@@ -1,0 +1,51 @@
+
+.imgcontainer {
+    position: relative;
+    display: inline-block;
+}
+
+
+/*SUBIR FOTO Y ELIMINAR FOTO*/
+
+.profile-edit-btn{
+    width: 2vw;
+    height: auto;
+}
+#profile-dropdown-btn {
+    position: absolute;
+    top: 0;
+    right: 8vw;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.profile-dropdown-menu {
+    position: absolute;
+    top: 2vw; /* Ajusta la posición según sea necesario */
+    right: 2vw;
+    background-color: #bfd9d1; /* Color de fondo del menú */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    overflow: hidden;
+}
+
+
+.profile-dropdown-menu button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    color: blacK;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.profile-dropdown-menu button:hover {
+    background-color: #606D69;
+    color: white;
+}

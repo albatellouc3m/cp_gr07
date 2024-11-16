@@ -21,9 +21,9 @@
         </div>
         <input type="checkbox" class="toggle-menu__checkbox" id="toggle-menu-checkbox">
         <ul id="main-menu" class="main-menu">
-            <li class="main-menu_item">
+            <li class="main-menu_item calendario-item">
                 <a href="calendario.html" class="main-menu_link">
-                <img src="images/regalo.svg" alt="Calendario" class="icono">
+                <img src="images/regalo.svg" alt="Calendario" class="calendario">
                 </a></li>
             <li class="main-menu_item">
                 <a class="main-menu_link"  onclick="toggleDropdown(event)" data-dropdown="dropdown-menu-papaNoel">PAPÁ NOEL</a>
@@ -36,7 +36,7 @@
                 <a class="main-menu_link"  onclick="toggleDropdown(event)" data-dropdown="dropdown-menu-cartas">CARTAS</a>
                 <div id="dropdown-menu-cartas" class="dropdown-content" style="display: none;">
                     <a href="enviaCarta.html">Envía tu Carta</a>
-                    <a href="verCartas">Ver Cartas</a>
+                    <a href="verCartas.html">Ver Cartas</a>
                 </div>
             </li>
             <li class="main-menu_item">
@@ -74,12 +74,7 @@
                     <img src="images/cerrar.svg" alt="Cancelar" class="closebtn">
                 </button>
             </div>
-            <h4>REGÍSTRATE</h4>
-            <div class="imgcontainer">
-                <img id="preview-avatar" src="images/foto-usuario.svg" alt="Avatar" class="foto-usuario">
-                <input type="file" id="foto" accept="image/*" onchange="previewImage(event)">
-            </div>
-    
+            <h4>REGÍSTRATE</h4>    
             <div class="container">
                 <label for="username"><b>Usuario</b></label>
                 <input type="text" placeholder="Inserte su nombre de usuario" id="username" name="username" required minlength="3">

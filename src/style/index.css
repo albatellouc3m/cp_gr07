@@ -6,7 +6,28 @@ body {
     color: black;
 }
 
-img.icono{
+button {
+    font-family: 'cookies', Verdana;
+    background-color: transparent; /* fondo transparente */
+    border: transparent; /* borde transparente */
+    cursor: pointer; /* para que se ponga el cursor de ratón encima de los botones */
+    background-color: transparent;
+    color: white;
+}
+
+h4{
+    font-size: 6vh;
+    font-family: 'Spiny Lobster', Verdana; /*fuente instalada y si no funciona verdana*/
+    padding-top: 10vh;  
+    padding-bottom: 6vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+
+img.calendario{
+    align-self: flex-start;
     width: 2vw;
     height: auto;
 }
@@ -73,6 +94,11 @@ img.icono{
     transition: all 0.3s ease; /* transición */    
 }
 
+.calendario-item {
+    align-self: flex-start; /* Esto alinea el ícono del calendario al inicio */
+    margin-left: 20px; /* Ajusta el espacio si necesitas */
+}
+
 /*los links de referencia de las páginas*/
 .main-menu_link{
     font-family: 'cookies', Verdana;
@@ -83,6 +109,7 @@ img.icono{
     display: block;
 }
 
+
 .main-menu_item {
     position: relative; /* Posiciona cada <li> como relativo para que el dropdown sea relativo a este */
     margin: 0.5vw 0;
@@ -90,6 +117,7 @@ img.icono{
     padding: 10px 20px;
     height: 5vh;
 }
+
 
 .main-menu_item a:hover{
     text-decoration: underline; /*decoración para cuando se pase el ratón por encima de los links*/
@@ -181,6 +209,12 @@ img.icono{
     
     }
 
+    .calendario-item {
+        left: 0;
+        align-self: flex-start; /* Esto alinea el ícono del calendario al inicio */
+        margin-left: 20px; /* Ajusta el espacio si necesitas */
+    }
+
     .main-menu_item {
         margin: 0.5vw 0;
         float: left;
@@ -195,7 +229,7 @@ img.icono{
         font-family: 'Spiny Lobster', Verdana;
         display: flex;
         font-size: 1.1vw;
-        color: black;
+        color: #737E6B;
         background-color: transparent;
         align-items: center;        
         justify-content: center;        
@@ -275,6 +309,54 @@ img.icono{
 }
 
 
+/*BOTONES*/
+/* contenedor global de los main buttons para que se centren*/
+.button-container{
+    display: flex;
+    justify-content: center;
+}
+
+/*botones principales*/
+.main-button {
+    background-color: #99A88E;
+    font-size: 2vh;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    padding: 2vh 5vw;
+    border-radius: 10vw;
+    margin: 5vh 0 7vh 0;
+}
+
+.main-button:hover {
+    opacity: 0.8;
+}
+
+/* contenedor de los botones para limpiar el formulario y cerrar los popups*/
+.otherbtn{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+/*botones de cerrar y limpiar formularios*/
+.cleanbtn, .closebtn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 2vw; 
+    height: auto;
+    margin: 1.5vh;
+}
+
+.cleanbtn:hover, .closebtn:hover {
+    opacity: 0.8;
+}
+
+
 
 /*FORMULARIOS*/
 input[type=text], input[type=password], input[type=email], input[type=number], #genero, #edit-genero {
@@ -286,12 +368,17 @@ input[type=text], input[type=password], input[type=email], input[type=number], #
     box-sizing: border-box;
   }
 
+/*contenedor de los formularios*/
+.container {
+    padding: 2vw;
+}
+
 /*CONTENENDORES GLOBALES DE LOS POPUPS*/
 .modal-content {
     background-color: #E5EFDE;
     margin: 5% auto 15% auto;
-    border: 1px solid #888;
     width: 30%;
+    border-radius: 2vw;
 }
 
 /*w3 schools*/
@@ -325,8 +412,7 @@ input[type=text], input[type=password], input[type=email], input[type=number], #
     width: 100%; 
     height: 100%;
     overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
+    backdrop-filter: blur(5px);
     padding-top: 60px;
 }
   
@@ -344,8 +430,7 @@ input[type=text], input[type=password], input[type=email], input[type=number], #
     width: 100%;
     height: 100%;
     overflow: auto; 
-    background-color: rgb(0,0,0); 
-    background-color: rgba(0,0,0,0.4);
+    backdrop-filter: blur(5px);
     padding-top: 60px;
 }
 
