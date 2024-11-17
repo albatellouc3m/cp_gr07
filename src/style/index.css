@@ -52,40 +52,56 @@ img.calendario{
     font-style: normal;
 }
 
-
-
-/* el menú hamburguesa */
-.menuhamb{
-    width: 5vw;
-    height: auto;
+@font-face {
+    font-family: 'CareAround';
+    src: url(../fonts/CareAround.otf);
+    font-weight: normal;
+    font-style: normal;
 }
 
+
+/* Ajustes del menú hamburguesa */
+.menuhamb{
+    width: 2vw;
+}
 .toggle-menu {
     width: 30px;
     position: fixed; /*para que no se mueva en la pantalla*/
     margin-left: 20px;
     top: 10px;
-    z-index: 1;
+    z-index: 2; /* asegúrate de que esté encima del resto del contenido */
 }
 
+.toggle-menu__checkbox {
+    display: none; /* Oculta el checkbox */
+}
 
-/*TODO ESTO ES PARA MOBILE FIRST*/
-/*navegador principal*/
-.main-menu{
+.toggle-menu__checkbox:checked + #main-menu {
+    transform: translateY(0); /* cuando se pulsa el checkbox el menú sale */
+}
+
+/* Menú principal en móvil */
+.main-menu {
     list-style: none;
     margin-top: 0;
     padding: 70px 0 0 0;
     display: flex;
-    flex-direction: column; /*columna*/
+    flex-direction: column; /* columna */
     background-color: #CBDFBD;
     align-items: center;
+    position: fixed; /* para que no se mueva */
+    width: 30%; /* ancho del nav (ajusta si es necesario) */
+    height: 100vh; /* alto del nav que ocupe la página entera */
+    top: 0;
+    right: 0;
+    transform: translateX(100%); /* oculta el menú desplazándolo hacia la derecha */
+    transition: transform 0.3s ease; /* transición para que se vea suave */
+    z-index: 1;
+}
 
-
-    position: fixed; /*para que no se mueva */
-    width: 30%; /*ancho del nav*/
-    height: 100vh; /*alto del nav que ocupe la página entera*/
-    transform: translateY(-100%); /*esto es para que se oculte el menu arriba y no se vea jeje*/
-    transition: transform 0.3s ease; /*transicion para que se vea guay*/
+/* Mostrar el menú cuando se selecciona el checkbox */
+.toggle-menu__checkbox:checked + #main-menu {
+    transform: translateX(0); /* despliega el menú desde la derecha */
 }
 
 /*los items del menu*/
@@ -120,18 +136,13 @@ img.calendario{
 }
 
 
-.main-menu_item a:hover{
-    text-decoration: underline; /*decoración para cuando se pase el ratón por encima de los links*/
-
-}
-
 /*botones de inicio de sesion y registro*/
 .main-menu_item button {
     color: white;
     padding: 1vw 4vw;
     border-radius: 10vw;
     height: 5vh; /* igual que los enlaces */
-    background-color: #99A88E;
+    background-color: #737E6B;
     transition: all 0.3s ease; /*transicion guapisima para que se hagan mas grandes las letras*/ 
     display: flex; /* flexbox para centrar el contenido */
     align-items: center; /* centra verticalmente */
@@ -153,23 +164,37 @@ img.calendario{
 
 }
 
-/* el dropwdown en movil se despliega hacia arriba*/
 .dropdown-content {
-    bottom: 100%;
-    top: -8vh;
-    transform: translateX(100%); /* desplazar tambien hacia la izquierda un poco */
+    position: absolute;
+    top: 0;
+    left: calc(-100% - 10px); /* Mueve el dropdown hacia la izquierda, ajusta según sea necesario */
+    background-color: #CBDFBD;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    width: 150px;
+    border-radius: 4px;
+    overflow: hidden;
+
+    /* Estilo para la transición */
+    opacity: 0;
+    transform: translateX(20px);
+    transition: max-height 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
 }
 
-.dropdown-content a{
-    background-color:#CBDFBD;
+/* Mostrar Dropdown - animación suave al abrirse */
+.dropdown-content.show {
+    opacity: 1;
+    transform: translateX(0);
 }
+
 
 /*DESKTOP Y TABLET*/
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 900px) {
     .toggle-menu{
         display: none; /*renito fuera*/
 
     }
+
     /*barra de Navegación*/
     nav {
         position: sticky; /*posicion para que solo se quede la barra en la primera página*/
@@ -204,7 +229,7 @@ img.calendario{
         margin: 0.5vw 0;
         float: left;
         display: flex;
-        padding: 10px 20px;
+        padding: 1vh 3vw;
         align-items: center;
         height: 5vh; /*que vaya variando la height y eso*/
         transition: all 0.3s ease; /* transición */                
@@ -214,17 +239,46 @@ img.calendario{
         font-family: 'Spiny Lobster', Verdana;
         display: flex;
         font-size: 1.1vw;
-        color: #737E6B;
+        color: #4D5447;
         background-color: transparent;
         align-items: center;        
         justify-content: center;        
         transition: all 0.3s ease;
     }
 
-    .main-menu_link:hover {
-        text-decoration: underline;
-        transform: scale(1.1);
-        
+
+    /* transicion tope guapa que sale debajo una linea*/
+    #link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 0.2vh;
+        background-color: #606959;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 1s ease;
+    }
+
+    #link:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+
+    .main-menu_link:hover .dropdown-icon {
+        opacity: 1; /* Mostrar el ícono suavemente al hacer hover */
+    }
+
+    .dropdown-icon {
+        opacity: 0; /* Ocultar ícono inicialmente */
+        margin-left: 1vw; /* Espacio entre el texto y el ícono */
+        width: 1vw;
+        transition: opacity 1s ease; /* Transición suave para mostrar el ícono */
+    }
+
+    #login-button, #register-button{
+        padding: 1vh 1vw;
     }
 
     #perfil-img {
@@ -248,31 +302,43 @@ img.calendario{
         padding: 1vw 1.25vw;
         border-radius: 10vw;
         height: 5vh;
-        background-color: #99A88E;
-        transition: all 0.3s ease;
+        background-color:#606959;
     }
 
     .main-menu_item button:hover{
         text-decoration: none;
-        background-color: #737E6B;
-        transform: scale(1);
+        background-color:  #4D5447;
     } 
+
 
 
     /* Dropdown */
     .dropdown-content {
         position: absolute;
         top: 100%; /* Coloca el dropdown justo debajo del enlace */
-        right: 100%; /* Alinea el dropdown al borde izquierdo del elemento padre */
+        right: 0;
         background-color: #CBDFBD;
         box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
         z-index: 1;
         width: 150px;
         border-radius: 4px;
-        transition: all 0.3s ease;
-        display: none; /* Por defecto, oculta el dropdown */
+        overflow: hidden;
+    
+        /* Estilo para la transición */
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: max-height 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
+    }
+    
+    /* Mostrar Dropdown */
+    .dropdown-content.show {
+        height: 14.5vh; /* Valor suficientemente grande para todos los menús */
+        opacity: 1;
+        transform: translateY(0);
     }
 
+
+    /* Estilo de los enlaces dentro del dropdown */
     .dropdown-content a {
         display: block;
         padding: 10px;
@@ -281,11 +347,11 @@ img.calendario{
         text-align: left;
         transition: all 0.3s ease;
     }
-
+    
     .dropdown-content a:hover {
         color: white;
         text-decoration: none;
-        background-color:#86937D;
+        background-color: #606959;
     }
 
 }
@@ -300,7 +366,7 @@ img.calendario{
 
 /*botones principales*/
 .main-button {
-    background-color: #99A88E;
+    background-color: #606959;
     font-size: 2vh;
     color: white;
     border: none;
@@ -313,6 +379,7 @@ img.calendario{
 }
 
 .main-button:hover {
+    background-color: #4D5447;
     opacity: 0.8;
 }
 
@@ -324,13 +391,20 @@ img.calendario{
     justify-content: space-between;
 }
 
+.closebtn{
+    width: 1.5vw; 
+    height: auto;
+}
+
+.cleanbtn{
+    width: 2vw; 
+    height: auto;
+}
 /*botones de cerrar y limpiar formularios*/
 .cleanbtn, .closebtn {
     background-color: transparent;
     border: none;
     cursor: pointer;
-    width: 2vw; 
-    height: auto;
     margin: 1.5vh;
 }
 
@@ -397,7 +471,25 @@ input[type=text], input[type=password], input[type=email], input[type=number], #
     backdrop-filter: blur(5px);
     padding-top: 60px;
 }
-  
+
+/*los mensajes de error interactivos*/
+.error {
+    font-family: 'CareAround', Verdana;
+    color: #BC4749;
+    font-size: 1vw;
+    margin-top: 0.5vh;
+    display: none; 
+}
+
+.errorimg{
+    width: 1vw;
+    height: auto;
+    margin-right: 1vw;
+    display: flex;
+    align-self: center;
+}
+
+
 /*POPUP DEL LOGIN*/
 #login-form{
     position: relative;
@@ -416,6 +508,19 @@ input[type=text], input[type=password], input[type=email], input[type=number], #
     padding-top: 60px;
 }
 
+.forg-reg{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1vh;
+}
+
+.forg-reg a{
+    font-family: 'cookies', Verdana;
+    color: #4D5447;
+    font-size: 1.5vh;
+    text-decoration: none;
+
+}
 #home{
     height: 100vh;
     width: auto;

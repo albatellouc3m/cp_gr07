@@ -1,3 +1,83 @@
+// FUNCIONES PARA VERIFICAR QUE EL USUARIO SE ESTA REGISTRANDO CORERCTAMENTE Y SI NO MUESTRA ERRORES
+// Validar el formulario en tiempo real
+document.getElementById("username").addEventListener("input", validarUsername);
+document.getElementById("password").addEventListener("input", validarPassword);
+document.getElementById("password2").addEventListener("input", validarPasswordsMatch);
+document.getElementById("email").addEventListener("input", validarEmail);
+
+// Función para validar el username
+function validarUsername() {
+    const username = document.getElementById("username").value;
+    const errorUsername = document.getElementById("error-username");
+
+    if (username.length < 3) {
+        errorUsername.style.display = "flex";
+    } else {
+        errorUsername.style.display = "none";
+    }
+}
+
+// Función para validar la contraseña
+function validarPassword() {
+    const password = document.getElementById("password").value;
+    const errorPass1 = document.getElementById("error-pass1");
+    const errorPass2 = document.getElementById("error-pass2");
+    const errorPass3 = document.getElementById("error-pass3");
+    const errorPass4 = document.getElementById("error-pass4");
+    const errorPass5 = document.getElementById("error-pass5");
+
+    // Resetear todos los errores al inicio
+    errorPass1.style.display = "none";
+    errorPass2.style.display = "none";
+    errorPass3.style.display = "none";
+    errorPass4.style.display = "none";
+    errorPass5.style.display = "none";
+
+    // Verificar cada condición de la contraseña y mostrar el error correspondiente
+    if (password.length < 12) {
+        errorPass1.style.display = "flex";
+    }
+    if (!/[A-Z]/.test(password)) {
+        errorPass2.style.display = "flex";
+    }
+    if (!/[a-z]/.test(password)) {
+        errorPass3.style.display = "flex";
+    }
+    if (password.replace(/[^0-9]/g, "").length < 2) {
+        errorPass4.style.display = "flex";
+    }
+    if (!/\W/.test(password)) {
+        errorPass5.style.display = "flex";
+    }
+}
+
+// Función para validar que las contraseñas coinciden
+function validarPasswordsMatch() {
+    const password = document.getElementById("password").value;
+    const password2 = document.getElementById("password2").value;
+    const errorPass6 = document.getElementById("error-pass6");
+
+    if (password !== password2) {
+        errorPass6.style.display = "flex";
+    } else {
+        errorPass6.style.display = "none";
+    }
+}
+
+// Función para validar el email
+function validarEmail() {
+    const email = document.getElementById("email").value;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const errorEmail = document.getElementById("error-email");
+
+    if (!emailRegex.test(email)) {
+        errorEmail.style.display = "flex";
+    } else {
+        errorEmail.style.display = "none";
+    }
+}
+
+
 // FUNCION PARA REGISTRAR AL USUARIO, CON SUS HIJAS Y SU FOTITIO FIREEEEEEEEEEEEE
 function registrarUsuario() {
     // primero cogemos todos los valores de los campos del formulario

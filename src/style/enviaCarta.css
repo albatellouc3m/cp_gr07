@@ -142,7 +142,7 @@ input[type=text], input[type=email], textarea {
     width: 8vw;
     font-size: 1vw;
     color: white;
-    background-color: #99A88E;
+    background-color: #606959;
     border-radius: 25px;
     margin-top: 3vh;
     margin-bottom: 10vh;
@@ -153,7 +153,7 @@ input[type=text], input[type=email], textarea {
 }
 
 input[type=submit]:hover {
-    background-color: #737E6B;
+    background-color: #4D5447;
 }
 
 /* Responsive!!!! :)*/

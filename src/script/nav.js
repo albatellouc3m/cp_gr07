@@ -2,8 +2,8 @@
 function toggleDropdown(event) {
     event.stopPropagation(); // Detiene la propagación del evento para evitar que se oculte inmediatamente
 
-    // data-dropdown del enlace 
-    const dropdownId = event.target.getAttribute('data-dropdown');
+    // data-dropdown del enlace
+    const dropdownId = event.currentTarget.getAttribute('data-dropdown');
     if (!dropdownId) return;
 
     // seleccionar el dropdown correspondiente
@@ -12,19 +12,20 @@ function toggleDropdown(event) {
     // cierra todos los otros menús desplegables
     const allDropdowns = document.querySelectorAll('.dropdown-content');
     allDropdowns.forEach(dropdown => {
-        if (dropdown !== dropdownMenu) {
-            dropdown.style.display = 'none';
+        if (dropdown !== dropdownMenu && dropdown.classList.contains('show')) {
+            dropdown.classList.remove('show');
         }
     });
 
-    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+    // alternar la clase 'show' para animar el desplegable
+    dropdownMenu.classList.toggle('show');
 }
 
-// Cierra ambos menús dropdown si el usuario hace clic fuera de ellos
+// Cerrar todos los menús dropdown si el usuario hace clic fuera de ellos
 window.onclick = function() {
     const allDropdowns = document.querySelectorAll('.dropdown-content');
     allDropdowns.forEach(dropdown => {
-        dropdown.style.display = 'none';
+        dropdown.classList.remove('show');
     });
 };
 
@@ -53,13 +54,4 @@ let x = setInterval(function() {
   }
 }, 1000);
 
-// FUNCION PARA CERRAR SESION
-function cerrarSesion() {
-    if (confirm("¿Estás seguro de que deseas cerrar sesión?")) {
-        localStorage.setItem("isLoggedIn", false);
-        localStorage.removeItem('loggedInUser');
-        alert("Has cerrado sesión exitosamente.");
-        location.reload(); // recargar la página para volver al estado inicial
-    }
-}
 

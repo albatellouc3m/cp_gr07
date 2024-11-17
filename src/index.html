@@ -30,22 +30,22 @@
             </div>
             <div class="main-division">
                 <li class="main-menu_item">
-                    <a class="main-menu_link"  onclick="toggleDropdown(event)" data-dropdown="dropdown-menu-papaNoel">PAPÁ NOEL</a>
-                    <div id="dropdown-menu-papaNoel" class="dropdown-content" style="display: none;">
+                    <a class="main-menu_link" id="link" onclick="toggleDropdown(event)" data-dropdown="dropdown-menu-papaNoel">PAPÁ NOEL<span><img src="images/dropdown.svg" alt="dropdown-icon" class="dropdown-icon"> </span></a>
+                    <div id="dropdown-menu-papaNoel" class="dropdown-content">
                         <a href="papaNoel.html">Papá Noel</a>
                         <a href="localiza.html">Localiza</a>
                     </div>
                 </li>
                 <li class="main-menu_item">
-                    <a class="main-menu_link"  onclick="toggleDropdown(event)" data-dropdown="dropdown-menu-cartas">CARTAS</a>
-                    <div id="dropdown-menu-cartas" class="dropdown-content" style="display: none;">
+                    <a class="main-menu_link" id="link"  onclick="toggleDropdown(event)" data-dropdown="dropdown-menu-cartas">CARTAS<span> <img src="images/dropdown.svg" alt="dropdown-icon" class="dropdown-icon"> </span></a>
+                    <div id="dropdown-menu-cartas" class="dropdown-content">
                         <a href="enviaCarta.html">Envía tu Carta</a>
                         <a href="verCartas.html">Ver Cartas</a>
                     </div>
                 </li>
                 <li class="main-menu_item">
-                    <a class="main-menu_link"  onclick="toggleDropdown(event)" data-dropdown="dropdown-menu-juega">¡JUEGA!</a>
-                    <div id="dropdown-menu-juega" class="dropdown-content" style="display: none;">
+                    <a class="main-menu_link" id="link"  onclick="toggleDropdown(event)" data-dropdown="dropdown-menu-juega">¡JUEGA!<span> <img src="images/dropdown.svg" alt="dropdown-icon" class="dropdown-icon"> </span></a>
+                    <div id="dropdown-menu-juega" class="dropdown-content">
                         <a href="creaElfo.html">Crea tu Elfo</a>
                         <a href="karaoke.html">Karaoke</a>
                         <a href="juega.html">Juega</a>
@@ -57,7 +57,7 @@
                     <button class="main-menu_link" onclick="document.getElementById('register-popup-id').style.display='block'">REGÍSTRATE</button></li>
                 <li class="main-menu_item" id="perfil-img" style="display: none;">
                     <img id="perfil-imagen" src="images/foto-usuario.svg" alt="Foto de perfil" onclick="toggleDropdown(event)" data-dropdown="dropdown-menu-perfil">                    
-                    <div id="dropdown-menu-perfil" class="dropdown-content" style="display: none;">
+                    <div id="dropdown-menu-perfil" class="dropdown-content">
                         <a href="miPerfil.html" onclick="sessionStorage.setItem('loadProfile', 'true');">Mi Perfil</a>
                         <a href="misCartas.html" onclick="mostrarCartas()">Mis Cartas</a>
                         <a href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
@@ -85,17 +85,34 @@
                 <input style="display: none" type="file" id="foto" accept="image/*" onchange="previewImage(event)">
             </div>
             <div class="container">
-                <label for="username"><b>Usuario</b></label>
-                <input type="text" placeholder="Inserte su nombre de usuario" id="username" name="username" required minlength="3">
-    
-                <label for="password"><b>Contraseña</b></label>
-                <input type="password" placeholder="Inserte su Contraseña" id="password" name="password" required minlength="12">
-    
-                <label for="password2"><b>Repita la Contraseña</b></label>
-                <input type="password" placeholder="Repita la contraseña" id="password2" name="password2" required minlength="12">
-    
-                <label for="email"><b>Correo electrónico</b></label>
-                <input type="email" placeholder="Inserte su email" id="email" name="email">
+                <div class="username">
+                    <label for="username"><b>Usuario</b></label>
+                    <input type="text" placeholder="Inserte su nombre de usuario" id="username" name="username" required minlength="3">
+                    <p class="error" id="error-username" style="display: none;"><span><img src="images/cerrar.svg" alt="Cancelar" class="errorimg"></span>el username debe tener como mínimo 3 caracteres</p>
+                </div>
+
+                <div class="password">
+                    <label for="password"><b>Contraseña</b></label>
+                    <input type="password" placeholder="Inserte su Contraseña" id="password" name="password" required minlength="12">
+                    <p class="error" id="error-pass1" style="display: none;"><span><img src="images/cerrar.svg" alt="Cancelar" class="errorimg"></span>la contraseña debe tener como mínimo 12 caracteres</p>
+                    <p class="error" id="error-pass2" style="display: none;"><span><img src="images/cerrar.svg" alt="Cancelar" class="errorimg"></span>la contraseña debe tener como mínimo una Mayúscula</p>
+                    <p class="error" id="error-pass3" style="display: none;"><span><img src="images/cerrar.svg" alt="Cancelar" class="errorimg"></span>la contraseña debe tener como mínimo una Minúscula</p>
+                    <p class="error" id="error-pass4" style="display: none;"><span><img src="images/cerrar.svg" alt="Cancelar" class="errorimg"></span>la contraseña debe tener como mínimo dos números</p>
+                    <p class="error" id="error-pass5" style="display: none;"><span><img src="images/cerrar.svg" alt="Cancelar" class="errorimg"></span>la contraseña debe tener como mínimo un símbolo</p>
+                </div>
+
+                <div class="password2">
+                    <label for="password2"><b>Repita la Contraseña</b></label>
+                    <input type="password" placeholder="Repita la contraseña" id="password2" name="password2" required minlength="12">
+                    <p class="error" id="error-pass6" style="display: none;"><span><img src="images/cerrar.svg" alt="Cancelar" class="errorimg"></span>las contraseñas no coinciden</p>
+                </div>
+                
+                <div class="email">
+                    <label for="email"><b>Correo electrónico</b></label>
+                    <input type="email" placeholder="Inserte su email" id="email" name="email">
+                    <p class="error" id="error-email" style="display: none;"><span><img src="images/cerrar.svg" alt="Cancelar" class="errorimg"></span>el email debe tener el formato <i>email@dominio.com</i></p>
+
+                </div>
                 
                 <div class="button-container">
                     <button type="button" onclick="registrarUsuario()" class="main-button">Registrarse</button>
@@ -118,11 +135,25 @@
             </div>
             <h4>INICIA SESIÓN</h4>      
             <div class="container">
-                <label for="usernameLogin"><b>Usuario</b></label>
-                <input type="text" placeholder="Nombre de usuario" id="usernameLogin" name="usernameLogin" required minlength="3">
-    
-                <label for="passwordLogin"><b>Contraseña</b></label>
-                <input type="password" placeholder="Contraseña" id="passwordLogin" name="passwordLogin" required minlength="12">
+                <div class="username">
+                    <label for="usernameLogin"><b>Usuario</b></label>
+                    <input type="text" placeholder="Nombre de usuario" id="usernameLogin" name="usernameLogin" required minlength="3">
+                    <p class="error" id="error-usernameLog" style="display: none;">
+                        <span><img src="images/cerrar.svg" alt="Cancelar" class="errorimg"></span>
+                        el usuario no está registrado
+                    </p>
+                </div>
+
+                <div class="password">
+                    <label for="passwordLogin"><b>Contraseña</b></label>
+                    <input type="password" placeholder="Contraseña" id="passwordLogin" name="passwordLogin" required minlength="12">
+                </div>
+
+
+                <div class="forg-reg">
+                    <a href="#" onclick="document.getElementById('login-popup-id').style.display='none'; document.getElementById('register-popup-id').style.display='block'">¿No tienes cuenta? Regístrate</a>
+                    <a href="#" onclick="document.getElementById('login-popup-id').style.display='none';">¿Olvidaste tu contraseña?</a>
+                </div>
 
                 <div class="button-container">
                     <button type="button" onclick="validarLogin()" class="main-button">Iniciar Sesión</button>
@@ -131,6 +162,8 @@
         </form>
     </div>
     <script src="script/login.js"></script>
+
+
 
     <!-- CONTENIDO DE LA PÁGINA -->
     <div class="home-content">

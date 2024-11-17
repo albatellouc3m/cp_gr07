@@ -1,3 +1,20 @@
+// Añadir listeners para validar campos al escribir
+document.getElementById("usernameLogin").addEventListener("input", validarUsernameLogin);
+
+// Función para validar el nombre de usuario
+function validarUsernameLogin() {
+    const usernameLogin = document.getElementById("usernameLogin").value;
+    const usuarios = JSON.parse(localStorage.getItem("usuarios")) || {};
+    const errorUsernameLogin = document.getElementById("error-usernameLog");
+
+    // Comprobar si el usuario existe o si tiene menos de 3 caracteres
+    if (usernameLogin.length < 3 || !usuarios[usernameLogin]) {
+        errorUsernameLogin.style.display = "flex";
+    } else {
+        errorUsernameLogin.style.display = "none";
+    }
+}
+
 // FUNCION PARA INICIAR SESION
 function validarLogin() {
     const usernameLogin = $("#usernameLogin").val();
