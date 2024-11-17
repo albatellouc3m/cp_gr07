@@ -164,28 +164,6 @@ img.calendario{
 
 }
 
-.dropdown-content {
-    position: absolute;
-    top: 0;
-    left: calc(-100% - 10px); /* Mueve el dropdown hacia la izquierda, ajusta según sea necesario */
-    background-color: #CBDFBD;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    width: 150px;
-    border-radius: 4px;
-    overflow: hidden;
-
-    /* Estilo para la transición */
-    opacity: 0;
-    transform: translateX(20px);
-    transition: max-height 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
-}
-
-/* Mostrar Dropdown - animación suave al abrirse */
-.dropdown-content.show {
-    opacity: 1;
-    transform: translateX(0);
-}
 
 
 /*DESKTOP Y TABLET*/
@@ -238,6 +216,7 @@ img.calendario{
     .main-menu_link {
         font-family: 'Spiny Lobster', Verdana;
         display: flex;
+        cursor: pointer;
         font-size: 1.1vw;
         color: #4D5447;
         background-color: transparent;
@@ -320,7 +299,7 @@ img.calendario{
         background-color: #CBDFBD;
         box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
         z-index: 1;
-        width: 150px;
+        width: 7vw;
         border-radius: 4px;
         overflow: hidden;
     
@@ -332,7 +311,7 @@ img.calendario{
     
     /* Mostrar Dropdown */
     .dropdown-content.show {
-        height: 14.5vh; /* Valor suficientemente grande para todos los menús */
+        height: 11.5vh; /* Valor suficientemente grande para todos los menús */
         opacity: 1;
         transform: translateY(0);
     }
@@ -341,6 +320,7 @@ img.calendario{
     /* Estilo de los enlaces dentro del dropdown */
     .dropdown-content a {
         display: block;
+        font-size: 1.75vh;
         padding: 10px;
         text-decoration: none;
         color: black;
