@@ -8,13 +8,14 @@ body {
 * {
     box-sizing: border-box;
 }
+
 nav {
     top: 0;
     margin: 0;
     padding: 0;
 }
 
-/*fuentes*/
+/* Fuentes */
 @font-face {
     font-family: 'Spiny Lobster';
     src: url(../fonts/SpinyLobster.ttf);
@@ -29,8 +30,7 @@ nav {
     font-style: normal;
 }
 
-
-/*navegador principal*/
+/* Navegador principal */
 .main-menu {
     padding-top: 0;
     margin-top: 0;
@@ -56,7 +56,7 @@ nav {
     transition: all 0.3s ease; /* transición */                
 }
 
-.casa{
+.casa {
     width: 2vw;
     height: auto;
 }
@@ -70,4 +70,98 @@ nav {
     align-items: center;        
     justify-content: center;        
     transition: all 0.3s ease;
+}
+
+/* Contenedor principal */
+.contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vh 7vw;
+    margin-top: 2vh;
+}
+
+/* Contenedor de canciones */
+.contenedor-canciones {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    gap: 3vw;
+    width: 45%;
+}
+
+.cancion img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.cancion img:hover {
+    transform: scale(1.05); /* Animación al pasar el ratón */
+}
+
+/* Contenedor del personaje */
+.contenedor-personaje {
+    width: 40%;
+    height: auto;
+    display: flex; /* Usar Flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    margin-right: 3vw;
+}
+
+/* Imagen dentro del contenedor */
+.contenedor-personaje img {
+    width: 100%;
+    max-width: 100%; /* Asegura que la imagen no sobrepase el contenedor */
+    height: auto; /* Mantiene la proporción */
+}
+
+
+/*RESPONSIVE*/
+/*TABLET*/
+@media screen and (max-width: 850px){
+    .casa {
+        width: 7vw;
+        max-width: 40px;
+        height: auto;
+    }
+    .main-menu_link {
+        font-size: 5vw;
+    }
+    /* Contenedor principal */
+    .contenedor {
+        flex-direction: column; /* Apilar elementos verticalmente */
+        padding: 2vh 5vw;
+        justify-content: center;
+        align-items: center;
+        height: 90vh;
+    }
+    /* Contenedor del personaje */
+    .contenedor-personaje {
+        display: none;
+    }
+    /* Contenedor de canciones */
+    .contenedor-canciones {
+        width: 80%; 
+        gap: 15px; /* Espacio entre canciones */
+    }
+    }
+
+
+/*MOVIL*/
+@media screen and (max-width: 500px) {
+    .casa {
+        width: 8vw;
+        max-width: 30px;
+        height: auto;
+    }
+    .main-menu_link {
+        font-size: 7vw;
+    }
+    /* Contenedor de canciones */
+    .contenedor-canciones {
+        width: 100%; /* Ocupa todo el ancho */
+        gap: 3vh; /* Espacio entre canciones */
+    }
 }
