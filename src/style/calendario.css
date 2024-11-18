@@ -111,9 +111,7 @@ nav {
 .numeros .numero {
     width: 100%; /* Para que se adapten a su contenedor */
     height: 11.3vh; /* Altura uniforme para todas las casillas */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    cursor: pointer;
 }
 
 .numeros {
