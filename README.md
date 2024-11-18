@@ -48,9 +48,6 @@ Colección de imágenes mágicas del mundo de Papá Noel, el Polo Norte y su fá
 ### 🌍 **Localiza a Papá Noel**
 Un mapa interactivo que permite seguir en tiempo real el recorrido de Papá Noel por el mundo.
 
-### 💬 **Chat con Papá Noel**
-Un chat en tiempo real para interactuar directamente con Papá Noel o sus elfos.
-
 ## 📚 Escenario de Uso
 Por ejemplo, un niño entra a la página con sus padres para enviar su carta a Papá Noel:
 1. El niño se registra en la plataforma con la ayuda de sus padres.
