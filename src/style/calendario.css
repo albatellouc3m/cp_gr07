@@ -124,6 +124,10 @@ nav {
     height: 50vw; /* Ajustar la altura para que se vea similar a la imagen */
 }
 
+.numero {
+    cursor: pointer;
+}
+
 /*ESTILOS PARA TODOS LOS NUMEROS*/
 #numero1{
     grid-column: 1; 
