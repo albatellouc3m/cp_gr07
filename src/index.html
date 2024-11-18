@@ -55,7 +55,7 @@
                     <button class="main-menu_link" onclick="document.getElementById('login-popup-id').style.display='block'">INICIA SESIÓN</button></li>
                 <li class="main-menu_item" id="register-button">
                     <button class="main-menu_link" onclick="document.getElementById('register-popup-id').style.display='block'">REGÍSTRATE</button></li>
-                <li class="main-menu_item" id="perfil-img" style="display: none;">
+                <li class="main-menu_item" id="perfil-img" style="display: none; cursor: pointer;">
                     <img id="perfil-imagen" src="images/foto-usuario.svg" alt="Foto de perfil" onclick="toggleDropdown(event)" data-dropdown="dropdown-menu-perfil">                    
                     <div id="dropdown-menu-perfil" class="dropdown-content">
                         <a href="miPerfil.html" onclick="sessionStorage.setItem('loadProfile', 'true');">Mi Perfil</a>
