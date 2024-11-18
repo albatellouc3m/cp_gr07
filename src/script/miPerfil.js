@@ -21,28 +21,23 @@ function subirFoto(event) {
 }
 
 // FUNCIÓN PARA ELIMINAR FOTO DE PERFIL
-function eliminarFotoPerfil(event) {
-    event.preventDefault(); // Evita la recarga de la página
-    event.stopPropagation(); // Evita que el clic cierre el dropdown
-
-    const loggedInUser = localStorage.getItem('loggedInUser');
-    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || {};
-
-    if (!loggedInUser || !usuarios[loggedInUser]) {
-        alert("No se encontraron datos del usuario. Por favor, inicia sesión nuevamente.");
-        return;
+function eliminarFotoPerfil() {
+    // Confirmar si el usuario realmente quiere eliminar la foto de perfil
+    if (confirm("¿Estás seguro de que quieres eliminar tu foto de perfil?")) {
+        // Restablecer la imagen al valor predeterminado
+        document.getElementById('profile-edit-foto').src = './images/foto-usuario.svg';
+        
+        // Actualizar el almacenamiento local para que la foto predeterminada se refleje en futuras sesiones
+        const loggedInUser = localStorage.getItem("loggedInUser");
+        if (loggedInUser) {
+            let usuarios = JSON.parse(localStorage.getItem("usuarios")) || {};
+            if (usuarios[loggedInUser]) {
+                usuarios[loggedInUser].foto = './images/usuario.svg';
+                localStorage.setItem("usuarios", JSON.stringify(usuarios));
+            }
+        }
     }
-
-    // Actualizar la imagen en el formulario a la imagen predeterminada
-    $('#profile-edit-foto').attr('src', '.images/usuario.svg');
-
-    // Eliminar la foto del usuario en los datos almacenados
-    usuarios[loggedInUser].foto = ''; // O bien, eliminar la propiedad `foto`
-    localStorage.setItem('usuarios', JSON.stringify(usuarios));
-
-    alert("La foto de perfil ha sido eliminada y se ha restaurado la imagen predeterminada.");
 }
-
 
 
 // FUNCION PARA MOSTRAR EL PERFIL DEL USUARIO
@@ -119,29 +114,6 @@ function guardarCambiosPerfil() {
 window.onload = function() {
     mostrarPerfil();
 }
-
-
-function toggleProfileDropdown(event) {
-    event.preventDefault(); // Evita el comportamiento por defecto del enlace o botón
-    event.stopPropagation(); // Evita que el clic cierre el menú inmediatamente
-    const profileDropdownMenu = document.getElementById("profile-dropdown-menu");
-    profileDropdownMenu.style.display = profileDropdownMenu.style.display === "block" ? "none" : "block";
-}
-
-
-// Escuchar clics en el documento para cerrar el dropdown si el usuario hace clic fuera de él
-document.addEventListener('click', function(event) {
-    const profileDropdownMenu = document.getElementById("profile-dropdown-menu");
-    const profileDropdownBtn = document.getElementById("profile-dropdown-btn");
-
-    // Si el dropdown está abierto y el clic no fue en el botón ni en el menú, cierra el dropdown
-    if (profileDropdownMenu.style.display === "block" &&
-        event.target !== profileDropdownMenu &&
-        event.target !== profileDropdownBtn &&
-        !profileDropdownMenu.contains(event.target)) {
-        profileDropdownMenu.style.display = "none";
-    }
-});
 
 
 if (sessionStorage.getItem('loadProfile') === 'true') {

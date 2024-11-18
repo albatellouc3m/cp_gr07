@@ -306,7 +306,7 @@ img.calendario{
         /* Estilo para la transición */
         display: none;
         transform: translateY(-20px);
-        transition: display 0.5s ease, transform 0.5s ease;
+        transition: display 0.5s ease, transform 0.5s ;
     }
     
     /* Mostrar Dropdown */
