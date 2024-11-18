@@ -1,4 +1,4 @@
-# 🎅 Proyecto EP03 - Prototipo de Página Web de Papá Noel 🎄
+# 🎅 Proyecto EP03 - Página Web de Papá Noel 🎄
 
 Este proyecto se centra en desarrollar un prototipo interactivo de una página web dedicada a Papá Noel, diseñada para entretener y fomentar el espíritu navideño entre usuarios de todas las edades. 
 
