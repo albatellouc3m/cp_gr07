@@ -136,8 +136,16 @@ nav {
         justify-content: center;
         align-items: center;
         height: 90vh;
+        display: flex;
+        flex-wrap: wrap; /* Permite que los elementos internos se ajusten en la línea */
+        overflow: hidden; /* Oculta cualquier contenido que se salga */
     }
-    /* Contenedor del personaje */
+    .contenedor-canciones {
+        width: 100%; 
+        max-width: 100%; /* Limita el ancho máximo al 100% */
+        gap: 3vw; /* Espacio entre las canciones */
+        padding: 5vw;
+    }
     .contenedor-personaje {
         display: none;
     }
