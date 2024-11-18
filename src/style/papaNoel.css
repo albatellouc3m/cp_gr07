@@ -96,7 +96,13 @@ body {
     align-items: center; 
     padding: 0 10px;
     padding-left: 4vw;
-    
+    padding-bottom: 10vh;
+}
+
+.column1 img {
+    width: auto;
+    height: 25vw;
+    border-radius: 10px;
 }
 
 /*columna para el texto de papa noel*/
@@ -111,11 +117,14 @@ body {
     text-align: justify; /*justifica texto*/
 }
 
-/*mini titulito sabias que*/
-.sabias{
+
+h3{
     font-family: 'Spiny Lobster', Verdana;
-    font-style: italic;
     color: black; 
+    font-size: 4vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /*esto es para el arbol que sale de decoración en la parte del movil*/

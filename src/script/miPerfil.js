@@ -145,6 +145,66 @@ document.addEventListener('click', function(event) {
 
 
 if (sessionStorage.getItem('loadProfile') === 'true') {
+    generarRegalos();
     mostrarPerfil(); // Llamar a la función para mostrar el perfil del usuario
     sessionStorage.removeItem('loadProfile'); // Limpiar la bandera para que no vuelva a cargar automáticamente
+}
+
+
+function generarRegalosPerfil() {
+    const loggedInUser = localStorage.getItem("loggedInUser");
+    const usuarios = JSON.parse(localStorage.getItem("usuarios")) || {};
+    
+    // Verificar si el usuario está logueado y tiene regalos
+    if (!loggedInUser || !usuarios[loggedInUser] || !usuarios[loggedInUser].regalosRecogidos) {
+        return;
+    }
+
+    const regalosRecogidos = usuarios[loggedInUser].regalosRecogidos;
+    const regalosContainer = document.getElementById("regalos-container");
+    regalosContainer.innerHTML = ''; // Limpiar el contenedor antes de agregar regalos
+
+    // Definir detalles de los regalos
+    const regalosDetalles = {
+        1: { imagen: "images/regalo1.png", descripcion: "Un caramelo" },
+        2: { imagen: "images/regalo2.png", descripcion: "Un muñeco de nieve" },
+        3: { imagen: "images/regalo3.png", descripcion: "Una estrella brillante" },
+        4: { imagen: "images/regalo4.png", descripcion: "Un gorrito navideño" },
+        5: { imagen: "images/regalo5.png", descripcion: "Unas medias calentitas" },
+        6: { imagen: "images/regalo6.png", descripcion: "Unos guantes de lana" },
+        // Puedes agregar más detalles de regalos según lo necesites
+    };
+
+    // Iterar sobre cada regalo recogido y generar los elementos
+    regalosRecogidos.forEach((dia, index) => {
+        const regalo = regalosDetalles[dia];
+
+        if (regalo) {
+            // Crear el contenedor para el regalo
+            const regaloDiv = document.createElement("div");
+            regaloDiv.classList.add("regalo");
+
+            // Crear el título "DÍA X"
+            const diaTitulo = document.createElement("h3");
+            diaTitulo.innerText = `DÍA ${dia}`;
+
+            // Crear la imagen del regalo
+            const imagen = document.createElement("img");
+            imagen.src = regalo.imagen;
+            imagen.alt = `Regalo del día ${dia}`;
+            imagen.classList.add("regalo-imagen");
+
+            // Crear la descripción del regalo
+            const descripcion = document.createElement("p");
+            descripcion.innerText = regalo.descripcion;
+
+            // Añadir los elementos al contenedor del regalo
+            regaloDiv.appendChild(diaTitulo);
+            regaloDiv.appendChild(imagen);
+            regaloDiv.appendChild(descripcion);
+
+            // Añadir el contenedor del regalo al contenedor principal
+            regalosContainer.appendChild(regaloDiv);
+        }
+    });
 }

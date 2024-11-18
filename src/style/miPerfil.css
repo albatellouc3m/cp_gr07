@@ -74,6 +74,7 @@ nav {
 
 #perfil{
     background-color: #F2F7EF;
+    margin-bottom: 10vh;
 }
 
 .perfil{
@@ -124,7 +125,8 @@ input[type=text], input[type=password], input[type=email] {
     display: inline-block;
     border: 1px solid #bfd9d1;
     box-sizing: border-box;
-  }
+    font-size: 1.5vh;
+}
 
 .formulario{
 width: 50vw;
@@ -199,4 +201,46 @@ margin-right: 10vw;
 
 .main-button:hover {
     opacity: 0.8;
+}
+
+/* Contenedor de todos los regalos */
+.regalos {
+    padding: 5vh 10vw;
+    background-color: #F2F7EF;
+}
+
+/* Contenedor para los regalos individuales */
+.regalos-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3vw;
+}
+
+/* Estilos para cada regalo */
+.regalo {
+    background-color: #CBDFBD;
+    padding: 2vh;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.regalo h3 {
+    font-family: 'Spiny Lobster', Verdana;
+    font-size: 2vh;
+    margin-bottom: 1vh;
+}
+
+.regalo-imagen {
+    width: 100%;
+    height: auto;
+    max-height: 20vh;
+    border-radius: 5px;
+    margin-bottom: 1vh;
+}
+
+.regalo p {
+    font-family: 'Cookies', Verdana;
+    font-size: 1.5vh;
+    color: #4D5447;
 }
