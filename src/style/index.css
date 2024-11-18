@@ -237,7 +237,7 @@ img.calendario{
         background-color: #606959;
         transform: scaleX(0);
         transform-origin: right;
-        transition: transform 1s ease;
+        transition: transform 0.7s ease;
     }
 
     #link:hover::after {
@@ -314,6 +314,10 @@ img.calendario{
         height: 11.5vh; /* Valor suficientemente grande para todos los menús */
         opacity: 1;
         transform: translateY(0);
+    }
+
+    #dropdown-menu-juega.show {
+        height: 15vh;
     }
 
 
