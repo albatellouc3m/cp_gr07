@@ -208,6 +208,11 @@ h3{
     border: 3px solid white;
     cursor: pointer;
     background-color: #333;
+    transition: transform 0.3s ease;
+}
+
+.galeria > ul > li:hover {
+    transform: scale(1.1);
 }
 
 .galeria > ul > li > img {
