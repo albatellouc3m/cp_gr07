@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style/papaNoel.css">
     <link rel="icon" href="images/arboldeco.svg" type="image/x-icon">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> <!-- jQuery -->
+    <script src="script/papaNoel.js"></script>
 </head>
 
 <body>
@@ -38,29 +39,28 @@
      </section>
 
     <section id="galeria">
-        <h3>GALERÍA</h3>
         <div class="galeria">
-            <figure>
-                <img src="images/galeria1.jpg" alt="Foto de Papá Noel en su trineo">
-                <figcaption>Papá Noel en su trineo</figcaption>
-            </figure>
-            <figure>
-                <img src="images/galeria2.jpg" alt="Foto de Papá Noel en su taller">
-                <figcaption>Papá Noel en su taller</figcaption>
-            </figure>
-            <figure>
-                <img src="images/galeria3.jpg" alt="Foto de Papá Noel en su trono">
-                <figcaption>Papá Noel en su trono</figcaption>
-            </figure>
-            <figure>
-                <img src="images/galeria4.jpg" alt="Foto de Papá Noel en su trono">
-                <figcaption>Papá Noel en su trono</figcaption>
-            </figure>
+            <h3>GALERÍA</h3>
+            <div class="hi-prev"></div>
+            <div class="hi-next"></div>
+            <ul>
+                <li><img src="images/galeria/imagen1.svg" alt="Papá Noel 1"></li>
+                <li><img src="images/galeria/imagen2.svg" alt="Papá Noel 2"></li>
+                <li><img src="images/galeria/imagen3.svg" alt="Papá Noel 3"></li>
+                <li><img src="images/galeria/imagen4.jpg" alt="Papá Noel 4"></li>
+                <li><img src="images/galeria/imagen5.jpeg" alt="Papá Noel 5"></li>
+                <li><img src="images/galeria/imagen6.jpg" alt="Papá Noel 6"></li>
+                <li><img src="images/galeria/imagen7.jpg" alt="Papá Noel 7"></li>
+            </ul>
         </div>
     </section>
     </section>
 
-
+    <script>
+        $(document).ready(function(){
+            $('.galeria').galeria();
+        });
+    </script>
 
     <footer>
         <p>©PAPA NOEL</p>
