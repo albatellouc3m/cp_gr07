@@ -125,7 +125,7 @@ function inicializarRegalos() {
         { nombre: "Puntos carnet", imagen: "./images/regalos/puntos.png", descripcion: "1000 puntos de carnet de conducir para poder hacer el terrorista en la carretera" },
         { nombre: "Pato informático", imagen: "./images/regalos/pato.jpg", descripcion: "un patito informático super mono" },
         { nombre: "Peluca", imagen: "./images/regalos/peluca.jpeg", descripcion: "una peluca por si acaso te quedas calvo" },
-        { nombre: "Hamburguesa", imagen: "./images/regalos/chamburguesa.jpeg", descripcion: "Una hamburguesa para que hoy comas como una reina" },
+        { nombre: "Hamburguesa", imagen: "./images/regalos/hamburguesa.jpeg", descripcion: "Una hamburguesa para que hoy comas como una reina" },
         { nombre: "Calcetines", imagen: "./images/regalos/calcetines.webp", descripcion: "calcetines dignos de una diva" },
         { nombre: "Muñeca", imagen: "./images/regalos/muñeca.jpg", descripcion: "Una muñeca para que te acompañe esas noches a solas" },
         { nombre: "Orejas", imagen: "./images/regalos/orejas.jpeg", descripcion: "Para disfrazarte de tu animal favorito" },

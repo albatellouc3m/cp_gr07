@@ -31,29 +31,6 @@ window.onclick = function() {
 
 
 
-function toggleProfileDropdown(event) {
-    event.preventDefault(); // Evita el comportamiento por defecto del enlace o botón
-    event.stopPropagation(); // Evita que el clic cierre el menú inmediatamente
-    const profileDropdownMenu = document.getElementById("profile-dropdown-menu");
-    profileDropdownMenu.style.display = profileDropdownMenu.style.display === "block" ? "none" : "block";
-}
-
-
-// Escuchar clics en el documento para cerrar el dropdown si el usuario hace clic fuera de él
-document.addEventListener('click', function(event) {
-    const profileDropdownMenu = document.getElementById("profile-dropdown-menu");
-    const profileDropdownBtn = document.getElementById("profile-dropdown-btn");
-
-    // Si el dropdown está abierto y el clic no fue en el botón ni en el menú, cierra el dropdown
-    if (profileDropdownMenu.style.display === "block" &&
-        event.target !== profileDropdownMenu &&
-        event.target !== profileDropdownBtn &&
-        !profileDropdownMenu.contains(event.target)) {
-        profileDropdownMenu.style.display = "none";
-    }
-});
-
-
 // CONTADOR DE LA CUENTA ATRAS PAAR NAVIDAD :)))) (merry christmas guys)
 // inicializamos la fecha limite
 let countDownDate = new Date("Dec 24, 2024 23:59:59").getTime();
@@ -80,3 +57,14 @@ let x = setInterval(function() {
 }, 1000);
 
 
+
+
+// FUNCION PARA CERRAR SESION
+function cerrarSesion() {
+    if (confirm("¿Estás seguro de que deseas cerrar sesión?")) {
+        localStorage.setItem("isLoggedIn", false);
+        localStorage.removeItem('loggedInUser');
+        alert("Has cerrado sesión exitosamente.");
+        location.reload(); // recargar la página para volver al estado inicial
+    }
+}
