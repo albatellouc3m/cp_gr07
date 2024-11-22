@@ -140,8 +140,8 @@ h3{
     margin: 115px auto 0;
 }
 
-.galeria .hi-prev,
-.galeria .hi-next {
+.galeria .galeria-prev,
+.galeria .galeria-next {
     position: absolute;
     top: 50%;
     width: 40px;
@@ -158,29 +158,29 @@ h3{
     font-weight: bold;
 }
 
-.galeria .hi-prev:hover,
-.galeria .hi-next:hover {
+.galeria .galeria-prev:hover,
+.galeria .galeria-next:hover {
     background-color: #fff;
     opacity: 1;
 }
 
-.galeria .hi-prev {
+.galeria .galeria-prev {
     left: -100px;
     top: 280px;
 }
 
-.galeria .hi-prev::before {
+.galeria .galeria-prev::before {
     content: '<';
     font-size: 50px;
     font-weight: bolder;
 }
 
-.galeria .hi-next {
+.galeria .galeria-next {
     right: -100px;
     top: 280px;
 }
 
-.galeria .hi-next::before {
+.galeria .galeria-next::before {
     content: '>';
     font-size: 50px;
     font-weight: bolder;

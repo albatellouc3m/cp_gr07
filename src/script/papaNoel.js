@@ -19,10 +19,10 @@
         var $lis = $ele.find('li');
         var timer = null;
 
-        $ele.find('.hi-next').on('click', function() {
+        $ele.find('.galeria-next').on('click', function() {
             next();
         });
-        $ele.find('.hi-prev').on('click', function() {
+        $ele.find('.galeria-prev').on('click', function() {
             states.push(states.shift());
             move();
         });
