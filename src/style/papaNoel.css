@@ -238,7 +238,6 @@ h3{
     .galeria {
         width: 100%; /* Ajusta el tamaño según sea necesario */
         height: auto;
-        background-color: #ff0095;
     }
     
     .galeria ul {
