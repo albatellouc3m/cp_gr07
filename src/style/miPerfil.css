@@ -202,6 +202,7 @@ margin-right: 10vw;
     cursor: pointer;
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 2vh 5vw;
     border-radius: 10vw;
     margin: 5vh 0 7vh 0;
