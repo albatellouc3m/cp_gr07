@@ -35,17 +35,24 @@ function cerrarPopup() {
     }
 }
 
-// Maneja la selección de un estilo
+
+// Función para seleccionar un estilo
 function seleccionarEstilo(estilo) {
-    cerrarPopup(); // Cierra el popup actual
-    if (estilo === 'reiniciar') {
-        alert('Sin estilo seleccionado.');
-        // Aquí puedes añadir la lógica para eliminar el estilo aplicado al elfo
+    const [categoria, numero] = estilo.match(/([a-z]+)(\d+)/).slice(1);
+    const elementoId = `elfo-${categoria}`;
+    const elemento = document.getElementById(elementoId);
+
+    if (elemento) {
+        if (estilo === 'reiniciar') {
+            elemento.style.display = 'none';
+        } else {
+            elemento.src = `images/elfo/${estilo}.svg`;
+            elemento.style.display = 'block';
+        }
     } else {
-        alert(`Estilo seleccionado: ${estilo}`);
-        // Aplica el estilo al elfo según el ID seleccionado
-        document.getElementById('elfo-foto').src = `images/elfo/${estilo}.svg`;
+        console.error(`Elemento con ID ${elementoId} no encontrado.`);
     }
+
 }
 
 

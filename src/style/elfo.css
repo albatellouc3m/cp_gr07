@@ -101,6 +101,7 @@ nav {
 }
 
 .elfo-imagen {
+    position: relative;
     width: 15vw;
     height: auto;
     padding-right: 2vw;
@@ -229,4 +230,54 @@ nav {
 /* Mostrar el popup */
 .estilos-popup.visible {
     display: block;
+}
+
+
+/* Posicionamiento para cada parte */
+#elfo-ojos {
+    top: 20%; /* Ajusta según la posición de los ojos */
+    left: 40%; /* Ajusta para centrar en el rostro */
+    width: 20%; /* Tamaño de los ojos */
+}
+
+#elfo-boca {
+    top: 50%; /* Ajusta para la posición de la boca */
+    left: 45%; /* Ajusta para centrar */
+    width: 10%;
+}
+
+#elfo-pelo {
+    top: 5%; /* Ajusta para la posición del pelo */
+    left: 30%; /* Ajusta según la cabeza */
+    width: 40%;
+}
+
+#elfo-camiseta {
+    top: 60%; /* Posición en el torso */
+    left: 25%;
+    width: 50%;
+}
+
+#elfo-pantalon {
+    top: 75%; /* Posición en las piernas */
+    left: 30%;
+    width: 40%;
+}
+
+#elfo-gafas {
+    top: 20%; /* Posición sobre los ojos */
+    left: 40%;
+    width: 20%;
+}
+
+#elfo-gorro {
+    top: 0%; /* Posición en la cabeza */
+    left: 30%;
+    width: 40%;
+}
+
+#elfo-pecas {
+    top: 40%; /* Ajusta según las mejillas */
+    left: 45%;
+    width: 10%;
 }
