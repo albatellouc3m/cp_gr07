@@ -25,7 +25,7 @@ function inicializarRegalos() {
         { nombre: "Familia", imagen: "./images/regalos/familiaEstable.jpeg", descripcion: "La familia estable que nunca tuviste" },
         { nombre: "BalóN", imagen: "./images/regalos/balon.jpg", descripcion: "Balón de España para echar una pachangüita con los colegas" },
         { nombre: "Nota de Arquitectura", imagen: "./images/regalos/10.jpg", descripcion: "Un 10 en Arquitectura de Computadores" },
-        { nombre: "Peluche", imagen: "../images/regalos/peluche.avif", descripcion: "Un peluche de chayanne para alegrarte los días" },
+        { nombre: "Peluche", imagen: "../images/regalos/peluche.jpg", descripcion: "Un peluche de chayanne para alegrarte los días" },
         { nombre: "Web Papá Noel", imagen: "./images/regalos/portada.svg", descripcion: "Una página web de Papá Noel" },
 
     ];

@@ -80,9 +80,67 @@ nav {
 }
 
 
-.contenedor {
+.elfo-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.elfo {
+    flex: 1;
     display: flex;
     justify-content: center;
+    width: 20vw;
+}
+
+.elfo-imagen {
+    width: 200px;
+    height: auto;
+}
+
+.botones {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     align-items: center;
-    flex-direction: row;
+}
+
+.elfo-button {
+    background: none;
+    border: 2px solid #c6dbc5;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.elfo-button:hover {
+    transform: scale(1.1);
+}
+
+.elfo-button-img {
+    width: 50px;
+    height: 50px;
+}
+
+.instrucciones {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.guardar-boton {
+    background-color: #b0cbb8;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.guardar-boton:hover {
+    background-color: #94b49f;
 }

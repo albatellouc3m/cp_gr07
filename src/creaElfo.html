@@ -24,12 +24,13 @@
         </ul>
     </nav>
     <!--CREA TU ELFO -->
-    <div class="contenedor">
-        <div class="elfo">
-            <img id="elfo-foto" src="images/elfo/elfo.svg" alt="elfo" class="elfo">
-        </div>
-        <div class="seleccion">
-            <h2>ELIGE TU ELFO</h2>
+    <div class="elfo-container">
+            <div class="elfo">
+                <!-- Imagen principal del elfo -->
+                <img id="elfo-foto" src="images/elfo/elfo.svg" alt="elfo" class="elfo-imagen">
+            </div>
+
+            <!-- Botones de personalización -->
             <div class="botones">
                 <button id="cara" class="elfo-button" onclick="cambiarElfo(1)">
                     <img src="images/elfo/cara.svg" alt="cara" class="elfo-button-img">
@@ -50,7 +51,13 @@
                     <img src="images/elfo/cerrar.svg" alt="reiniciar" class="elfo-button-img">
                 </button>
             </div>
-        </div>
+    </div>
+
+    <!-- Sección de instrucciones -->
+    <div class="instrucciones">
+        <h2>CREA</h2>
+        <p>Crea tu elfo personalizado con los accesorios que deseas</p>
+        <button id="guardar-elfo" class="guardar-boton" onclick="guardarElfo()">GUARDAR ELFO</button>
     </div>
 </section>
 <script src="script/elfo.js"></script>
