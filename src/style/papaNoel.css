@@ -236,14 +236,16 @@ h3{
     } 
 
     .galeria {
-        width: 90%; /* Ajusta el tamaño según sea necesario */
+        width: 100%; /* Ajusta el tamaño según sea necesario */
         height: auto;
+        background-color: #ff0095;
     }
+    
     .galeria ul {
-        width: 90%;
+        width: 100%;
     }
     .galeria li {
-        width: 90%;
+        width: 100%;
     }
 }
 

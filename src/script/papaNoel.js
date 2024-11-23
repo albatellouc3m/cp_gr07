@@ -76,15 +76,15 @@
         }
 
         // Detectar tamaño de pantalla y ajustar dirección de la animación para tablets
-        if (window.innerWidth <= 820 && window.innerWidth > 500) {
+        if (window.innerWidth <= 810) {
             states = [
-                { $zIndex: 1, width: 100, height: 120, top: 69, left: 134, $opacity: 0.2 },
-                { $zIndex: 2, width: 110, height: 140, top: 59, left: 0, $opacity: 0.5 },
-                { $zIndex: 3, width: 140, height: 180, top: 35, left: 110, $opacity: 0.7 },
-                { $zIndex: 4, width: 180, height: 230, top: 0, left: 263, $opacity: 1 },
-                { $zIndex: 3, width: 140, height: 180, top: 35, left: 470, $opacity: 0.7 },
-                { $zIndex: 2, width: 110, height: 140, top: 59, left: 620, $opacity: 0.5 },
-                { $zIndex: 1, width: 100, height: 120, top: 69, left: 500, $opacity: 0.2 }
+                { $zIndex: 1, width: 90, height: 110, top: 69, left: 100, $opacity: 0.2 },
+                { $zIndex: 2, width: 110, height: 130, top: 59, left: 150, $opacity: 0.5 },
+                { $zIndex: 3, width: 130, height: 160, top: 35, left: 220, $opacity: 0.7 },
+                { $zIndex: 4, width: 150, height: 180, top: 0, left: 300, $opacity: 1 },
+                { $zIndex: 3, width: 130, height: 160, top: 35, left: 380, $opacity: 0.7 },
+                { $zIndex: 2, width: 110, height: 130, top: 59, left: 450, $opacity: 0.5 },
+                { $zIndex: 1, width: 90, height: 110, top: 69, left: 500, $opacity: 0.2 }
             ];
         }
     }
