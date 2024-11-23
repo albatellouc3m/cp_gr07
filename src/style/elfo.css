@@ -29,6 +29,13 @@ nav {
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'CareAround';
+    src: url(../fonts/CareAround.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 /*navegador principal*/
 .main-menu {
@@ -70,4 +77,12 @@ nav {
     align-items: center;        
     justify-content: center;        
     transition: all 0.3s ease;
+}
+
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 }

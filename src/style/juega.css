@@ -71,3 +71,137 @@ nav {
     justify-content: center;        
     transition: all 0.3s ease;
 }
+
+#juega{
+    background-color: white;
+    background-image: url(../images/fondoJuego.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/*contenedor de seccion que engloba todos los juegos*/
+.games{
+    display: flex;
+    justify-content: flex-start; 
+    
+}
+
+/*columna de los botones de los juegos*/
+.columna1{
+    height: 100%;
+    width: 40%;
+    flex-direction: column; 
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    margin-left: 5vw;
+    padding: 10% 2%;
+    align-items: center;
+}
+
+.columna2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+/*un poco de decoracion de la lista global de juegos*/
+.columna1 ul {
+    list-style-type: none;
+    margin: 0.2vw;
+    padding: 0;
+    
+}
+
+/*estilo de cada uno de los links de los juegos*/
+.columna1 li button{
+    font-family: 'cookies', Verdana;
+    font-style: bold;
+    font-size: 2vw;
+    width: 100%;    
+    background-color: #Bf3f34;
+    padding: 3vh 5vw;
+    margin: 1vh 0;
+    border-radius: 20px;
+    list-style: none;
+}
+
+.columna1 li button:hover{
+    background-color: #A23F34;
+    color: white;
+}
+
+/*estilo de los selectores de juegos*/
+.game-selec{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+}
+
+/*columna de las imagenes de los juegos*/
+.columna2{
+    display: flex;
+    align-items: center;  
+    justify-content: center;
+}
+
+/*para que salga la imagen del juego que queremos*/
+.img-juego{   
+    display: none; /*por ahora no sale porque no hemos pulsado el link*/
+}
+
+
+/*RESPONSIVE*/
+/*TABLET*/
+
+/*MOVIL*/
+@media screen and (max-width: 850px){
+    .games{
+        display: flex;
+        flex-direction: column; /*que se organice en columnas*/
+        align-items: center;
+    }
+
+    .columna1{
+        height: auto;
+        padding: 0;
+        margin:0;
+    }
+
+    .columna2{
+        height: auto;
+        display: flex;
+        align-items: center;  
+        justify-content: center;
+        margin-top: 10vh;
+        z-index: 200;
+    }
+
+    .columna1 li {
+        font-size: 5vw;
+        text-align: center;
+        width: 100%;
+    }
+
+    .columna1 li button{
+        font-size: 5vw;
+        width: 100%;
+        padding: 2vh 10vw;
+    }
+
+    .columna1 ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/*MOVIL*/
+@media screen and (max-width: 480px){
+    .columna2{
+        height: 50vh;
+        padding: 0 5vw;
+    }
+}

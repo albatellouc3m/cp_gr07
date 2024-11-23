@@ -24,11 +24,68 @@
         </ul>
     </nav>
     <!--JUEGA -->
-    <div class="contenedor">
-        <div class="calendario">
-
+    <section id="juega">
+        <h2>JUEGA</h2>
+        <div class="games">
+            <div class="columna1">
+                <ul>
+                    <li><button class="game-selec" onclick="mostrarJuego('juego1')">Juego 1</button></li>
+                    <li><button class="game-selec" onclick="mostrarJuego('juego2')">Juego 2</button></li>
+                    <li><button class="game-selec" onclick="mostrarJuego('juego3')">Juego 3</button></li>
+                </ul>
+            </div>
+            <div class="columna2">
+                <div id="juegoDef" class="img-juego" style="display:block;">
+                    <img src="../ej/images/elige.png" alt="juegoDef">
+                </div>
+                
+                <!-- Juego 1 -->
+                <div id="juego1" class="contenedor-juego1" style="display:none;">
+                    <div id="juego1-inicio" class="pantalla-inicio">
+                        <h1>¡Atrapa la nieve!</h1>
+                        <button class="btnEmpezar" id="btnEmpezar1">EMPEZAR</button>
+                    </div>
+                    <div class="container">
+                        <p class="copos-atrapados">PUNTOS: <span id="score">0</span></p>
+                        <p class="tiempo-restante">TIEMPO: <span id="time">90</span> s</p>
+                        <div id="gameBoard">
+                            <div id="circle"></div>
+                        </div>
+                    </div>
+                    <div id="juego1-final" class="pantalla-final" style="display: none;">
+                        <h1>¡Has atrapado <span id="scoreFinal">0</span> copos de nieve!</h1>
+                        <button class="btnEmpezar" id="btnReiniciar1">Reiniciar</button>
+                    </div>
+                </div>
+                <script src="scripts/juego1.js"></script>
+                
+                <!-- Juego 2 -->
+                <div id="juego2" class="contenedor-juego2" style="display:none;">
+                    <div id="juego2-inicio" class="pantalla-inicio">
+                        <h1>¡Memoria!</h1>
+                        <h1>Encuentra las parejas</h1>
+                        <button class="btnEmpezar" id="btnEmpezar2">EMPEZAR</button>
+                    </div>
+                    <p id="timeDisplay" style="display:none;">Tiempo restante: <span id="time2"></span> s</p>
+                    <div class="game-board2">
+                        <!-- aquí se generarán dinámicamente las cartas -->
+                    </div>
+                    <div id="juego2-final" class="pantalla-final" style="display: none;">
+                        <h1 id="mensaje-exito" style="display:none;">¡Has conseguido emparejar todas las cartas!</h1>
+                        <h1 id="mensaje-fracaso" style="display:none;">Mala suerte... Sigue intentándolo y lo conseguirás</h1>
+                        <button class="btnEmpezar" id="btnReiniciar2">Reiniciar</button>
+                    </div>
+                </div>
+                <script src="scripts/juego2.js"></script>
+    
+                <!-- Juego 3 -->
+                <div id="juego3" class="img-juego" style="display:none;">
+                    <img src="../ej/images/juego3.svg" alt="juego3">
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
+    <script src="scripts/juega.js"></script>
 </section>
 <script src="script/juega.js"></script>
 </body>
