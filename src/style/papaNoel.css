@@ -72,6 +72,7 @@ body {
 #papaNoel{
     background-color: #E5EFDE;
 }
+
 /*DESKTOP*/
 #historia {
     background-color: #E5EFDE;
@@ -138,6 +139,11 @@ h3{
     height: 600px;
     border-radius: 50px;
     margin: 115px auto 0;
+}
+
+#galeria {
+    background-color: #FFFFFF;
+    padding: 10px 10px 10px 10px;
 }
 
 .galeria .galeria-prev,
@@ -228,6 +234,17 @@ h3{
         background-image: none;
         background-color: #dfece8;
     } 
+
+    .galeria {
+        width: 90%; /* Ajusta el tamaño según sea necesario */
+        height: auto;
+    }
+    .galeria ul {
+        width: 90%;
+    }
+    .galeria li {
+        width: 90%;
+    }
 }
 
 /*MOVIL*/
@@ -269,11 +286,53 @@ h3{
         padding: 0 10vw;
         padding-bottom: 10vh;
     }
-}
 
-/*GALERIA DE FOTOS*/
-/*DESKTOP*/
-#galeria {
-    background-color: #FFFFFF;
-    padding: 10px 10px 10px 10px;
+    #galeria {
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .galeria {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #titulo-galeria {
+        font-size: 6vw;
+        margin-top: -60px;
+        margin-bottom: 40px;
+    }
+
+    .galeria ul {
+        flex-direction: column;
+    }
+    .galeria li {
+        position: relative;
+        margin: 10px 0;
+    }
+    .galeria img {
+        width: 100%;
+        height: auto;
+    }
+    .galeria .galeria-prev, .galeria .galeria-next {
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 20px;
+    }
+    .galeria .galeria-prev {
+        display: none;
+        left: 5px;
+    }
+    .galeria .galeria-next {
+        display: none;
+        right: 5px;
+    }
+    
 }
