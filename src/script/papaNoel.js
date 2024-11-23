@@ -62,19 +62,6 @@
             timer = setInterval(next, setting.interval);
         }
 
-        // Detectar tamaño de pantalla y ajustar dirección de la animación para móviles
-        if (window.innerWidth <= 500) {
-            states = [
-                { $zIndex: 1, width: 100, height: 120, top: '50%', left: '50%', $opacity: 0.2, marginTop: '-60px', marginLeft: '-50px' },
-                { $zIndex: 2, width: 120, height: 140, top: '40%', left: '50%', $opacity: 0.5, marginTop: '-70px', marginLeft: '-60px' },
-                { $zIndex: 3, width: 140, height: 160, top: '30%', left: '50%', $opacity: 0.7, marginTop: '-80px', marginLeft: '-70px' },
-                { $zIndex: 4, width: 160, height: 180, top: '20%', left: '50%', $opacity: 1, marginTop: '-90px', marginLeft: '-80px' },
-                { $zIndex: 3, width: 140, height: 160, top: '30%', left: '50%', $opacity: 0.7, marginTop: '-80px', marginLeft: '-70px' },
-                { $zIndex: 2, width: 120, height: 140, top: '40%', left: '50%', $opacity: 0.5, marginTop: '-70px', marginLeft: '-60px' },
-                { $zIndex: 1, width: 100, height: 120, top: '50%', left: '50%', $opacity: 0.2, marginTop: '-60px', marginLeft: '-50px' }
-            ];
-        }
-
         // Detectar tamaño de pantalla y ajustar dirección de la animación para tablets
         if (window.innerWidth <= 810) {
             states = [
@@ -85,6 +72,19 @@
                 { $zIndex: 3, width: 130, height: 160, top: 35, left: 380, $opacity: 0.7 },
                 { $zIndex: 2, width: 110, height: 130, top: 59, left: 450, $opacity: 0.5 },
                 { $zIndex: 1, width: 90, height: 110, top: 69, left: 500, $opacity: 0.2 }
+            ];
+        }
+
+        // Detectar tamaño de pantalla y ajustar dirección de la animación para móviles
+        if (window.innerWidth <= 500) {
+            states = [
+                { $zIndex: 1, width: 100, height: 120, top: '50%', left: '50%', $opacity: 0.2, marginTop: '-60px', marginLeft: '-50px' },
+                { $zIndex: 2, width: 120, height: 140, top: '40%', left: '50%', $opacity: 0.5, marginTop: '-70px', marginLeft: '-60px' },
+                { $zIndex: 3, width: 140, height: 160, top: '30%', left: '50%', $opacity: 0.7, marginTop: '-80px', marginLeft: '-70px' },
+                { $zIndex: 4, width: 160, height: 180, top: '20%', left: '50%', $opacity: 1, marginTop: '-90px', marginLeft: '-80px' },
+                { $zIndex: 3, width: 140, height: 160, top: '30%', left: '50%', $opacity: 0.7, marginTop: '-80px', marginLeft: '-70px' },
+                { $zIndex: 2, width: 120, height: 140, top: '40%', left: '50%', $opacity: 0.5, marginTop: '-70px', marginLeft: '-60px' },
+                { $zIndex: 1, width: 100, height: 120, top: '50%', left: '50%', $opacity: 0.2, marginTop: '-60px', marginLeft: '-50px' }
             ];
         }
     }
