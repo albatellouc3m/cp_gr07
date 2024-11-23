@@ -113,6 +113,7 @@ function guardarCambiosPerfil() {
 
 window.onload = function() {
     mostrarPerfil();
+    generarRegalos();
 }
 
 
@@ -123,63 +124,44 @@ if (sessionStorage.getItem('loadProfile') === 'true') {
 }
 
 
-function generarRegalosPerfil() {
-    const loggedInUser = localStorage.getItem("loggedInUser");
-    const usuarios = JSON.parse(localStorage.getItem("usuarios")) || {};
-    
-    // Verificar si el usuario está logueado y tiene regalos
+// FUNCIÓN PARA GENERAR LOS REGALOS EN LA SECCIÓN DE PERFIL
+function generarRegalos() {
+    const loggedInUser = localStorage.getItem('loggedInUser');
+    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || {};
+
+    // verificar si el usuario está registrado y tiene regalos recogidos
     if (!loggedInUser || !usuarios[loggedInUser] || !usuarios[loggedInUser].regalosRecogidos) {
+        document.getElementById('regalos-container').innerHTML = '<p>Descubre el calendario de Adviento escondido y abre cada día un regalo nuevo</p>';
         return;
     }
 
     const regalosRecogidos = usuarios[loggedInUser].regalosRecogidos;
-    const regalosContainer = document.getElementById("regalos-container");
-    regalosContainer.innerHTML = ''; // Limpiar el contenedor antes de agregar regalos
+    const regalosDisponibles = JSON.parse(localStorage.getItem('regalosDisponibles')) || [];
+    const regalosContainer = document.getElementById('regalos-container');
 
-    // Definir detalles de los regalos
-    const regalosDetalles = {
-        1: { imagen: "images/regalo1.png", descripcion: "Un caramelo" },
-        2: { imagen: "images/regalo2.png", descripcion: "Un muñeco de nieve" },
-        3: { imagen: "images/regalo3.png", descripcion: "Una estrella brillante" },
-        4: { imagen: "images/regalo4.png", descripcion: "Un gorrito navideño" },
-        5: { imagen: "images/regalo5.png", descripcion: "Unas medias calentitas" },
-        6: { imagen: "images/regalo6.png", descripcion: "Unos guantes de lana" },
-        // Puedes agregar más detalles de regalos según lo necesites
-    };
+    // ordernar los regalos (no sabia que se podia hecer asi lol)
+    regalosRecogidos.sort((a, b) => a - b);
 
-    // Iterar sobre cada regalo recogido y generar los elementos
-    regalosRecogidos.forEach((dia, index) => {
-        const regalo = regalosDetalles[dia];
+    // limpiar el contenedor por si acaso 
+    regalosContainer.innerHTML = '';
 
-        if (regalo) {
-            // Crear el contenedor para el regalo
-            const regaloDiv = document.createElement("div");
-            regaloDiv.classList.add("regalo");
+    // generar los regalos abiertos por el usuario
+    regalosRecogidos.forEach(dia => {
+        const regalo = regalosDisponibles[dia % regalosDisponibles.length]; // aqui se coge el regalo del dia
+        const regaloDiv = document.createElement('div');
+        regaloDiv.classList.add('regalo');
 
-            // Crear el título "DÍA X"
-            const diaTitulo = document.createElement("h3");
-            diaTitulo.innerText = `DÍA ${dia}`;
+        regaloDiv.innerHTML = `
+            <h1 class="regalo-dia">Día ${dia}</h1>
+            <img src="${regalo.imagen}" alt="${regalo.nombre}" class="regalo-img">
+            <h3 class="regalo-nombre">${regalo.nombre}</h3>
+            <p class="regalo-descripcion">${regalo.descripcion}</p>
+        `;
 
-            // Crear la imagen del regalo
-            const imagen = document.createElement("img");
-            imagen.src = regalo.imagen;
-            imagen.alt = `Regalo del día ${dia}`;
-            imagen.classList.add("regalo-imagen");
-
-            // Crear la descripción del regalo
-            const descripcion = document.createElement("p");
-            descripcion.innerText = regalo.descripcion;
-
-            // Añadir los elementos al contenedor del regalo
-            regaloDiv.appendChild(diaTitulo);
-            regaloDiv.appendChild(imagen);
-            regaloDiv.appendChild(descripcion);
-
-            // Añadir el contenedor del regalo al contenedor principal
-            regalosContainer.appendChild(regaloDiv);
-        }
+        regalosContainer.appendChild(regaloDiv);
     });
 }
+
 
 function toggleProfileDropdown(event) {
     event.preventDefault(); // Evita el comportamiento por defecto del enlace o botón

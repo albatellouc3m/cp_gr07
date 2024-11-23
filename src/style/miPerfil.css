@@ -29,6 +29,14 @@ nav {
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'CareAround';
+    src: url(../fonts/CareAround.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 
 /*navegador principal*/
 .main-menu {
@@ -203,44 +211,44 @@ margin-right: 10vw;
     opacity: 0.8;
 }
 
-/* Contenedor de todos los regalos */
-.regalos {
-    padding: 5vh 10vw;
+/*PARA LOS REGALITOS*/
+.regalos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2vw;
+    justify-content: center;
+    padding: 2vh;
+}
+
+.regalo {
+    border: 2px solid #99A88E;
+    border-radius: 2vw;
+    padding: 2vh;
+    text-align: center;
+    width: 17vw;
     background-color: #F2F7EF;
 }
 
-/* Contenedor para los regalos individuales */
-.regalos-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 3vw;
+.regalo-img {
+    width: auto;
+    height: 20vh;
+    margin-bottom: 2vh;
+    padding: 0 0.5vw;
 }
 
-/* Estilos para cada regalo */
-.regalo {
-    background-color: #CBDFBD;
-    padding: 2vh;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.regalo-dia{
+    font-family: 'CareAround', Verdana;
+    font-size: 4vh;
+    margin: 1vw 0.5vw;
 }
 
-.regalo h3 {
+.regalo-nombre {
     font-family: 'Spiny Lobster', Verdana;
     font-size: 2vh;
-    margin-bottom: 1vh;
+    margin: 1vw 0 0.5vw;
 }
 
-.regalo-imagen {
-    width: 100%;
-    height: auto;
-    max-height: 20vh;
-    border-radius: 5px;
-    margin-bottom: 1vh;
-}
-
-.regalo p {
-    font-family: 'Cookies', Verdana;
-    font-size: 1.5vh;
-    color: #4D5447;
+.regalo-descripcion {
+    font-size: 0.9em;
+    color: #555;
 }
