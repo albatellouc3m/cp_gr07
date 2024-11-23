@@ -1,4 +1,3 @@
-<!-- JUEGA-->
 <!DOCTYPE html>
 <html lang="es-ES">
 <head>
@@ -79,15 +78,47 @@
                 <script src="scripts/juego2.js"></script>
     
                 <!-- Juego 3 -->
-                <div id="juego3" class="img-juego" style="display:none;">
-                    <img src="../ej/images/juego3.svg" alt="juego3">
+                <div id="juego3" class="contenedor-juego3" style="display:none;">
+                    <div id="juego3-inicio" class="pantalla-inicio">
+                        <h1>¡Escapa del Grinch!</h1>
+                        <button class="btnEmpezar" id="btnEmpezar3">EMPEZAR</button>
+                    </div>
+                    <div class="container-juego3">
+                        <div id="tablero">
+                            <div id="jugador" class="personaje"></div>
+                            <div id="grinch" class="personaje"></div>
+                            <div id="temporizador3">20</div>
+                        </div>
+                    </div>
+                    <div id="juego3-final" class="pantalla-final" style="display: none;">
+                        <h1 id="mensaje-final3"></h1>
+                        <button class="btnEmpezar" id="btnReiniciar3">Reiniciar</button>
+                    </div>
                 </div>
+                <script src="script/juego3.js"></script>
             </div>
         </div>
     </section>
-    <script src="scripts/juega.js"></script>
 </section>
-<script src="script/juega.js"></script>
+<script>
+    function mostrarJuego(juegoId) {
+        const juegos = document.querySelectorAll('.contenedor-juego1, .contenedor-juego2, .contenedor-juego3');
+        const juegoDef = document.getElementById('juegoDef');
+        
+        juegos.forEach(juego => juego.style.display = 'none');
+        
+        const juegoSeleccionado = document.getElementById(juegoId);
+        if (juegoSeleccionado) {
+            juegoSeleccionado.style.display = 'block';
+            if (juegoDef) {
+                juegoDef.style.display = 'none';
+            }
+        } else {
+            if (juegoDef) {
+                juegoDef.style.display = 'block';
+            }
+        }
+    }
+</script>
 </body>
 </html>
-

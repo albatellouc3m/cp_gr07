@@ -9,6 +9,7 @@ function mostrarJuego(idJuego) {
     // oculta los contenedores de los juegos
     document.getElementById('juego1').style.display = 'none';
     document.getElementById('juego2').style.display = 'none';
+    document.getElementById('juego3').style.display = 'none';
 
     // si se selecciona el juego 1, se reinicia
     if (idJuego === 'juego1') {
