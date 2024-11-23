@@ -270,6 +270,7 @@ img.calendario{
 
     #perfil-imagen {
         width: 3vw;
+        height: 3vw;
         border-radius: 100%;
         height: auto;
         align-self: center;

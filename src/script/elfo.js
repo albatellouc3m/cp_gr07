@@ -53,9 +53,56 @@ function seleccionarEstilo(estilo) {
         console.error(`Elemento con ID ${elementoId} no encontrado.`);
     }
 
+    cerrarPopup();
+}
+
+function guardarElfo() {
+    const loggedInUser = localStorage.getItem('loggedInUser');
+    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || {};
+
+    if (!loggedInUser || !usuarios[loggedInUser]) {
+        alert("No se puede guardar el elfo porque no hay ningún usuario logueado.");
+        return;
+    }
+
+    const partesElfo = [
+        { id: 'elfo-ojos', src: document.getElementById('elfo-ojos').src },
+        { id: 'elfo-boca', src: document.getElementById('elfo-boca').src, visible: document.getElementById('elfo-boca').style.display !== 'none' },
+        { id: 'elfo-pelo', src: document.getElementById('elfo-pelo').src, visible: document.getElementById('elfo-pelo').style.display !== 'none' },
+        { id: 'elfo-pecas', src: document.getElementById('elfo-pecas').src },
+        { id: 'elfo-camiseta', src: document.getElementById('elfo-camiseta').src },
+        { id: 'elfo-pantalon', src: document.getElementById('elfo-pantalon').src },
+        { id: 'elfo-gafas', src: document.getElementById('elfo-gafas').src, visible: document.getElementById('elfo-gafas').style.display !== 'none' },
+        { id: 'elfo-gorro', src: document.getElementById('elfo-gorro').src },
+        { id: 'elfo-nariz', src: document.getElementById('elfo-nariz').src },
+        { id: 'elfo-piel', src: document.getElementById('elfo-piel').src }
+    ];
+
+    // Agrega el elfo al usuario actual
+    if (!usuarios[loggedInUser].elfos) {
+        usuarios[loggedInUser].elfos = [];
+    }
+    usuarios[loggedInUser].elfos.push(partesElfo);
+
+    // Guarda los datos actualizados en localStorage
+    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+
+    alert("¡El elfo ha sido guardado en tu perfil!");
 }
 
 
+
 function reiniciarEstilos() {
-    document.getElementById('elfo-foto').src = 'images/elfo/elfo.svg';
+    confirm('¿Estás seguro de que deseas reiniciar los estilos?');
+    document.getElementById('elfo-ojos').src ='images/elfo/ojos2.svg';
+    document.getElementById('elfo-pecas').src ='images/elfo/pecas1.svg';
+    document.getElementById('elfo-camiseta').src ='images/elfo/camiseta.svg';
+    document.getElementById('elfo-pantalon').src ='images/elfo/pantalon.svg';
+    document.getElementById('elfo-gorro').src ='images/elfo/gorro.svg';
+    document.getElementById('elfo-nariz').src ='images/elfo/nariz1.svg';
+    document.getElementById('elfo-piel').src ='images/elfo/cuerpo.svg';
+
+    document.getElementById('elfo-boca').style ='display:none';
+    document.getElementById('elfo-pelo').style ='display:none';
+    document.getElementById('elfo-gafas').style ='display:none';
 }
