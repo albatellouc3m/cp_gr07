@@ -218,38 +218,8 @@ function cargarElfosGuardados() {
                     <img src="${parte.src}" id="${parte.id}" class="elfo-imagen-things" style="display: ${parte.visible === false ? 'none' : 'block'};">
                 `).join('')}
             </div>
-            <button class="button-elfo" onclick="usarElfo(${index})">Usar como foto de perfil</button>
         `;
 
         elfosContainer.appendChild(elfoDiv);
     });
-}
-
-// Función para establecer un elfo como foto de perfil
-function usarElfo(index) {
-    const loggedInUser = localStorage.getItem('loggedInUser');
-    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || {};
-
-    if (!loggedInUser || !usuarios[loggedInUser]) {
-        alert("No hay datos de usuario disponibles.");
-        return;
-    }
-
-    const userElfos = usuarios[loggedInUser].elfos || [];
-    if (index < 0 || index >= userElfos.length) {
-        alert("Elfo no encontrado.");
-        return;
-    }
-
-    // Usa la primera parte del elfo (puedes personalizar esto)
-    const fotoElfo = userElfos[index][0].src;
-
-    // Actualiza la foto de perfil
-    document.getElementById('profile-edit-foto').src = fotoElfo;
-
-    // Guarda la nueva foto de perfil en localStorage
-    usuarios[loggedInUser].foto = fotoElfo;
-    localStorage.setItem('usuarios', JSON.stringify(usuarios));
-
-    alert("El elfo ha sido establecido como foto de perfil.");
 }
