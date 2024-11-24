@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg2"
+   width="80"
+   height="79.999969"
+   viewBox="0 0 80 79.99997"
+   sodipodi:docname="1266039_163116-OVE06R-443.eps"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs6" />
+  <sodipodi:namedview
+     id="namedview4"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false" />
+  <g
+     id="g10"
+     inkscape:groupmode="layer"
+     inkscape:label="Page 1"
+     transform="matrix(1.3333333,0,0,-1.3333333,-481.33331,173.33333)">
+    <path
+       d="m 361,100 c 0,16.568 13.432,30 30,30 16.568,0 30,-13.432 30,-30 0,-16.568 -13.432,-30 -30,-30 -16.568,0 -30,13.432 -30,30"
+       style="fill:#99a88e;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.1"
+       id="path36"
+       inkscape:export-filename="../Documentos/INGENIERÍA INFORMATICA/3er CURSO/1er CUATRI/interfaces/FinalCase/cp_gr07/src/images/flechaatras.svg"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       d="m 406.343,98.5012 h -16.727 c -1.104,0 -2,0.8949 -2,1.9998 0,1.105 0.896,2 2,2 h 16.727 c 1.104,0 2,-0.895 2,-2 0,-1.1049 -0.896,-1.9998 -2,-1.9998"
+       style="fill:#f2f7ef;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.1"
+       id="path38" />
+    <path
+       d="m 389.098,85.178897 -13.897,13.8961 c -0.372,0.373 -0.586,0.8879 -0.586,1.414003 v 0.012 c 0,0.527 0.214,1.042 0.586,1.414 l 13.897,13.897 c 0.781,0.781 2.047,0.781 2.828,0 0.781,-0.781 0.781,-2.048 0,-2.829 L 378.029,99.087097 376.615,100.501 h 2 v -0.012 h -2 l 1.414,1.415 13.897,-13.897003 c 0.781,-0.7808 0.781,-2.0468 0,-2.8281 -0.781,-0.7809 -2.047,-0.7809 -2.828,0"
+       style="fill:#f2f7ef;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.1"
+       id="path40" />
+  </g>
+</svg>
