@@ -117,6 +117,25 @@ nav {
     height: auto; /* Mantiene la proporción */
 }
 
+.contenedor-video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 85vh; /* Asegúrate de mantener el tamaño deseado */
+}
+
+#karaoke-video {
+    width: 100%;
+    height: 100%;
+    max-width: 640px; /* Limita el tamaño máximo si es necesario */
+    max-height: 360px; /* Proporción 16:9 */
+    object-fit: cover;
+    display: block; /* Garantiza que no haya espacio extra */
+    border: none; /* Quita bordes innecesarios del iframe */
+}
+
+
 
 /*RESPONSIVE*/
 /*TABLET*/
