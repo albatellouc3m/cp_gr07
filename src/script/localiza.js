@@ -5,38 +5,54 @@ const popup = document.getElementById('popup-localiza');
 const papanoel = document.getElementById('trineo');
 const contenido = document.querySelector('.contenido');
 
-let animation; // Declaramos el intervalo de tiempo para el movimiento
+let animationFrame; // Variable para controlar la animación
 
-// Mostramos el pop-up al hacer clic en "Iniciar"
+// Mostrar el pop-up al hacer clic en "Iniciar"
 iniciar_boton.addEventListener('click', () => {
     popup.style.display = 'flex';
 
-    // Iniciamos el movimiento
+    // Configura la posición inicial del trineo en la esquina inferior izquierda
+    inicializarPosicion();
+
+    // Inicia el movimiento de Papá Noel
     iniciarMovimiento();
 });
 
-// Cerramos el pop-up al hacer clic fuera de la imagen
+// Cerrar el pop-up al hacer clic fuera de la imagen
 popup.addEventListener('click', (event) => {
     if (event.target === popup) {
         popup.style.display = 'none';
 
-        // Detenemos el movimiento de Papá Noel
+        // Detén el movimiento de Papá Noel
         detenerMovimiento();
     }
 });
 
-/* MOVIMIENTO PAPA NOEL */
+/* MOVIMIENTO CONSTANTE DE PAPÁ NOEL */
 
 let velocidadX = 0.5; // Velocidad en el eje X
-let velocidadY = 0.5; // Velocidad en el eje Y
-let posX = 0; // Posición inicial en el eje X
-let posY = 0; // Posición inicial en el eje Y
+let velocidadY = -0.5; // Velocidad en el eje Y (hacia arriba inicialmente)
+let posX = 0; // Posición inicial en el eje X (borde izquierdo)
+let posY = 0; // Posición inicial en el eje Y (borde inferior)
+
+function inicializarPosicion() {
+    const contWidth = contenido.offsetWidth;
+    const contHeight = contenido.offsetHeight;
+
+    // Establece la posición inicial en el borde inferior izquierdo
+    posX = popup.offsetWidth - contWidth; // Empieza en el borde izquierdo
+    posY = contHeight - papanoel.offsetHeight; // Empieza en el borde inferior
+
+    // Aplica la posición inicial
+    papanoel.style.left = `${posX}px`;
+    papanoel.style.top = `${posY}px`;
+}
 
 function moverPapanoel() {
     const contWidth = contenido.offsetWidth;
     const contHeight = contenido.offsetHeight;
 
-    // Actualizamos la posición
+    // Actualiza la posición
     posX += velocidadX;
     posY += velocidadY;
 
