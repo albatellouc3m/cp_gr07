@@ -19,8 +19,9 @@ $(document).ready(function () {
         $(".contenedor-canciones").show();
         $(".contenedor-personaje").show();
 
-        // Oculta el contenedor del vídeo y detiene el vídeo
+        // Oculta el contenedor del vídeo, la flecha y detiene el vídeo
         $(".contenedor-video").hide();
+        $(".flecha").hide();
         $("#karaoke-video").attr("src", ""); // Detiene el vídeo limpiando el src
     });
 });
