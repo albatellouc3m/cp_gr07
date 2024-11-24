@@ -27,29 +27,38 @@
 
     <!-- Contenedor principal -->
     <div class="contenedor">
+        <div class="flecha">
+            <img src="images/casa.svg" alt="Volver">
+        </div>
         <!-- Contenedor de canciones -->
         <div class="contenedor-canciones">
-            <div class="cancion"><a href="https://www.youtube.com/watch?v=ct9dADDd-ng"> 
+            <div class="cancion" data-video="videos/allIWantForChristmas.MP4">
                 <img src="images/karaoke-allIWantForChristmas.jpg" alt="Mariah Carey - All I Want For Christmas Is You">
-            </div></a>
-            <div class="cancion"><a href="https://www.youtube.com/watch?v=O0eCgIBeiJE">
+            </div>
+            <div class="cancion" data-video="videos/señorita.MP4">
                 <img src="images/karaoke-señorita.jpeg" alt="Abraham Mateo - Señorita">
-            </div></a>
-            <div class="cancion"><a href="https://www.youtube.com/watch?v=fjompetgoHM">
+            </div>
+            <div class="cancion" data-video="videos/elSecretoDeLasTortugas.MP4">
                 <img src="images/karaoke-elSecretoDeLasTortugas.jpg" alt="Maldita Nerea - El Secreto de las Tortugas">
-            </div></a>
-            <div class="cancion"><a href="https://www.youtube.com/watch?v=xb39VAI6lgI">
+            </div>
+            <div class="cancion" data-video="videos/santaClausIsComing.MP4">
                 <img src="images/karaoke-santaClausIsComingToTown.jpeg" alt="Michael Bublé - Santa Claus Is Coming">
-            </div></a>
+            </div>
         </div>
 
         <!-- Contenedor del personaje -->
         <div class="contenedor-personaje">
             <img src="images/elfo-bailando.gif" alt="Elfo">
         </div>
+
+        <!-- Contenedor del video -->
+        <div class="contenedor-video" style="display: none;">
+            <iframe id="karaoke-video" allowfullscreen></iframe>
+        </div>
     </div>
 </section>
 <script src="script/karaoke.js"></script>
 </body>
 </html>
+
 
