@@ -68,7 +68,6 @@ function guardarElfo() {
     const partesElfo = [
         { id: 'elfo-ojos', src: document.getElementById('elfo-ojos').src },
         { id: 'elfo-boca', src: document.getElementById('elfo-boca').src, visible: document.getElementById('elfo-boca').style.display !== 'none' },
-        { id: 'elfo-pelo', src: document.getElementById('elfo-pelo').src, visible: document.getElementById('elfo-pelo').style.display !== 'none' },
         { id: 'elfo-pecas', src: document.getElementById('elfo-pecas').src },
         { id: 'elfo-camiseta', src: document.getElementById('elfo-camiseta').src },
         { id: 'elfo-pantalon', src: document.getElementById('elfo-pantalon').src },
@@ -103,6 +102,5 @@ function reiniciarEstilos() {
     document.getElementById('elfo-piel').src ='images/elfo/cuerpo.svg';
 
     document.getElementById('elfo-boca').style ='display:none';
-    document.getElementById('elfo-pelo').style ='display:none';
     document.getElementById('elfo-gafas').style ='display:none';
 }
