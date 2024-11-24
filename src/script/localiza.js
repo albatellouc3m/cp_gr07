@@ -3,7 +3,7 @@
 const iniciar_boton = document.getElementById('iniciar_localiza');
 const popup = document.getElementById('popup-localiza');
 const papanoel = document.getElementById('trineo');
-const contenido = document.querySelector('.contenido');
+const contenido = document.getElementById('contenido');
 
 let animationFrame; // Variable para controlar la animación
 
@@ -28,12 +28,12 @@ popup.addEventListener('click', (event) => {
     }
 });
 
-/* MOVIMIENTO CONSTANTE DE PAPÁ NOEL */
+/* MOVIMIENTO ALEATORIO DE PAPÁ NOEL */
 
 let velocidadX = 0.5; // Velocidad en el eje X
 let velocidadY = -0.5; // Velocidad en el eje Y (hacia arriba inicialmente)
-let posX = 0; // Posición inicial en el eje X (borde izquierdo)
-let posY = 0; // Posición inicial en el eje Y (borde inferior)
+let posX = 0; // Posición inicial en el eje X
+let posY = 0; // Posición inicial en el eje Y
 
 function inicializarPosicion() {
     const contWidth = contenido.offsetWidth;
@@ -46,30 +46,37 @@ function inicializarPosicion() {
     // Aplica la posición inicial
     papanoel.style.left = `${posX}px`;
     papanoel.style.top = `${posY}px`;
+
 }
 
 function moverPapanoel() {
     const contWidth = contenido.offsetWidth;
     const contHeight = contenido.offsetHeight;
 
-    // Actualiza la posición
+    // Actualiza las posiciones de Papá Noel de acuerdo con las velocidades
     posX += velocidadX;
     posY += velocidadY;
 
     // Verifica los límites del contenedor y rebota si es necesario
-    if (posX <= 0 || posX + papanoel.offsetWidth >= contWidth) {
-        velocidadX *= -1; // Cambia de dirección en X
+    if (posX <= popup.offsetWidth - contWidth || posX + papanoel.offsetWidth >= contWidth) {
+        velocidadX *= -1; // Cambia la dirección en el eje X
+        cambiarDireccionX();
     }
     if (posY <= 0 || posY + papanoel.offsetHeight >= contHeight) {
-        velocidadY *= -1; // Cambia de dirección en Y
+        velocidadY *= -1; // Cambia la dirección en el eje Y
     }
 
     // Aplica las nuevas posiciones
     papanoel.style.left = `${posX}px`;
     papanoel.style.top = `${posY}px`;
 
-    // Solicita el siguiente cuadro de animación
+    // Solicita el siguiente cuadro de animación para un movimiento constante
     animationFrame = requestAnimationFrame(moverPapanoel);
+}
+
+function cambiarDireccionX() {
+    // Cambia la dirección de la imagen horizontalmente cuando la velocidad X cambia de dirección
+    papanoel.style.transform = papanoel.style.transform === 'scaleX(-1)' ? 'scaleX(1)' : 'scaleX(-1)';
 }
 
 function iniciarMovimiento() {
