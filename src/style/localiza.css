@@ -91,20 +91,20 @@ nav {
     flex-direction: column;
 }
 .intro p {
-    font-size: 2.5rem;
+    font-size: 3vw;
     margin-bottom: 5%;
     font-family: 'cookies', Verdana;
 }
 
 /* Estilo del botón */
 .intro button {
-    width: 25%;
+    width: 30%;
     background-color: #61875f;
     color: white;
     border: none;
     border-radius: 0.75rem;
     padding: 1.5% 2.5%;
-    font-size: 1.5rem;
+    font-size: 2vw;
     font-family: Verdana, sans-serif;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
