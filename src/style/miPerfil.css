@@ -121,6 +121,7 @@ h2{
     font-family: 'Spiny Lobster', Verdana;
     font-size: 5vh;
     margin: 0 0 2vh 0;
+    padding-top: 8vh;
     display: flex;
     justify-content: center;
 }
@@ -267,21 +268,32 @@ margin-right: 10vw;
 }
 
 #elfos-section {
-    margin-top: 20px;
+    margin-top: 10vh;
+    background-color: #F2F7EF;
 }
 
 #elfos-container{
+    padding: 3vw;
+    margin-bottom: 10vh;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 }
 
-.button-elfo{
+
+.elfo-guardado{
+    display: flex;
+    flex-direction: column;
+}
+
+.elfo-borrar{
     background: none;
-    border: 1vh solid #A8B99C;
-    border-radius: 2vw;
-    padding: 0.5vw;
     width: 7vw;
     height: 7vw;
     cursor: pointer;
-    transition: transform 0.2s ease;
+}
+
+h3{
+    font-family: 'CareAround', Verdana;
+    font-size: 4vh;
+    margin: 1vh 0;
 }

@@ -213,6 +213,10 @@ function cargarElfosGuardados() {
         elfoDiv.classList.add('elfo-guardado');
 
         elfoDiv.innerHTML = `
+            <h3 class="elfo-titulo">Elfo ${index + 1}</h3>
+            <button class="elfo-borrar" onclick="borrarElfo(${index})">
+                <img src="images/cerrar.svg" alt="Borrar elfo" class="borrar">
+            </button>
             <div class="elfo">
                 ${elfo.map(parte => `
                     <img src="${parte.src}" id="${parte.id}" class="elfo-imagen-things" style="display: ${parte.visible === false ? 'none' : 'block'};">
