@@ -69,6 +69,10 @@ function moverPapanoel() {
     papanoel.style.left = `${posX}px`;
     papanoel.style.top = `${posY}px`;
 
+    // Almacenamos las coordenadas del trineo
+    trineoX = posX;
+    trineoY = posY;
+
     animationFrame = requestAnimationFrame(moverPapanoel); // Movimiento constante
 }
 
