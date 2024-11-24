@@ -3,14 +3,14 @@
 <html lang="es-ES">
 <head>
     <meta charset="UTF-8">
-    <title>PAPA NOEl</title>
+    <title>PAPA NOEL</title>
     <link rel="stylesheet" href="style/localiza.css">
     <link rel="icon" href="images/arboldeco.svg" type="image/x-icon">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> <!-- jQuery -->
 </head>
 
 <body>
-<section id="calendario">
+<section id="localiza">
     <nav>
         <ul id="main-menu" class="main-menu">
             <li class="main-menu_item casa-item">
@@ -23,10 +23,20 @@
             </li>
         </ul>
     </nav>
-    <!--CALENDARIO DE ADVIENTO -->
-    <div class="contenedor">
-        <div class="localiza">
+    <!--Localiza a Papá Noel -->
+    <div class="global">
+        <div class="intro">
+            <p class="intro_text">Busca a Papá Noel en el mapa y mira su recorrido</p>
+            <button id="iniciar_localiza">Iniciar</button>
+        </div>
+        <div class="pantalla_inicio">
+        </div>
+    </div>
 
+    <div class="popup-localiza" id="popup-localiza">
+        <div class="contenido">
+            <img src="images/localiza.svg" alt="Imagen de Papá Noel">
+            <img id="trineo" src="images/papanoelmapa.svg" alt="papanoelmapa">
         </div>
     </div>
 </section>
