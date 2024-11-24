@@ -2,6 +2,7 @@ body {
     font-family: Verdana;
     margin: 0;
     padding: 0;
+    font-size: 2vh;
     background-color: white;
     color: black;
 }
@@ -406,6 +407,7 @@ input[type=text], input[type=password], input[type=email], input[type=number], #
     display: inline-block;
     border: 1px solid #99A88E;
     box-sizing: border-box;
+    font-size: 1.5vh;
   }
 
 /*contenedor de los formularios*/
