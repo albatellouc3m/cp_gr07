@@ -85,6 +85,7 @@ function guardarElfo() {
 
     // Guarda los datos actualizados en localStorage
     localStorage.setItem('usuarios', JSON.stringify(usuarios));
+    reiniciarEstilos();
 
     alert("¡El elfo ha sido guardado en tu perfil!");
 }
