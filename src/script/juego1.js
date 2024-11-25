@@ -25,7 +25,7 @@
 
   // Evento para disminuir el score al fallar el click
   $('#juego1').on('click', function (event) {
-      if (event.target.id !== 'regalo' && event.target.id !== 'btnEmpezar1' && event.target.id !== 'volver_juego') { // Verifica que el clic no sea en el regalo
+      if (event.target.id !== 'regalo' && event.target.id !== 'btnEmpezar1' && event.target.id !== 'btnReiniciar1') { // Verifica que el clic no sea en el regalo
           score--;
           $('#score').text(score);
       }
@@ -44,6 +44,8 @@
       $('#juego1-inicio').hide();
       $('#titulo').hide();
       $('#juego1').show();
+      $('#score_container').show();
+      $('#timer_container').show();
       $('#regalo').show();
       // Ocultamos el mensaje
       $('#puntos_finales').hide(); 
@@ -93,23 +95,26 @@
       clearInterval(movimiento); 
       $('#valor_final').text(score); 
       $('#puntos_finales').show(); 
-      $('#regalo').hide(); 
+      $('#valor_final').show();
+      $('#regalo').hide();
+      $('#score_container').hide();
+      $('#timer_container').hide(); 
       $('#btnReiniciar1').show(); 
+      $('#juego1-final').show(); 
   }
 
   // Funcion que usamos para reiniciar el juego
   $('#btnReiniciar1').on('click', function () {
-      score = 0;
-      timeLeft = 30;
-      $('#score').text(score);
-      $('#timer').text(timeLeft + "s");
-      $('#puntos_finales').hide(); 
-      $('#btnEmpezar1').show(); 
-      $('#volver_juego').hide(); 
-      $('#titulo').show();
-      $('#juego1-inicio').show();
+      $('#btnReiniciar1').hide();
+      $('#juego1-final').hide();
+      $('#puntos_finales').hide();
+      $('#valor_final').hide();
 
       // Reiniciamos el temporizador
       clearInterval(timerInterval); 
       clearInterval(movimiento); 
+
+      resetJuego1();
+
+      $('#btnEmpezar1').show();
   });

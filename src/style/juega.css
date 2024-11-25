@@ -155,7 +155,6 @@ nav {
     display: none; /*por ahora no sale porque no hemos pulsado el link*/
 }
 
-
 /*RESPONSIVE*/
 /*TABLET*/
 
@@ -220,176 +219,102 @@ nav {
 /* Juego 1 */
 /* Contenedor principal del juego */
 .contenedor-juego1 {
-    color: rgb(15, 54, 33);
     width: 667px; 
     height: 667px;
-    position: relative; /* relativa para que los elementos hijos absolutos se posicionen dentro de este contenedor */
-    text-align: center;
-    display: flex;
-}
-
-/* Tablero de juego */
-#gameBoard {
-    position: absolute;  /* Posición absoluta para que cubra todo el contenedor */
-    top: 0; 
-    left: 0; 
-    width: 100%;  
-    height: 100%; 
-    
-    z-index: 1; /* más bajo para que quede detrás del texto */
-    border-radius: 5px;
-    overflow: hidden;
-
-    /* Ajuste de la imagen */
-    background-image: url(../images/juego1-foto.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-/*TEXTOS*/
-.copos-atrapados {
-    font-family: 'Cookies', Verdana;
-    position: absolute;
-    top: 2vh;  
-    left: 1vw; 
-    z-index: 2; 
-    color: rgb(15, 54, 33); 
-    font-size: 2vh; 
-}
-
-.tiempo-restante {
-    font-family: 'Cookies', Verdana;
-    position: absolute;
-    top: 2dvh;  
-    right: 1vw; 
-    z-index: 2; 
-    color: rgb(15, 54, 33); 
-    font-size: 2vh; 
-}
-
-/* circulo en el juego (copo de nieve)*/
-#circle {
-    position: absolute;
-    width: 12%;
-    height: 12%;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 100;
-    
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat;
-    /* Animación de rotación */
-    animation: rotateSnowflake 50s linear infinite; /* Gira continuamente */
-}
-
-
-/* Definición de la animación de rotación */
-@keyframes rotateSnowflake {
-    from {
-        transform: rotate(0deg); /* Inicia sin rotación */
-    }
-    to {
-        transform: rotate(360deg); /* Gira completamente en 360 grados */
-    }
-}
-
-/* Pantalla de inicio */
-.pantalla-inicio {
-    background-color: #bfd9d1;
-    color: white;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 10; 
-}
-
-.pantalla-final {
-    background-color: #bfd9d1;
-    color: white;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 10;
-}
-
-/* Botón de empezar */
-.btnEmpezar {
-    background-color: #ffffff;
     color: rgb(15, 54, 33);
-    border: none;
-    padding: 1vh 2vw;
-    font-size: 18px;
+    background-image: url("../images/fondo_juego.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 2px solid black;
+    box-shadow: 0 3px 6px black; /*Consultado en w3schools box shadow*/
+}
+
+#timer_container {
+    position: absolute;
+    font-size: 1.25rem;
+    font-family: 'Righteous';
+    color: black;
+    top: 0;
+    left: 0;
+    margin-left: 5%;
+    z-index: 500;
+    display: none;
+}
+#score_container {
+    position: absolute;
+    font-size: 1.25rem;
+    font-family: 'Righteous';
+    color: black;
+    top: 0;
+    right: 0;
+    margin-right: 5%;
+    z-index: 500;
+    display: none;
+}
+
+.play-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    height: 100%;
+    margin-bottom: 0;
+}
+
+
+#puntos_finales {
+    font-size: 1.85rem;
+    font-family: 'Lobster';
+    color: rgb(91, 122, 125)
+}
+
+#regalo {
+    width: 3.5rem; 
+    height: 3.5rem;
+    position: absolute;
     cursor: pointer;
-    margin-top: 20px;
-    border-radius: 10px;
-    transition: background-color 0.3s;
+    display: none;
+}
+
+#puntos_finales {
+    display: none;
+}
+
+.btnEmpezar {
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease; /*Transicion consultada con IA Generativa*/
+    position: relative;
+    display: inline-block;
+    outline: none;  /* Consultado*/
+    border-radius: 5px;
+    border: none;
+    box-shadow: 2px 2px 2px 0px rgba(255,255,255,.5); 
+    background: #57cc99;
+    border-radius: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    margin-top: 3vh;
 }
 
 .btnEmpezar:hover {
-    background-color: #606D69;
-    color: white;
-}
-
-/*RESPONSIVE*/
-/*TABLET Y MOVIL*/
-@media screen and (max-width: 500px) {
-    .contenedor-juego1 {
-        overflow: visible; /* Asegúrate de que sea visible para evitar recortes de contenido */
-        width: 80%;
-        height: 80%;
-    }
-
-    #gameBoard {
-        background-size: cover;
-    }
-    .copos-atrapados {
-        font-size: 12px;
-    }
-
-    .tiempo-restante {
-        font-size: 12px;
-    }
-
-    .btnEmpezar {
-        padding: 10px 20px;
-        font-size: 14px;
-    }
-
-    .pantalla-inicio {
-        padding: 10vw;
-    }
-
-    .pantalla-final {
-        padding: 10vw;
-    }
-
-    #juego1, #juego2, #juego3 {
-        z-index: 20; /* Asegúrate de que sea más alto que cualquier otro elemento superpuesto */
-    }
+    background-color: #80ed99;
+    top: 2px;
 }
 
 /** Juego 2 */
 .contenedor-juego2 {
     /* LO AZUL */
-      color: rgb(15, 54, 33);
-      width: 667px; 
-      height: 667px; 
-      position: relative; /* relativa como antes, para los hijos absolutos */
+    color: rgb(15, 54, 33);
+    width: 667px; 
+    height: 667px; 
+    position: relative; /* relativa como antes, para los hijos absolutos */
+    border: 2px solid black;
+    box-shadow: 0 3px 6px black; /*Consultado en w3schools box shadow*/
   }
 
 .game-board2 {
@@ -481,6 +406,8 @@ nav {
     color: rgb(15, 54, 33);
     width: 667px;
     height: 667px;
+    border: 2px solid black;
+    box-shadow: 0 3px 6px black; /*Consultado en w3schools box shadow*/
     position: relative;
     text-align: center;
     display: flex;
