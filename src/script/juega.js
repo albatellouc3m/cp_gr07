@@ -9,7 +9,8 @@ function mostrarJuego(idJuego) {
     // oculta los contenedores de los juegos
     document.getElementById('juego1').style.display = 'none';
     document.getElementById('juego2').style.display = 'none';
-
+    document.getElementById('juego3').style.display = 'none';
+    
     // si se selecciona el juego 1, se reinicia
     if (idJuego === 'juego1') {
         resetJuego1();
@@ -25,25 +26,10 @@ function mostrarJuego(idJuego) {
 }
 
 // FUNCION PARA INICIAR EL JUEGO 1
-function resetJuego1() {
-    // cogemos los elementos
-    const pantallaInicio = document.getElementById('juego1-inicio');
-    const juegoContainer = document.getElementById('juego1');
-    
-    pantallaInicio.style.display = 'flex'; // mostrar la pantalla de inicio
-    document.getElementById('score').textContent = '0'; // restablecer el puntaje
-    document.getElementById('time').textContent = '90'; // restablecer el tiempo
-
-
-    // ocultar los elementos del juego1
-    juegoContainer.querySelector('.container').style.display = 'none';
-    document.getElementById('circle').style.display = 'none';
+function resetJuego1(){
+    const pantallaInicio1 = document.getElementById('juego1-inicio');
+    pantallaInicio1.style.display = 'flex'; // mostamos la pantalla de inicio
 }
-
-// cuando se hace click en el boton de empezar del juego 1 se inicia
-document.getElementById('btnEmpezar1').addEventListener('click', function () {
-    startJuego1(); // EMPIEZA EL JUEGOOO
-});
 
 // FUNCION PARA INICIAR EL JUEGO 2
 function resetJuego2(){
@@ -59,144 +45,6 @@ function resetJuego2(){
 document.getElementById('btnEmpezar2').addEventListener('click', function (){
     document.querySelector('.game-board2').innerHTML = ''; // reinicia el tablero
     startGame2(); // EMPIEZA EL JUEGOOO
-});
-
-//JUEGO 1: ATRAPA EL REGALO
-//codigo de izan pero por ahora pego el mio
-// iniciamos unas cuantas varaibles necesarias para el juego
-const $circle = $('#circle');
-const $gameBoard = $('#gameBoard');
-const $scoreDisplay = $('#score');
-const $timeDisplay = $('#time');
-const $gameOverMessage = $('#gameOverMessage');
-const $pantallaInicio = $('#juego1-inicio');
-const $pantallaFinal = $('#juego1-final');
-const $containerJuego = $('.container'); // Contenedor del juego
-const $btnEmpezar1 = $('#btnEmpezar1');
-const $btnReiniciar1 = $('#btnReiniciar1');
-const $juego1 = $('#juego1');
-
-// lista para las imaganes de los copos de nieve para que vayan cambiando tope huapo
-const snowflakeImages = [
-    '../ej/images/copo1.svg',
-    '../ej/images/copo2.svg',
-    '../ej/images/copo3.svg',
-    '../ej/images/copo4.svg',
-];
-
-let score = 0;
-let timeLeft = 90; // 1 minuto y 30 segundos
-let gameInterval;
-let circleMoveInterval;
-
-// iniciar cuando se haga click en el boton de empezar
-$btnEmpezar1.on('click', function() {
-    $pantallaInicio.hide();
-    $pantallaFinal.hide();
-    startGame();
-});
-
-$btnReiniciar1.on('click', function() {
-    resetJuego1();                  // reiniciar el juego
-    $pantallaFinal.hide();           // ocultar pantalla final
-    $pantallaInicio.show();          // mostrar pantalla inicial
-});
-
-//FUNCION QUE COGE UN COOPO DE NIEVE RANDOM DE LA LISTA
-function getRandomSnowflake() {
-    const randomIndex = Math.floor(Math.random() * snowflakeImages.length);
-    return snowflakeImages[randomIndex];
-}
-
-function startJuego1() {
-    // ocultamos la pantalla de incio y mostramos el juego
-    const pantallaInicio = document.getElementById('juego1-inicio');
-    const juegoContainer = document.getElementById('juego1');
-
-    pantallaInicio.style.display = 'none';
-    juegoContainer.querySelector('.container').style.display = 'block';
-    document.getElementById('circle').style.display = 'block';
-
-    // lllamamos a la funcion para empezar
-    startGame();
-}
-
-// FUNCION PARA MOVER EL CIRCULO A UNA POSICION ALEATORIA DEL TABLERO
-function moveCircle() {
-    
-    const boardWidth = $gameBoard.width();
-    const boardHeight = $gameBoard.height();
-    const circleSize = $circle.width();
-
-    const randomX = Math.floor(Math.random() * (boardWidth - circleSize));
-    const randomY = Math.floor(Math.random() * (boardHeight - circleSize));
-
-    $circle.css({ left: randomX + 'px', top: randomY + 'px' }); // mover circulo posicion aleatoria
-    $circle.css('background-image', `url(${getRandomSnowflake()})`); // cambiar imagen del copo de nieve
-}
-
-// FUNCION PARA INICIAR EL JUEGO
-function startGame() {
-    // restablecemos los valores por si acaso
-    score = 0;
-    timeLeft = 90;
-    $scoreDisplay.text(score);
-    $timeDisplay.text(timeLeft);
-    $gameOverMessage.text('');
-    $juego1.show(); // mostrar juego1 
-    $circle.show(); // circulo visible
-
-
-    moveCircle(); // mover el circulo a una posicion aleatoria
-    clearInterval(circleMoveInterval); // asegurarse de que no haya intervalos previos
-    clearInterval(gameInterval); // asegurarse de que no haya intervalos previos
-    circleMoveInterval = setInterval(moveCircle, 1500); // mover cada 1.5 segundos
-    gameInterval = setInterval(updateGame, 1000); // actualizar el tiempo cada segundo
-}
-
-// FUNCION QUE ACUTALIZA EL TIEMPO Y DICE SI HA TERMINAD EL JUEGO
-function updateGame() {
-    timeLeft--;
-    $timeDisplay.text(timeLeft);
-
-    if (timeLeft <= 0) {
-        endGame();
-    }
-}
-
-// FUNCION QUE FINALIZA EL JUEGO
-function endGame() {
-    clearInterval(gameInterval);
-    clearInterval(circleMoveInterval);
-    $circle.hide();                  // oculta el circulo
-    $containerJuego.hide();          // oculta contenedor del juego
-    $pantallaFinal.show();           // mostrar la pantalla final
-    $('#scoreFinal').text(score);    // mostrar puntaje final
-}
-
-// cuando se hace click en el circulo se suma un puntoooo
-$circle.on('click', function() {
-    score++;
-    $scoreDisplay.text(score);
-    clearInterval(circleMoveInterval); // asegurarse de que no haya intervalos previos
-    clearInterval(gameInterval); // asegurarse de que no haya intervalos previos
-    circleMoveInterval = setInterval(moveCircle, 1500); // mover cada 1.5 segundos
-    gameInterval = setInterval(updateGame, 1000); // actualizar el tiempo cada segundo
-    moveCircle();
-    
-});
-
-// cuando se hace click fuera del circulo se resta un punto
-$gameBoard.on('click', function(e) {
-    if (!$(e.target).is($circle)) {
-        score -= 1; // restar 1 punto
-        if (score < 0) score = 0; // asegurarse de que los puntos no sean negativos
-        $scoreDisplay.text(score);
-
-        if (timeLeft <= 0) {
-            endGame(); // finalizar el juego si el tiempo llega a 0
-        }
-    }
 });
 
 

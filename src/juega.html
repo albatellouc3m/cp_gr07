@@ -41,20 +41,20 @@
                 <!-- Juego 1 -->
                 <div id="juego1" class="contenedor-juego1" style="display:none;">
                     <div id="juego1-inicio" class="pantalla-inicio">
-                        <h1>¡Atrapa la nieve!</h1>
+                        <h1>¡Atrapa!</h1>
+                        <h1>Recoge los regalos perdidos</h1>
                         <button class="btnEmpezar" id="btnEmpezar1">EMPEZAR</button>
                     </div>
-                    <div class="container">
-                        <p class="copos-atrapados">PUNTOS: <span id="score">0</span></p>
-                        <p class="tiempo-restante">TIEMPO: <span id="time">90</span> s</p>
-                        <div id="gameBoard">
-                            <div id="circle"></div>
-                        </div>
+                    <p id="score_container">Score: <span id="score">0</span></p>
+                    <p id="timer_container">Time: <span id="timer">30s</span></p>
+                    <div class="play-container">
+                        <img id="regalo" src="images/regalo_navidad.png" alt="regalo">
                     </div>
                     <div id="juego1-final" class="pantalla-final" style="display: none;">
-                        <h1>¡Has atrapado <span id="scoreFinal">0</span> copos de nieve!</h1>
+                        <p id="puntos_finales">¡Juego terminado! Regalos conseguidos: <span id="valor_final">0</span></p>
                         <button class="btnEmpezar" id="btnReiniciar1">Reiniciar</button>
                     </div>
+                    
                 </div>
                 <script src="script/juego1.js"></script>
                 

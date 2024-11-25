@@ -37,9 +37,10 @@ let posY = 0; // Posición inicial en el eje Y
 
 function inicializarPosicion() {
     const contHeight = contenido.offsetHeight;
+    const contWidth = contenido.offsetHeight;
 
     // Posiciones iniciales
-    posX = 278; // Empieza en el borde izquierdo
+    posX = popup.offsetWidth - contWidth; // Empieza en el borde izquierdo
     posY = contHeight - papanoel.offsetHeight; // Empieza en el borde inferior
 
     // Aplicamos las posiciones iniciales
@@ -57,7 +58,7 @@ function moverPapanoel() {
     posY += velocidadY;
 
     // Verificamos los límites del contenedor y rebota si es necesario
-    if (posX <= 278 || posX + papanoel.offsetWidth >= contWidth + 278) {
+    if (posX <= popup.offsetWidth - contWidth || posX + papanoel.offsetWidth >= contWidth) {
         velocidadX *= -1;
         cambiarDireccionX();
     }
