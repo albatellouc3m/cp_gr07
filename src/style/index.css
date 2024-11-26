@@ -27,12 +27,6 @@ h4{
 }
 
 
-img.calendario{
-    align-self: flex-start;
-    width: 2vw;
-    height: auto;
-}
-
 * {
     box-sizing: border-box;
 }
@@ -63,7 +57,8 @@ img.calendario{
 
 /* Ajustes del menú hamburguesa */
 .menuhamb{
-    width: 2vw;
+    width: 5vw;
+    margin-top: 2vh
 }
 .toggle-menu {
     width: 30px;
@@ -85,7 +80,7 @@ img.calendario{
 .main-menu {
     list-style: none;
     margin-top: 0;
-    padding: 70px 0 0 0;
+    padding:  0 0 0;
     display: flex;
     flex-direction: column; /* columna */
     background-color: #CBDFBD;
@@ -112,16 +107,18 @@ img.calendario{
     transition: all 0.3s ease; /* transición */    
 }
 
-.calendario-item {
-    align-self: flex-start; /* Esto alinea el ícono del calendario al inicio */
-    margin-left: 20px; /* Ajusta el espacio si necesitas */
+img.calendario{
+    align-self: flex-start;
+    height: 10vw;
+    width: auto;
 }
+
 
 /*los links de referencia de las páginas*/
 .main-menu_link{
     font-family: 'cookies', Verdana;
     color: black;
-    font-size: 1.5vh;
+    font-size: 2vh;
     text-decoration: none;
     text-align: center; 
     display: block;
@@ -131,7 +128,7 @@ img.calendario{
 .main-menu_item {
     position: relative; /* Posiciona cada <li> como relativo para que el dropdown sea relativo a este */
     margin: 0.5vw 0;
-    display: inline-block; /* Asegura que los <li> se alineen correctamente */
+    display: inline-block; 
     padding: 10px 20px;
     height: 5vh;
 }
@@ -165,6 +162,103 @@ img.calendario{
 
 }
 
+.main-menu_link:hover .dropdown-icon-left {
+    opacity: 1; /* Mostrar el ícono suavemente al hacer hover */
+}
+
+.main-division.links{
+    height: 100vh;
+}
+
+#perfil-img {
+    position: fixed;
+    bottom: 10px; /* Ajusta esta posición según sea necesario */
+    right: 10px; /* Ajusta esta posición según sea necesario */
+    width: 20vw; /* Ajusta el tamaño según sea necesario */
+    height: 20vw;
+}
+
+#perfil-imagen {
+    border-radius: 100%;
+    object-fit: cover;
+    width: 10vw;
+    height: 10vw;
+}
+
+#dropdown-menu-perfil {
+    position: absolute;
+    top: -25vw; /* Ajusta este valor para que el dropdown se muestre justo arriba */
+    left: -5vw;
+    right: 0;
+    width: 25vw;
+    background-color: #CBDFBD;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    display: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#dropdown-menu-perfil.show {
+    display: block;
+    opacity: 1;
+}
+
+
+.dropdown-icon-left {
+    opacity: 0; /* Ocultar ícono inicialmente */
+    margin-right: 2vw; /* Espacio entre el texto y el ícono */
+    width: 1.5vw;
+    transition: opacity 1s ease; /* Transición suave para mostrar el ícono */
+}
+
+.dropdown-icon{
+    display: none;
+}
+
+.dropdown-content {
+    position: absolute; /* Posiciona el dropdown de manera absoluta */
+    right: 97%; /* Despliega hacia la derecha del contenedor */
+    top: 0; /* Alineado con la parte superior del enlace */
+    width: 100%; /* Ajusta el ancho según sea necesario */
+    height: auto;
+    background-color: #CBDFBD;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 2;
+    transform: translateX(-20px); /* Agrega una animación para la entrada */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Mostrar Dropdown hacia la derecha */
+.dropdown-content.show {
+    display: block;
+    transform: translateX(0); /* Aparece en su posición */
+    opacity: 1;
+}
+
+/* Ajuste de los enlaces dentro del dropdown */
+.dropdown-content a {
+    display: block;
+    font-size: 1.5vh;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    color: white;
+    background-color: #606959;
+}
+
+/* Ajustar el enlace principal del menú */
+.main-menu_link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Mantén espacio entre texto e ícono */
+    width: 100%;
+}
 
 
 /*DESKTOP Y TABLET*/
@@ -202,6 +296,12 @@ img.calendario{
         left: 0;
         align-self: flex-start; /* Esto alinea el ícono del calendario al inicio */
         margin-left: 20px; /* Ajusta el espacio si necesitas */
+    }
+
+    img.calendario{
+        align-self: flex-start;
+        width: 2vw;
+        height: auto;
     }
 
     .main-menu_item {
@@ -251,6 +351,7 @@ img.calendario{
     }
 
     .dropdown-icon {
+        display: block;
         opacity: 0; /* Ocultar ícono inicialmente */
         margin-left: 1vw; /* Espacio entre el texto y el ícono */
         width: 1vw;
@@ -538,4 +639,23 @@ input[type=text], input[type=password], input[type=email], input[type=number], #
     font-size: 2vw;
     color: #BC4749;
     text-align: center;
+}
+
+@media  screen and (max-width: 480px) {
+    #home{
+        background-image: url(../images/portadaMOV.svg);
+        background-position: bottom;
+    }
+    .home-text{
+        font-size: 5vw;
+    }
+
+    .home-text p{
+        font-size: 3vw;
+    }
+
+    #countdown{
+        font-size: 4vw;
+    }
+    
 }

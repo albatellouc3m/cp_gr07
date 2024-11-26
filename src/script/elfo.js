@@ -92,16 +92,38 @@ function guardarElfo() {
 
 
 
-function reiniciarEstilos() {
-    confirm('¿Estás seguro de que deseas reiniciar los estilos?');
-    document.getElementById('elfo-ojos').src ='images/elfo/ojos2.svg';
-    document.getElementById('elfo-pecas').src ='images/elfo/pecas1.svg';
-    document.getElementById('elfo-camiseta').src ='images/elfo/camiseta.svg';
-    document.getElementById('elfo-pantalon').src ='images/elfo/pantalon.svg';
-    document.getElementById('elfo-gorro').src ='images/elfo/gorro.svg';
-    document.getElementById('elfo-nariz').src ='images/elfo/nariz1.svg';
-    document.getElementById('elfo-piel').src ='images/elfo/cuerpo.svg';
+function reiniciarEstilos(id) {
+    if (id == 'reiniciar'){
+        confirm('¿Estás seguro de que deseas reiniciar los estilos?');
+        document.getElementById('elfo-ojos').src ='images/elfo/ojos2.svg';
+        document.getElementById('elfo-pecas').src ='images/elfo/pecas1.svg';
+        document.getElementById('elfo-camiseta').src ='images/elfo/camiseta.svg';
+        document.getElementById('elfo-pantalon').src ='images/elfo/pantalon.svg';
+        document.getElementById('elfo-gorro').src ='images/elfo/gorro.svg';
+        document.getElementById('elfo-nariz').src ='images/elfo/nariz1.svg';
+        document.getElementById('elfo-piel').src ='images/elfo/cuerpo.svg';
+        document.getElementById('elfo-boca').style ='display:none';
+        document.getElementById('elfo-gafas').style ='display:none';
+    }
 
-    document.getElementById('elfo-boca').style ='display:none';
-    document.getElementById('elfo-gafas').style ='display:none';
+    if (id == 'cara'){
+        document.getElementById('elfo-ojos').src ='images/elfo/ojos2.svg';
+        document.getElementById('elfo-pecas').src ='images/elfo/pecas1.svg'; 
+        document.getElementById('elfo-nariz').src ='images/elfo/nariz1.svg';
+        document.getElementById('elfo-boca').style ='display:none';
+    }
+
+    if (id == 'camiseta'){
+        document.getElementById('elfo-camiseta').src ='images/elfo/camiseta.svg';  
+    }
+
+    if (id == 'pantalon'){
+        document.getElementById('elfo-pantalon').src ='images/elfo/pantalon.svg';
+    }
+
+    if (id == 'accesorios'){
+        document.getElementById('elfo-gorro').src ='images/elfo/gorro.svg';
+        document.getElementById('elfo-gafas').style ='display:none';
+    }
+
 }
