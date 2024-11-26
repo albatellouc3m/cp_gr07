@@ -68,6 +68,29 @@ body {
     justify-content: center;        
     transition: all 0.3s ease;
 }
+ 
+/*MAIN MENU RESPONSIVE*/
+/*TABLET*/
+@media screen and (max-width: 900px) {
+    .main-menu_link {
+        font-size: 2vw;
+        padding: 0 1vw;
+    }
+    .casa {
+        width: 3vw;
+    }
+}
+
+/*MOVIL*/
+@media screen and (max-width: 500px) {
+    .main-menu_link {
+        font-size: 4vw;
+        padding: 0 1vw;
+    }
+    .casa {
+        width: 5vw;
+    }
+}
 
 
 /*PAPA NOEL*/
@@ -252,10 +275,7 @@ h3{
 
 /*MOVIL*/
 @media screen and (max-width: 500px) {
-    #historia{
-        background-color: #dfece8;
-    }
-    
+
     /*se hace solo una columna*/
     .outer-box {
         display: grid;
