@@ -197,6 +197,7 @@ nav {
     }
 
     .columna2{
+        width: 100vw;
         height: auto;
         display: flex;
         align-items: center;  
@@ -222,6 +223,11 @@ nav {
         flex-direction: column;
         align-items: center;
     }
+    .contenedor-juego1 {
+        width: 100%; 
+        height: 100%;
+        margin-bottom: 5vh;
+    }
 }
 
 /*MOVIL*/
@@ -243,8 +249,8 @@ nav {
 /* Juego 1 */
 /* Contenedor principal del juego */
 .contenedor-juego1 {
-    width: 667px; 
-    height: 667px;
+    width: 50vw; 
+    height: 70vh;
     color: rgb(15, 54, 33);
     background-image: url("../images/fondo_juego.jpg");
     background-size: 100% 100%;
@@ -257,9 +263,13 @@ nav {
     box-shadow: 0 3px 6px black; /*Consultado en w3schools box shadow*/
 }
 
+#juego1-inicio h1 {
+    font-size: 2.9vw;
+}
+
 #timer_container {
     position: absolute;
-    font-size: 1.25rem;
+    font-size: 1.953vw; /* 1.25rem convertido a vw */
     font-family: 'Righteous';
     color: black;
     top: 0;
@@ -268,9 +278,10 @@ nav {
     z-index: 500;
     display: none;
 }
+
 #score_container {
     position: absolute;
-    font-size: 1.25rem;
+    font-size: 1.953vw; /* 1.25rem convertido a vw */
     font-family: 'Righteous';
     color: black;
     top: 0;
@@ -289,24 +300,21 @@ nav {
     margin-bottom: 0;
 }
 
-
 #puntos_finales {
-    font-size: 1.85rem;
+    font-size: 2.5vw; /* 1.85rem convertido a vw */
     font-family: 'Lobster';
-    color: rgb(91, 122, 125)
+    color: rgb(91, 122, 125);
+    display: none;
 }
 
 #regalo {
-    width: 3.5rem; 
-    height: 3.5rem;
+    width: 3.5vw; /* 3.5rem convertido a vw */
+    height: 3.5vw; /* 3.5rem convertido a vw */
     position: absolute;
     cursor: pointer;
     display: none;
 }
 
-#puntos_finales {
-    display: none;
-}
 
 .btnEmpezar {
     color: white;
@@ -334,8 +342,8 @@ nav {
 .contenedor-juego2 {
     /* LO AZUL */
     color: rgb(15, 54, 33);
-    width: 667px; 
-    height: 667px; 
+    width: 50vw; 
+    height: 70vh; 
     position: relative; /* relativa como antes, para los hijos absolutos */
     border: 2px solid black;
     box-shadow: 0 3px 6px black; /*Consultado en w3schools box shadow*/
@@ -345,12 +353,12 @@ nav {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 1vw;
-    margin-bottom: 20px;
+    margin: 10px 40px;
 }
 
 .card {
-    width: 150px;
-    height: 150px;
+    width: 8vw;
+    height: 15vh;
     perspective: 1000px;
     cursor: pointer;
 }
@@ -428,8 +436,8 @@ nav {
 
 .contenedor-juego3 {
     color: rgb(15, 54, 33);
-    width: 667px;
-    height: 667px;
+    width: 50vw;
+    height: 70vh;
     border: 2px solid black;
     box-shadow: 0 3px 6px black; /*Consultado en w3schools box shadow*/
     position: relative;

@@ -36,12 +36,10 @@ let posX = 0; // Posición inicial en el eje X
 let posY = 0; // Posición inicial en el eje Y
 
 function inicializarPosicion() {
-    const contHeight = contenido.offsetHeight;
-    const contWidth = contenido.offsetHeight;
 
     // Posiciones iniciales
-    posX = popup.offsetWidth - contWidth; // Empieza en el borde izquierdo
-    posY = contHeight - papanoel.offsetHeight; // Empieza en el borde inferior
+    posX = popup.offsetWidth / 6; // Empieza en el borde izquierdo
+    posY = contenido.offsetHeight - papanoel.offsetHeight; // Empieza en el borde inferior
 
     // Aplicamos las posiciones iniciales
     papanoel.style.left = `${posX}px`;
@@ -50,20 +48,21 @@ function inicializarPosicion() {
 }
 
 function moverPapanoel() {
-    const contWidth = contenido.offsetWidth;
-    const contHeight = contenido.offsetHeight;
+
+    const popupWidth = popup.offsetWidth;
+    const contenidoHeight = contenido.offsetHeight;
 
     // Actualizamos las posiciones de Papá Noel de acuerdo con las velocidades
     posX += velocidadX;
     posY += velocidadY;
 
     // Verificamos los límites del contenedor y rebota si es necesario
-    if (posX <= popup.offsetWidth - contWidth || posX + papanoel.offsetWidth >= contWidth) {
-        velocidadX *= -1;
+    if (posX < popupWidth / 6 || posX + papanoel.offsetWidth > (5 * popupWidth) / 6 ) {
+        velocidadX *= -1; // Invertir dirección horizontal
         cambiarDireccionX();
     }
-    if (posY <= 0 || posY + papanoel.offsetHeight >= contHeight) {
-        velocidadY *= -1;
+    if (posY < contenidoHeight / 6 || posY + papanoel.offsetHeight > popup.offsetHeight) {
+        velocidadY *= -1; // Invertir dirección vertical
     }
 
     // Aplicamos las nuevas posiciones

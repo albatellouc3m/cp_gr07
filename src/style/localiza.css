@@ -147,7 +147,7 @@ nav {
 /* Pantalla de inicio */
 .pantalla_inicio {
     width: 40%;
-    height: 60vh;
+    height: 40vw;
     margin-right: 5vw;
     display: flex;
     justify-content: center;
@@ -185,11 +185,18 @@ nav {
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra alrededor */
     width: 70%;
-    height: 90%;
+    height: 40vw;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+}
+
+@media screen and (max-width: 900px) {
+    .contenido {
+        height: 60vw;
+    }
+    
 }
 
 /* Imagen dentro del pop-up */
