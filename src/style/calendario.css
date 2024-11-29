@@ -154,10 +154,11 @@ nav {
 
 /*ESTILOS PARA TODOS LOS NUMEROS*/
 #numero1{
+    background-color: #4D5447;
     grid-column: 1; 
     grid-row: 1; 
     width: 12.2vw;
-    height: 11.3vh;
+    height: 5.8vw;
     margin-top: 0;
     margin-left: 1.8vw;
     display: flex;
@@ -172,12 +173,13 @@ nav {
 }
 
 #numero2{
+    background-color: #4D5447;
     grid-column: 2; 
     grid-row: 1; 
     width: 7.7vw;
-    height: 11.3vh;
+    height: 5.8vw;
     margin-top: 0;
-    margin-left: 1.3vw;
+    margin-left: 1.2vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -191,10 +193,11 @@ nav {
 }
 
 #numero3{
+    background-color: #4D5447;
     grid-column: 3; 
     grid-row: 1; 
     width: 7.7vw;
-    height: 11.3vh;
+    height: 5.8vw;
     margin-top: 0;
     margin-left: -8.1vw;
     display: flex;
@@ -209,12 +212,13 @@ nav {
 }
 
 #numero4{
+    background-color: #4D5447;
     grid-column: 4; 
     grid-row: 1; 
     width: 17.1vw;
-    height: 11.3vh;
+    height: 5.8vw;
     margin-top: 0;
-    margin-left: -12.9vw;
+    margin-left: -11.9vw;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -228,10 +232,11 @@ nav {
 }
 
 #numero5{
+    background-color: #4D5447;
     grid-column: 5; 
     grid-row: 1; 
     width: 7.7vw;
-    height: 11.3vh;
+    height: 5.8vw;
     margin-top: 0;
     margin-left: -7.6vw;
     display: flex;
@@ -242,15 +247,16 @@ nav {
 #numero5 p{
     font-family: 'CareAround', Verdana;
     font-size: 3vw;
-    margin-bottom: 4vh;
+    margin-bottom: 2vw;
 }
 
 #numero6{
+    background-color: #4D5447;
     grid-column: 1; 
     grid-row: 2; 
     width: 12.3vw;
-    height: 14.5vh;
-    margin-top: 2.1vh;
+    height: 7.5vw;
+    margin-top: 1.1vw;
     margin-left: 1.7vw;
     display: flex;
     justify-content: flex-end;
@@ -260,17 +266,18 @@ nav {
 #numero6 p{
     font-family: 'CareAround', Verdana;
     font-size: 2.5vw;
-    margin-right: 2vh;
-    margin-bottom: 9vh;
+    margin-right: 1vw;
+    margin-bottom: 4vw;
 
 }
 
 #numero7{
+    background-color: #4D5447;
     grid-column: 2; 
     grid-row: 2; 
     width: 11.9vw;
-    height: 14.5vh;
-    margin-top: 2vh;
+    height: 7.5vw;
+    margin-top: 1.1vw;
     margin-left: 1.3vw;
     display: flex;
     justify-content: center;
@@ -284,11 +291,12 @@ nav {
 
 
 #numero8{
+    background-color: #4D5447;
     grid-column: 3; 
     grid-row: 2; 
     width: 12.3vw;
-    height: 14.5vh;
-    margin-top: 2vh;
+    height: 7.5vw;
+    margin-top: 1.1vw;
     margin-left: -3.7vw;
     display: flex;
     justify-content: flex-end;
@@ -298,17 +306,18 @@ nav {
 #numero8 p{
     font-family: 'CareAround', Verdana;
     font-size: 3vw;
-    margin-right: 2vh;
+    margin-right: 1vw;
     margin-top: 0;
 }
 
 #numero9{
+    background-color: #4D5447;
     grid-column: 5; 
     grid-row: 2; 
     width: 17.1vw;
-    height: 14.5vh;
-    margin-top: 2vh;
-    margin-left: -16vw;
+    height: 7.5vw;
+    margin-top: 1.1vw;
+    margin-left: -17vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -321,11 +330,12 @@ nav {
 }
 
 #numero10{
+    background-color: #4D5447;
     grid-column: 1; 
     grid-row: 3/4; 
     width: 13vw;
-    height: 28.3vh;
-    margin-top: 7.2vh;
+    height: 14.7vw;
+    margin-top: 4vw;
     margin-left: 1.2vw;
     display: flex;
     justify-content: center;
@@ -335,16 +345,17 @@ nav {
 #numero10 p{
     font-family: 'CareAround', Verdana;
     font-size: 3vw;
-    margin-top: 2vh;
+    margin-top: 1vw;
     margin-left: 8vw;
 }
 
 #numero11{
+    background-color: #4D5447;
     grid-column: 2/3; 
     grid-row: 3/4; 
     width: 16.9vw;
-    height: 13.4vh;
-    margin-top: 7.2vh;
+    height: 6.9vw;
+    margin-top: 3.8vw;
     margin-left: 1.2vw;
     display: flex;
     justify-content: flex-start;
@@ -358,12 +369,12 @@ nav {
 }
 
 #numero12{
+    background-color: #4D5447;
     grid-column: 2/3; 
     grid-row: 4; 
     width: 16.9vw;
-    height: 12.1vh;
-
-    margin-top: 12.1vh;
+    height: 7vw;
+    margin-top: 6vw;
     margin-left: 1.2vw;
     display: flex;
     justify-content: flex-end;
@@ -377,11 +388,12 @@ nav {
 }
 
 #numero13{
+    background-color: #4D5447;
     grid-column: 3; 
     grid-row: 3; 
     width: 7.7vw;
-    height: 19.8vh;
-    margin-top: 7vh;
+    height: 10.2vw;
+    margin-top: 3.7vw;
     margin-left: 1.4vw;
     display: flex;
     justify-content: center;
@@ -395,11 +407,12 @@ nav {
 
 
 #numero14{
+    background-color: #4D5447;
     grid-column: 4; 
     grid-row: 3; 
     width: 7.7vw;
-    height: 19.8vh;
-    margin-top: 7vh;
+    height: 10.2vw;
+    margin-top: 3.7vw;
     margin-left: -2.2vw;
     display: flex;
     justify-content: flex-end;
@@ -409,16 +422,17 @@ nav {
 #numero14 p{
     font-family: 'CareAround', Verdana;
     font-size: 3vw;
-    margin-top: 1vh;
+    margin-top: 0.5vw;
     margin-right: 1vw;
 }
 
 #numero15{
+    background-color: #4D5447;
     grid-column: 5; 
     grid-row: 3; 
     width: 7.7vw;
-    height: 19.8vh;
-    margin-top: 7vh;
+    height: 10.2vw;
+    margin-top: 3.7vw;
     margin-left: -7.6vw;
     display: flex;
     justify-content: center;
@@ -431,11 +445,12 @@ nav {
 }
 
 #numero16{
+    background-color: #4D5447;
     grid-column: 1; 
     grid-row: 5; 
     width: 12.3vw;
-    height: 14.5vh;
-    margin-top: 16vh;
+    height: 7.4vw;
+    margin-top: 8.4vw;
     margin-left: 1.7vw;
     display: flex;
     justify-content: center;
@@ -450,11 +465,12 @@ nav {
 
 
 #numero17{
+    background-color: #4D5447;
     grid-column: 2; 
     grid-row: 5; 
     width: 17vw;
-    height: 14.5vh;
-    margin-top: 16vh;
+    height: 7.5vw;
+    margin-top: 8.4vw;
     margin-left: 1.1vw;
     display: flex;
     justify-content: flex-end;
@@ -468,11 +484,12 @@ nav {
 }
 
 #numero18{
+    background-color: #4D5447;
     grid-column: 3; 
     grid-row: 5; 
     width: 11.2vw;
-    height: 13.5vh;
-    margin-top: 6.3vh;
+    height: 7vw;
+    margin-top: 3.4vw;
     margin-left: 1.5vw;
     display: flex;
     justify-content: center;
@@ -485,11 +502,12 @@ nav {
 }
 
 #numero19{
+    background-color: #4D5447;
     grid-column: 4; 
     grid-row: 5; 
     width: 12.4vw;
-    height: 13.5vh;
-    margin-top: 6.3vh;
+    height: 7vw;
+    margin-top: 3.2vw;
     margin-left: 1.7vw;
     display: flex;
     justify-content: center;
@@ -503,11 +521,12 @@ nav {
 
 
 #numero20{
+    background-color: #4D5447;
     grid-column: 1; 
     grid-row: 6; 
     width: 12.3vw;
-    height: 18.4vh;
-    margin-top: 21.4vh;
+    height: 9.5vw;
+    margin-top: 11.2vw;
     margin-left: 1.7vw;
     display: flex;
     justify-content: flex-end;
@@ -517,17 +536,18 @@ nav {
 #numero20 p{
     font-family: 'CareAround', Verdana;
     font-size: 2vw;
-    margin-top: 1.5vh;
+    margin-top: 0.75vw;
     margin-right: 1vw;
 }
 
 
 #numero21{
+    background-color: #4D5447;
     grid-column: 2; 
     grid-row: 6; 
     width: 7.7vw;
-    height: 18.4vh;
-    margin-top: 21.4vh;
+    height: 9.5vw;
+    margin-top: 11.2vw;
     margin-left: 1.1vw;
     display: flex;
     justify-content: flex-end;
@@ -537,16 +557,17 @@ nav {
 #numero21 p{
     font-family: 'CareAround', Verdana;
     font-size: 3vw;
-    margin-top: 1.5vh;
+    margin-top: 0.75vw;
     margin-right: 1vw;
 }
 
 #numero22{
+    background-color: #4D5447;
     grid-column: 3; 
     grid-row: 6; 
     width: 7.7vw;
-    height: 18.4vh;
-    margin-top: 21.4vh;
+    height: 9.5vw;
+    margin-top: 11.2vw;
     margin-left: -7.5vw;
     display: flex;
     justify-content: center;
@@ -560,11 +581,12 @@ nav {
 
 
 #numero23{
+    background-color: #4D5447;
     grid-column: 3; 
     grid-row: 5; 
     width: 8.5vw;
-    height: 16vh;
-    margin-top: 21.4vh;
+    height: 8.4vw;
+    margin-top: 11.1vw;
     margin-left: 1.6vw;
     display: flex;
     justify-content: center;
@@ -574,16 +596,17 @@ nav {
 #numero23 p{
     font-family: 'CareAround', Verdana;
     font-size: 3vw;
-    margin-top: 10vh;
+    margin-top: 5vw;
 }
 
 
 #numero24{
+    background-color: #4D5447;
     grid-column: 3; 
     grid-row: 6; 
     width: 8.5vw;
-    height: 12.3vh;
-    margin-top: 27.5vh;
+    height: 6.2vw;
+    margin-top: 14.4vw;
     margin-left: 1.6vw;
     display: flex;
     justify-content: center;
@@ -593,18 +616,19 @@ nav {
 #numero24 p{
     font-family: 'CareAround', Verdana;
     font-size: 3vw;
-    margin-top: 9vh;
+    margin-top: 4.5vw;
     margin-right: 0.5vw;
 }
 
 
 #numero25{
+    background-color: #4D5447;
     grid-column: 4; 
     grid-row: 6; 
     width: 14.9vw;
-    height: 29.5vh;
-    margin-top: 10.2vh;
-    margin-left: -1.9vw;
+    height: 15.2vw;
+    margin-top: 5.4vw;
+    margin-left: -1.5vw;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -613,7 +637,7 @@ nav {
 #numero25 p{
     font-family: 'CareAround', Verdana;
     font-size: 4vw;
-    margin-bottom: -9vh;
+    margin-bottom: -4.5vw;
     margin-right: -0.5vw;
 }
 
