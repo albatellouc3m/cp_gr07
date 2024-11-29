@@ -86,9 +86,13 @@ nav {
     .casa {
         width: 3vw;
     }
+    .global {
+        flex-direction: column;
+    }
 }
 
 /*MOVIL*/
+/* MOVIL */
 @media screen and (max-width: 500px) {
     .main-menu_link {
         font-size: 4vw;
@@ -97,7 +101,31 @@ nav {
     .casa {
         width: 5vw;
     }
+    .global {
+        display: flex; 
+        flex-direction: column; /* Cambiar a columna */
+        align-items: center;
+        justify-content: center;
+        gap: 2rem; /* Espacio entre elementos */
+    }
+    .intro, 
+    .pantalla_inicio {
+        width: 90%; /* Asegurar que ocupen todo el ancho */
+        margin: 0 auto; /* Centrar */
+    }
+    .intro p {
+        font-size: 5vw; /* Ajustar el tamaño del texto */
+    }
+    .intro button {
+        width: 50%; /* Hacer el botón más proporcional */
+        font-size: 3vw; /* Ajustar texto */
+    }
+    .pantalla_inicio {
+        height: auto; /* Ajustar la altura automáticamente */
+        background-size: cover; /* Asegurar que la imagen se ajuste */
+    }
 }
+
 
 
 .global {
