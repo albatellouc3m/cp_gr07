@@ -61,7 +61,7 @@ function moverPapanoel() {
         velocidadX *= -1; // Invertir dirección horizontal
         cambiarDireccionX();
     }
-    if (posY < contenidoHeight / 6 || posY + papanoel.offsetHeight > popup.offsetHeight) {
+    if (posY < (popup.offsetHeight - contenidoHeight) / 2 || posY + papanoel.offsetHeight > popup.offsetHeight - ((popup.offsetHeight - contenidoHeight) / 2)) {
         velocidadY *= -1; // Invertir dirección vertical
     }
 
