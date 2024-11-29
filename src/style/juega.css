@@ -250,7 +250,7 @@ nav {
 /* Contenedor principal del juego */
 .contenedor-juego1 {
     width: 50vw; 
-    height: 70vh;
+    height: 35vw;
     color: rgb(15, 54, 33);
     background-image: url("../images/fondo_juego.jpg");
     background-size: 100% 100%;
@@ -263,7 +263,7 @@ nav {
     box-shadow: 0 3px 6px black; /*Consultado en w3schools box shadow*/
 }
 
-#juego1-inicio h1 {
+#juego1-inicio h1, #juego2-inicio h1, #juego3-inicio h1 {
     font-size: 2.9vw;
 }
 
@@ -343,7 +343,7 @@ nav {
     /* LO AZUL */
     color: rgb(15, 54, 33);
     width: 50vw; 
-    height: 70vh; 
+    height: 35vw; 
     position: relative; /* relativa como antes, para los hijos absolutos */
     border: 2px solid black;
     box-shadow: 0 3px 6px black; /*Consultado en w3schools box shadow*/
@@ -437,7 +437,7 @@ nav {
 .contenedor-juego3 {
     color: rgb(15, 54, 33);
     width: 50vw;
-    height: 70vh;
+    height: 35vw;
     border: 2px solid black;
     box-shadow: 0 3px 6px black; /*Consultado en w3schools box shadow*/
     position: relative;
