@@ -168,6 +168,9 @@ img.calendario{
 
 .main-division.links{
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #perfil-img {
