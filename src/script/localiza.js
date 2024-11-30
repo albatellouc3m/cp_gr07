@@ -90,3 +90,72 @@ function detenerMovimiento() {
     // Detenemos la animación
     cancelAnimationFrame(animationFrame);
 }
+
+// MAPA INTERACTIVO PARA EL TRINEO
+
+const trineo = document.getElementById('trineo');
+
+// Variable para el mensaje que sigue a Papá Noel
+let mensajeActivo = null;
+let mensajeInterval = null;
+
+// Efecto al hacer clic en Papá Noel
+trineo.addEventListener('click', () => {
+    // Añade la clase "clicked" para activar la animación
+    trineo.classList.add('clicked');
+
+    // Después de la animación, quita la clase para que pueda repetirse
+    setTimeout(() => {
+        trineo.classList.remove('clicked');
+    }, 600); // Duración de la animación (0.6s)
+
+    // Acción adicional: mostrar un mensaje que siga a Papá Noel y reproducir audio
+    const mensaje = "¡Ho Ho Ho! ¡Feliz Navidad!";
+    mostrarMensajeQueSigue(mensaje);
+});
+
+// Función para mostrar un mensaje que siga a Papá Noel
+function mostrarMensajeQueSigue(texto) {
+    if (mensajeActivo) {
+        mensajeActivo.remove(); // Elimina el mensaje anterior si existe
+        clearInterval(mensajeInterval); // Detiene el seguimiento anterior
+    }
+
+    // Crear el mensaje
+    const mensaje = document.createElement('div');
+    mensaje.textContent = texto;
+    mensaje.style.position = 'absolute';
+    mensaje.style.padding = '5px 10px';
+    mensaje.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+    mensaje.style.border = '1px solid #61875f';
+    mensaje.style.borderRadius = '5px';
+    mensaje.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.2)';
+    mensaje.style.color = '#61875f';
+    mensaje.style.fontFamily = 'Verdana, sans-serif';
+    mensaje.style.fontSize = '1.5vh';
+    mensaje.style.textAlign = 'center';
+    mensaje.style.zIndex = '101';
+    mensaje.style.display = 'none'
+
+    // Añadir el mensaje al contenedor del popup
+    contenido.appendChild(mensaje);
+
+     // Actualizar la posición del mensaje constantemente usando posX y posY
+    mensajeInterval = setInterval(() => {
+        mensaje.style.left = `${posX + papanoel.offsetWidth / 2 - mensaje.offsetWidth / 2}px`;
+        mensaje.style.top = `${posY - mensaje.offsetHeight - 10}px`; // Encima de Papá Noel
+        mensaje.style.display = 'block'
+    }, 50);
+
+    // Guardar el mensaje activo
+    mensajeActivo = mensaje;
+
+    // Quitar el mensaje después de 2 segundos
+    setTimeout(() => {
+        mensaje.remove();
+        clearInterval(mensajeInterval);
+        mensajeActivo = null;
+    }, 2000);
+}
+
+
