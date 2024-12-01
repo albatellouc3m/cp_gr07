@@ -76,6 +76,15 @@ nav {
     transition: all 0.3s ease;
 }
 
+.global {
+    width: 100%;
+    height: 80vh;
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
 /*MAIN MENU RESPONSIVE*/
 /*TABLET*/
 @media screen and (max-width: 900px) {
@@ -86,19 +95,8 @@ nav {
     .casa {
         width: 3vw;
     }
-
-    /* Cambiar la disposición de la clase global a columna */
-    .global {
-        flex-direction: column; /* Cambia de fila a columna */
-        align-items: center; /* Centra los elementos */
-        justify-content: center; /* Centra los elementos */
-        gap: 2rem; /* Espacio entre los elementos */
-    }
-    
 }
 
-
-/*MOVIL*/
 /* MOVIL */
 @media screen and (max-width: 500px) {
     .main-menu_link {
@@ -111,39 +109,31 @@ nav {
 
     .global {
         display: flex;
-        flex-direction: column; /* Cambia de fila a columna */
-        align-items: center;
-        justify-content: center;
-        gap: 2rem; /* Espacio entre los elementos */
+        flex-direction: column; /* Cambia a columna */
+        align-items: center; /* Centra los elementos horizontalmente */
+        justify-content: center; /* Centra los elementos verticalmente */
+        gap: 2rem;
     }
+
     .intro, 
     .pantalla_inicio {
-        width: 90%; /* Asegurar que ocupen todo el ancho */
-        margin: 0 auto; /* Centrar */
+        width: 100%; /* Asegura que ocupen un ancho consistente */
+        text-align: center; /* Asegura que el contenido interno también esté centrado */
+        display: flex;
+        align-items: center;
+
     }
-    .intro p {
-        font-size: 5vw; /* Ajustar el tamaño del texto */
-    }
-    .intro button {
-        width: 50%; /* Hacer el botón más proporcional */
-        font-size: 3vw; /* Ajustar texto */
-    }
+
     .pantalla_inicio {
-        height: auto; /* Ajustar la altura automáticamente */
-        background-size: cover; /* Asegurar que la imagen se ajuste */
+        margin-left: 8vw;
+    }
+
+    .intro p {
+        font-size: 5vw;
     }
 }
 
 
-
-.global {
-    width: 100%;
-    height: 80vh;
-    display: flex; 
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row;
-}
 .intro {
     max-width: 30%;
     margin-left: 5vw;
