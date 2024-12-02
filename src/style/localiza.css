@@ -91,61 +91,11 @@ nav {
     display: flex;
     flex-direction: column;
 }
-.intro p {
+
+.intro_text{
+    font-size: 3vw;
     margin-bottom: 5%;
     font-family: 'cookies', Verdana;
-}
-
-.intro_text {
-    font-size: 5vh;
-}
-
-/*MAIN MENU RESPONSIVE*/
-/*TABLET*/
-@media screen and (max-width: 900px) {
-    .main-menu_link {
-        font-size: 2vw;
-        padding: 0 1vw;
-    }
-    .casa {
-        width: 3vw;
-    }
-}
-
-/* MOVIL */
-@media screen and (max-width: 500px) {
-    .main-menu_link {
-        font-size: 4vw;
-        padding: 0 1vw;
-    }
-    .casa {
-        width: 5vw;
-    }
-
-    .global {
-        display: flex;
-        flex-direction: column; /* Cambia a columna */
-        align-items: center; /* Centra los elementos horizontalmente */
-        justify-content: center; /* Centra los elementos verticalmente */
-        gap: 15vw;
-    }
-
-    .intro, 
-    .pantalla_inicio {
-        width: 100%; /* Asegura que ocupen un ancho consistente */
-        text-align: center; /* Asegura que el contenido interno también esté centrado */
-        display: flex;
-        align-items: center;
-
-    }
-
-    .pantalla_inicio {
-        margin-left: 8vw;
-    }
-
-    .intro_text{
-        font-size: 10vh;
-    }
 }
 
 /* Estilo del botón */
@@ -220,13 +170,6 @@ nav {
     overflow: hidden;
 }
 
-@media screen and (max-width: 900px) {
-    .contenido {
-        height: 60vw;
-    }
-    
-}
-
 /* Imagen dentro del pop-up */
 .contenido img {
     width: 100%;
@@ -264,5 +207,65 @@ nav {
     }
     100% {
         transform: scale(1) rotate(0deg);
+    }
+}
+
+/*RESPONSIVE*/
+/*TABLET*/
+@media screen and (max-width: 900px) {
+    .main-menu_link {
+        font-size: 2vw;
+        padding: 0 1vw;
+    }
+    .casa {
+        width: 3vw;
+    }
+    .contenido {
+        height: 60vw;
+    }
+}
+
+/* MOVIL */
+@media screen and (max-width: 500px) {
+    .main-menu_link {
+        font-size: 4vw;
+        padding: 0 1vw;
+    }
+    .casa {
+        width: 5vw;
+    }
+
+    .global {
+        display: flex;
+        flex-direction: column; /* Cambia a columna */
+        align-items: center; /* Centra los elementos horizontalmente */
+        justify-content: center; /* Centra los elementos verticalmente */
+        gap: 20vw;
+    } 
+    .pantalla_inicio {
+        width: 60%; /* Asegura que ocupen un ancho consistente */
+        text-align: center; /* Asegura que el contenido interno también esté centrado */
+        display: flex;
+        align-items: center;
+
+    }
+    .intro {
+        max-width: 60%;
+        text-align: center; /* Asegura que el contenido interno también esté centrado */
+        display: flex;
+        align-items: center;
+    }
+
+    .pantalla_inicio {
+        margin-left: 8vw;
+    }
+
+    .intro_text{
+        font-size: 4vw;
+    }
+    .intro button {
+        font-size: 3vw;
+        width: 13vw;
+        border-radius: 0.5rem;
     }
 }
