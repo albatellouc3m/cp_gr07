@@ -168,9 +168,6 @@ img.calendario{
 
 .main-division.links{
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 #perfil-img {
@@ -258,7 +255,7 @@ img.calendario{
 
 
 /*DESKTOP Y TABLET*/
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 700px) {
     .toggle-menu{
         display: none; /*renito fuera*/
 
@@ -324,6 +321,9 @@ img.calendario{
 
     .main-division.links{
         height: 5vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
 
@@ -617,6 +617,67 @@ input[type=text], input[type=password], input[type=email], input[type=number], #
     font-size: 1.5vh;
     text-decoration: none;
 
+}
+
+/*POPUPS RESPONSIVE*/
+/*TABLET*/
+/*MOVIL*/
+@media screen and (max-width: 480px) {
+    .modal-content {
+        width: 80%;
+    }
+
+    .username{
+        padding: 0 4vw;
+    }
+
+    .password{
+        padding: 0 4vw;
+    }
+
+    .password2{
+        padding: 0 4vw;
+    }
+
+    .email{
+        padding: 0 4vw;
+    }
+    
+    .forg-reg a{
+        padding: 0 4vw;
+        font-size: 1.5vh;
+    }
+
+    input[type=text], input[type=password], input[type=email], input[type=number], #genero, #edit-genero {
+        padding: 2vh;
+        margin: 1vh 0 3vh 0;
+        font-size: 2vh;
+    }
+
+    .error {
+        font-size: 2vh;
+        margin-top: 0.5vh;
+    }
+
+    .errorimg{
+        width: 2vh;
+        height: auto;
+    }
+
+    .closebtn{
+        width: 4vw; 
+        height: auto;
+    }
+    
+    .cleanbtn{
+        width: 4.5vw; 
+        height: auto;
+    }
+
+    h4{
+        font-size: 5vh;
+    }
+    
 }
 #home{
     height: 100vh;
