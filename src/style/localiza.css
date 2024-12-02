@@ -85,6 +85,21 @@ nav {
     flex-direction: row;
 }
 
+.intro {
+    max-width: 30%;
+    margin-left: 5vw;
+    display: flex;
+    flex-direction: column;
+}
+.intro p {
+    margin-bottom: 5%;
+    font-family: 'cookies', Verdana;
+}
+
+.intro_text {
+    font-size: 5vh;
+}
+
 /*MAIN MENU RESPONSIVE*/
 /*TABLET*/
 @media screen and (max-width: 900px) {
@@ -127,19 +142,13 @@ nav {
     .pantalla_inicio {
         margin-left: 8vw;
     }
-}
+<<<<<<< HEAD
+=======
 
-
-.intro {
-    max-width: 30%;
-    margin-left: 5vw;
-    display: flex;
-    flex-direction: column;
-}
-.intro p {
-    font-size: 3vw;
-    margin-bottom: 5%;
-    font-family: 'cookies', Verdana;
+    .intro_text{
+        font-size: 10vh;
+    }
+>>>>>>> 7dac114ca41e08e24128639d2e63d929263ac8d6
 }
 
 /* Estilo del botón */

@@ -186,9 +186,9 @@ input[type=submit]:hover {
 /*TABLET*/
 @media screen and (max-width: 850px) {
     #envia{
-        background-image: url(../images/formulario2.svg);
+        background-image: url(../images/formulario.svg);
         background-position: top;
-        background-size: 70%;
+        background-size: 100%;
     }
 
     form{
