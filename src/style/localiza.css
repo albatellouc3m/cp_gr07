@@ -162,8 +162,8 @@ nav {
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra alrededor */
-    width: 70%;
-    height: 40vw;
+    width: 60%;
+    height: 50vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -267,5 +267,8 @@ nav {
         font-size: 3vw;
         width: 13vw;
         border-radius: 0.5rem;
+    }
+    .contenido {
+        height: 0vw;
     }
 }
