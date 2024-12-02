@@ -188,13 +188,23 @@ input[type=submit]:hover {
     #envia{
         background-image: url(../images/formulario.svg);
         background-position: top;
-        background-size: 100%;
+        background-size: cover;
+    }
+
+    h2{
+        font-size: 7vw;
+        padding-top: 10vh;
+        padding-left: 0;
     }
 
     form{
         margin: 0 2%;
-        margin-top: 15%;
+        margin-top: 0;
 
+    }
+
+    .forms{
+        font-size: 2.5vw;
     }
     
     .enviar {
@@ -208,13 +218,23 @@ input[type=submit]:hover {
 /*MOVIL*/
 @media (max-width: 500px) {
     #envia{
-        background-image: url(../images/formulario2.svg);
+        background-image: url(../images/formulario.svg);
         background-size: cover;
+        background-repeat: no-repeat;
         background-position: top;
     }
-    form{
 
+    h2{
+        font-size: 10vw;
+        padding-top: 10vh;
+        padding-left: 0;
+    }
+    form{
         margin: 0 5vw;
+    }
+
+    .forms{
+        font-size: 4vw;
     }
     .row {
         flex-direction: column;

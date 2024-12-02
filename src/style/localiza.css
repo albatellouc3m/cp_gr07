@@ -98,6 +98,58 @@ nav {
     font-family: 'cookies', Verdana;
 }
 
+.intro_text {
+    font-size: 5vh;
+}
+
+/*MAIN MENU RESPONSIVE*/
+/*TABLET*/
+@media screen and (max-width: 900px) {
+    .main-menu_link {
+        font-size: 2vw;
+        padding: 0 1vw;
+    }
+    .casa {
+        width: 3vw;
+    }
+}
+
+/* MOVIL */
+@media screen and (max-width: 500px) {
+    .main-menu_link {
+        font-size: 4vw;
+        padding: 0 1vw;
+    }
+    .casa {
+        width: 5vw;
+    }
+
+    .global {
+        display: flex;
+        flex-direction: column; /* Cambia a columna */
+        align-items: center; /* Centra los elementos horizontalmente */
+        justify-content: center; /* Centra los elementos verticalmente */
+        gap: 2rem;
+    }
+
+    .intro, 
+    .pantalla_inicio {
+        width: 100%; /* Asegura que ocupen un ancho consistente */
+        text-align: center; /* Asegura que el contenido interno también esté centrado */
+        display: flex;
+        align-items: center;
+
+    }
+
+    .pantalla_inicio {
+        margin-left: 8vw;
+    }
+
+    .intro_text{
+        font-size: 10vh;
+    }
+}
+
 /* Estilo del botón */
 .intro button {
     width: 30%;
