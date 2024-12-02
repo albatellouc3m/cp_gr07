@@ -96,8 +96,8 @@ nav {
     font-family: 'cookies', Verdana;
 }
 
-.intro_text {
-    font-size: 5vh;
+.intro_text p{
+    font-size: 1000000vw;
 }
 
 /*MAIN MENU RESPONSIVE*/

@@ -340,3 +340,12 @@ nav {
 .estilos-popup.visible {
     display: block;
 }
+
+
+/*RESPONSIVEEEEEEEE*/
+/*TABLET*/
+@media screen and (max-width: 800px) {
+    
+    
+}
+/*MOVIL*/
