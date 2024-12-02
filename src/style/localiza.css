@@ -112,7 +112,7 @@ nav {
         flex-direction: column; /* Cambia a columna */
         align-items: center; /* Centra los elementos horizontalmente */
         justify-content: center; /* Centra los elementos verticalmente */
-        gap: 2rem;
+        gap: 15vw;
     }
 
     .intro, 
@@ -126,10 +126,6 @@ nav {
 
     .pantalla_inicio {
         margin-left: 8vw;
-    }
-
-    .intro p {
-        font-size: 5vw;
     }
 }
 
