@@ -3,9 +3,20 @@
 const iniciar_boton = document.getElementById('iniciar_localiza');
 const popup = document.getElementById('popup-localiza');
 const papanoel = document.getElementById('trineo');
+// Referencia al contenedor del trineo para hovers correctos
+const trineoContenedor = document.getElementById('trineo-contenedor');
 const contenido = document.getElementById('contenido');
+// Referencias a los audios
+const musicaFondo = new Audio('./images/audios/musica_fondo.mp3');
+const audioHoHoHo = new Audio('./images/audios/ho-ho-ho.mp3');
 
 let animationFrame; // Variable para controlar la animación
+
+// Configuración de la música de fondo
+musicaFondo.loop = true; // Se reproduce en bucle
+musicaFondo.volume = 0.5;
+const volumenReducido = 0.2; // Volumen reducido durante "Ho Ho Ho"
+
 
 // Mostramos el pop-up al hacer clic en "Iniciar"
 iniciar_boton.addEventListener('click', () => {
@@ -16,6 +27,9 @@ iniciar_boton.addEventListener('click', () => {
 
     // Iniciamos el movimiento de Papá Noel
     iniciarMovimiento();
+
+    // Reproducimos la música de fondo
+    musicaFondo.play();
 });
 
 // Cerramos el pop-up al hacer clic fuera de la imagen
@@ -25,6 +39,10 @@ popup.addEventListener('click', (event) => {
 
         // Detenemos el movimiento de Papá Noel
         detenerMovimiento();
+
+        // Pausamos la música de fondo
+        musicaFondo.pause();
+        musicaFondo.currentTime = 0;
     }
 });
 
@@ -36,19 +54,16 @@ let posX = 0; // Posición inicial en el eje X
 let posY = 0; // Posición inicial en el eje Y
 
 function inicializarPosicion() {
-
     // Posiciones iniciales
     posX = popup.offsetWidth / 6; // Empieza en el borde izquierdo
-    posY = contenido.offsetHeight - papanoel.offsetHeight; // Empieza en el borde inferior
+    posY = contenido.offsetHeight - trineoContenedor.offsetHeight; // Empieza en el borde inferior
 
-    // Aplicamos las posiciones iniciales
-    papanoel.style.left = `${posX}px`;
-    papanoel.style.top = `${posY}px`;
-
+    // Aplicamos las posiciones iniciales al contenedor
+    trineoContenedor.style.left = `${posX}px`;
+    trineoContenedor.style.top = `${posY}px`;
 }
 
 function moverPapanoel() {
-
     const popupWidth = popup.offsetWidth;
     const contenidoHeight = contenido.offsetHeight;
 
@@ -57,28 +72,25 @@ function moverPapanoel() {
     posY += velocidadY;
 
     // Verificamos los límites del contenedor y rebota si es necesario
-    if (posX < popupWidth / 6 || posX + papanoel.offsetWidth > (5 * popupWidth) / 6 ) {
-        velocidadX *= -1; // Invertir dirección horizontal
+    if (posX < popupWidth / 6 || posX + trineoContenedor.offsetWidth > (5 * popupWidth) / 6) {
+        velocidadX *= -1; // Invertimos dirección horizontal
         cambiarDireccionX();
     }
-    if (posY < (popup.offsetHeight - contenidoHeight) / 2 || posY + papanoel.offsetHeight > popup.offsetHeight - ((popup.offsetHeight - contenidoHeight) / 2)) {
-        velocidadY *= -1; // Invertir dirección vertical
+    if (posY < (popup.offsetHeight - contenidoHeight) / 2 || posY + trineoContenedor.offsetHeight > popup.offsetHeight - ((popup.offsetHeight - contenidoHeight) / 2)) {
+        velocidadY *= -1; // Invertimos dirección vertical
     }
 
-    // Aplicamos las nuevas posiciones
-    papanoel.style.left = `${posX}px`;
-    papanoel.style.top = `${posY}px`;
+    // Aplicamos las nuevas posiciones al contenedor
+    trineoContenedor.style.left = `${posX}px`;
+    trineoContenedor.style.top = `${posY}px`;
 
-    // Almacenamos las coordenadas del trineo
-    trineoX = posX;
-    trineoY = posY;
-
-    animationFrame = requestAnimationFrame(moverPapanoel); // Movimiento constante
+    // Movimiento constante
+    animationFrame = requestAnimationFrame(moverPapanoel);
 }
 
 function cambiarDireccionX() {
     // Cambiamos la dirección de la imagen horizontalmente cuando la velocidad X cambia de dirección
-    papanoel.style.transform = papanoel.style.transform === 'scaleX(-1)' ? 'scaleX(1)' : 'scaleX(-1)';
+    trineoContenedor.style.transform = trineoContenedor.style.transform === 'scaleX(-1)' ? 'scaleX(1)' : 'scaleX(-1)';
 }
 
 function iniciarMovimiento() {
@@ -101,6 +113,19 @@ let mensajeInterval = null;
 
 // Efecto al hacer clic en Papá Noel
 trineo.addEventListener('click', () => {
+
+    // Reducimos el volumen de la música de fondo
+    volumenNormal = musicaFondo.volume
+    musicaFondo.volume = volumenReducido;
+
+    // Reproducimos el sonido de "Ho Ho Ho"
+    audioHoHoHo.play();
+
+    // Restauramos gradualmente el volumen de la música de fondo después de que termine "Ho Ho Ho"
+    audioHoHoHo.addEventListener('ended', () => {
+        musicaFondo.volume = volumenNormal
+    });
+
     // Añade la clase "clicked" para activar la animación
     trineo.classList.add('clicked');
 
