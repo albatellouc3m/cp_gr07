@@ -234,7 +234,6 @@ nav {
     display: flex;
     gap: 1vw;
     left: 1vw;
-
 }
 .elfo-button {
     background: none;
@@ -245,6 +244,10 @@ nav {
     height: 7vw;
     cursor: pointer;
     transition: transform 0.2s ease;
+}
+
+.elfo-button.reiniciar2{
+    display: none;
 }
 
 .elfo-button:hover {
@@ -269,6 +272,10 @@ nav {
 .instrucciones h2{
     font-family: 'Spiny Lobster', Verdana;
     font-size: 4vh;
+}
+
+.instrucciones-texto2 h2, .instrucciones-texto2 p{
+    display: none;
 }
 
 .instrucciones-boton{
@@ -345,6 +352,158 @@ nav {
 /*RESPONSIVEEEEEEEE*/
 /*TABLET*/
 @media screen and (max-width: 800px) {
+
+    .elfo-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 10vh;
+        margin-top: 20vh;
+        height: 30vw;
+    }
+
+    .elfo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .instrucciones h2, .instrucciones p{
+        display: none;
+    }
+
+    .instrucciones-texto2{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .instrucciones-texto2 h2{
+        display: block;
+        font-family: 'Spiny Lobster', Verdana;
+        font-size: 5vh;        
+    }
+
+    .instrucciones-texto2 p{
+        display: block;
+        font-family: Verdana;
+        font-size: 3vh;
+    }
+    
+
+    .botones {
+        display: flex;
+        align-items: center;
+    }
+
+    .botones-columna{
+        display: flex;
+        gap: 1vw;
+        top: 0;
+        flex-direction: column;
+    }
+
+    .botones-fila{
+        display: flex;
+        gap: 1vw;
+        top: 0;
+        left: 0;
+        flex-direction: column;
+    }
+
+    .elfo-button.reiniciar2{
+        display: block;
+    }
+
+    .elfo-button.reiniciar{
+        display: none;
+    }
+
+    
+    /*COSAS DE EL ELFO*/
+    /* Posicionamiento para cada parte */
+    #elfo-piel {
+        position: relative;
+        padding: 0;
+        margin: 0;
+        justify-self: center;
+        width: 25vw;
+        height: auto;
+    }
+
+    #elfo-ojos {
+        position: absolute;
+        z-index: 1;
+        top: 30%; /* Ajusta según la posición de los ojos */
+        left: 30%; /* Ajusta para centrar en el rostro */
+        width: 30%; /* Tamaño de los ojos */
+    }
+    
+    #elfo-pecas {
+        position: absolute;
+        z-index: 1;
+        top: 34%; /* Ajusta según las mejillas */
+        left: 25%;
+        width: 40%;
+    }
+    
+    #elfo-nariz{
+        position: absolute;
+        z-index: 2;
+        top: 38%; /* Ajusta según la posición de los accesorios */
+        left: 44.5%; /* Ajusta para centrar */
+        width: 2.5%;
+    }
+    
+    #elfo-boca {
+        position: absolute;
+        z-index: 2;
+        top: 43%; /* Ajusta para la posición de la boca */
+        left: 41%; /* Ajusta para centrar */
+        width: 10%;
+    }
+    
+    #elfo-pelo {
+        position: absolute;
+        z-index: 2;
+        top: 0; /* Ajusta para la posición del pelo */
+        left: 10%; /* Ajusta según la cabeza */
+        width: 70%;
+    }
+    
+    #elfo-camiseta {
+        position: absolute;
+        z-index: 2;
+        top: 53%;
+        left: 23.5%;
+        width: 43%;
+    }
+    
+    #elfo-pantalon {
+        position: absolute;
+        z-index: 1;   
+        top: 72%;
+        left: 32.5%;
+        width: 25.5%;
+    }
+    
+    #elfo-gafas {
+        position: absolute;
+        z-index: 3;
+        top: 25%;
+        left: 25%;
+        width: 40%;
+    }
+    
+    #elfo-gorro {
+        position: absolute;
+        z-index: 3;
+        top: 2%;
+        left: 21%;
+        width: 55%;
+    }
     
     
 }
