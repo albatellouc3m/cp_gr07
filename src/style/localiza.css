@@ -130,7 +130,7 @@ nav {
 /* Pantalla de inicio */
 .pantalla_inicio {
     width: 40%;
-    height: 40vw;
+    height: 35vw;
     margin-right: 5vw;
     display: flex;
     justify-content: center;
@@ -168,7 +168,7 @@ nav {
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra alrededor */
     width: 60%;
-    height: 50vw;
+    height: 40vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -240,7 +240,7 @@ nav {
 }
 
 /* MOVIL */
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 700px) {
     .main-menu_link {
         font-size: 4vw;
         padding: 0 1vw;

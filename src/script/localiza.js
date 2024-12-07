@@ -3,9 +3,11 @@
 const iniciar_boton = document.getElementById('iniciar_localiza');
 const popup = document.getElementById('popup-localiza');
 const papanoel = document.getElementById('trineo');
+
 // Referencia al contenedor del trineo para hovers correctos
 const trineoContenedor = document.getElementById('trineo-contenedor');
 const contenido = document.getElementById('contenido');
+
 // Referencias a los audios
 const musicaFondo = new Audio('./images/audios/musica_fondo.mp3');
 const audioHoHoHo = new Audio('./images/audios/ho-ho-ho.mp3');
@@ -54,9 +56,9 @@ let posX = 0; // Posición inicial en el eje X
 let posY = 0; // Posición inicial en el eje Y
 
 function inicializarPosicion() {
-    // Posiciones iniciales
-    posX = popup.offsetWidth / 6; // Empieza en el borde izquierdo
-    posY = contenido.offsetHeight - trineoContenedor.offsetHeight; // Empieza en el borde inferior
+    // Posiciones iniciales elegidas
+    posX = popup.offsetWidth / 6;
+    posY = contenido.offsetHeight - trineoContenedor.offsetHeight;
 
     // Aplicamos las posiciones iniciales al contenedor
     trineoContenedor.style.left = `${posX}px`;
@@ -67,16 +69,30 @@ function moverPapanoel() {
     const popupWidth = popup.offsetWidth;
     const contenidoHeight = contenido.offsetHeight;
 
+    if (window.innerWidth < 700) {
+        // Límites ajustados para móviles
+        limiteIzquierdo = 0;
+        limiteDerecho = popupWidth;
+        limiteSuperior = (popup.offsetHeight - contenidoHeight) / 3;
+        limiteInferior = popup.offsetHeight - (popup.offsetHeight - contenidoHeight) / 3;
+    } else {
+        // Límites generales para tablet y desktop
+        limiteIzquierdo = popupWidth / 6;
+        limiteDerecho = (5 * popupWidth) / 6;
+        limiteSuperior = (popup.offsetHeight - contenidoHeight) / 2;
+        limiteInferior = popup.offsetHeight - (popup.offsetHeight - contenidoHeight) / 2;
+    }
+
     // Actualizamos las posiciones de Papá Noel de acuerdo con las velocidades
     posX += velocidadX;
     posY += velocidadY;
 
     // Verificamos los límites del contenedor y rebota si es necesario
-    if (posX < popupWidth / 6 || posX + trineoContenedor.offsetWidth > (5 * popupWidth) / 6) {
+    if (posX < limiteIzquierdo || posX + trineoContenedor.offsetWidth > limiteDerecho) {
         velocidadX *= -1; // Invertimos dirección horizontal
         cambiarDireccionX();
     }
-    if (posY < (popup.offsetHeight - contenidoHeight) / 2 || posY + trineoContenedor.offsetHeight > popup.offsetHeight - ((popup.offsetHeight - contenidoHeight) / 2)) {
+    if (posY < limiteSuperior || posY + trineoContenedor.offsetHeight > limiteInferior) {
         velocidadY *= -1; // Invertimos dirección vertical
     }
 
@@ -121,7 +137,7 @@ trineo.addEventListener('click', () => {
     // Reproducimos el sonido de "Ho Ho Ho"
     audioHoHoHo.play();
 
-    // Restauramos gradualmente el volumen de la música de fondo después de que termine "Ho Ho Ho"
+    // Restauramos el volumen de la música de fondo después de que termine "Ho Ho Ho"
     audioHoHoHo.addEventListener('ended', () => {
         musicaFondo.volume = volumenNormal
     });
@@ -135,7 +151,7 @@ trineo.addEventListener('click', () => {
     }, 600); // Duración de la animación (0.6s)
 
     // Acción adicional: mostrar un mensaje que siga a Papá Noel y reproducir audio
-    const mensaje = "¡Ho Ho Ho! ¡Feliz Navidad!";
+    const mensaje = "¡Ho Ho Ho! ¡Merry Christmas!";
     mostrarMensajeQueSigue(mensaje);
 });
 
