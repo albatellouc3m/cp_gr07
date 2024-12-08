@@ -129,7 +129,6 @@ nav {
 }
 
 #elfo-piel {
-    position: relative;
     z-index: 0;
     width: 15vw;
     height: auto;
@@ -222,6 +221,7 @@ nav {
 }
 
 .botones-columna{
+    z-index: 1;
     position: absolute;
     display: flex;
     gap: 1vw;
@@ -229,12 +229,14 @@ nav {
     flex-direction: column;
 }
 .botones-fila{
+    z-index: 1;
     position: absolute;
     top: 24vw;
     display: flex;
     gap: 1vw;
     left: 1vw;
 }
+
 .elfo-button {
     background: none;
     border: 1vh solid #A8B99C;
@@ -364,9 +366,7 @@ nav {
     }
 
     .elfo {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        margin: 0;
     }
 
     .instrucciones h2, .instrucciones p{
@@ -381,6 +381,7 @@ nav {
     }
 
     .instrucciones-texto2 h2{
+        margin-top: 20vh;
         display: block;
         font-family: 'Spiny Lobster', Verdana;
         font-size: 5vh;        
@@ -390,6 +391,7 @@ nav {
         display: block;
         font-family: Verdana;
         font-size: 3vh;
+        margin-bottom: 10vh;
     }
     
 
@@ -400,17 +402,30 @@ nav {
 
     .botones-columna{
         display: flex;
-        gap: 1vw;
+        gap: 3vw;
         top: 0;
+        right: -80%;
         flex-direction: column;
     }
 
     .botones-fila{
         display: flex;
-        gap: 1vw;
+        gap: 3vw;
         top: 0;
-        left: 0;
+        left: -80%;
         flex-direction: column;
+    }
+
+    .elfo-button {
+        border-radius: 3vw;
+        padding: 0.5vw;
+        width: 10vw;
+        height: 10vw;
+    }
+
+    .elfo-button-img {
+        width: auto;
+        height: 3.5vw;
     }
 
     .elfo-button.reiniciar2{
@@ -425,7 +440,6 @@ nav {
     /*COSAS DE EL ELFO*/
     /* Posicionamiento para cada parte */
     #elfo-piel {
-        position: relative;
         padding: 0;
         margin: 0;
         justify-self: center;
@@ -434,77 +448,238 @@ nav {
     }
 
     #elfo-ojos {
-        position: absolute;
-        z-index: 1;
-        top: 30%; /* Ajusta según la posición de los ojos */
-        left: 30%; /* Ajusta para centrar en el rostro */
-        width: 30%; /* Tamaño de los ojos */
+        top: 26%; 
+        left: 30%; 
+        width: 44%; 
     }
     
     #elfo-pecas {
-        position: absolute;
-        z-index: 1;
-        top: 34%; /* Ajusta según las mejillas */
+        top: 31%; 
         left: 25%;
-        width: 40%;
+        width: 54%;
     }
     
     #elfo-nariz{
-        position: absolute;
-        z-index: 2;
-        top: 38%; /* Ajusta según la posición de los accesorios */
-        left: 44.5%; /* Ajusta para centrar */
-        width: 2.5%;
+        top: 34%; 
+        left: 49.5%; 
+        width: 5.5%;
     }
     
     #elfo-boca {
-        position: absolute;
-        z-index: 2;
-        top: 43%; /* Ajusta para la posición de la boca */
-        left: 41%; /* Ajusta para centrar */
-        width: 10%;
+
+        top: 40%;
+        left: 44%; 
+        width: 17%;
     }
     
     #elfo-pelo {
-        position: absolute;
-        z-index: 2;
-        top: 0; /* Ajusta para la posición del pelo */
-        left: 10%; /* Ajusta según la cabeza */
+        top: 0;
+        left: 10%; 
         width: 70%;
     }
     
     #elfo-camiseta {
-        position: absolute;
-        z-index: 2;
-        top: 53%;
-        left: 23.5%;
-        width: 43%;
+        top: 48%;
+        left: 9.5%;
+        width: 82%;
     }
     
-    #elfo-pantalon {
-        position: absolute;
-        z-index: 1;   
-        top: 72%;
-        left: 32.5%;
-        width: 25.5%;
+    #elfo-pantalon { 
+        top: 69%;
+        left: 26%;
+        width: 50%;
     }
     
     #elfo-gafas {
-        position: absolute;
-        z-index: 3;
-        top: 25%;
-        left: 25%;
-        width: 40%;
+        top: 21%;
+        left: 18%;
+        width: 67%;
     }
     
     #elfo-gorro {
-        position: absolute;
-        z-index: 3;
-        top: 2%;
-        left: 21%;
-        width: 55%;
+        top: -5%;
+        left: 3%;
+        width: 110%;
+    }
+
+    /* Popup de estilos (oculto inicialmente) */
+    .estilos-popup {
+        top: 20%;
+        left: -35%;
+        width: 51.5vw;
+        height: 20vh;
+    }
+
+    /* Grid de estilos dentro del popup */
+    .estilos-grid {
+        width:100%;
+        gap: 15px;
+    }
+
+    /* Botones de los estilos */
+    .estilo-item {
+        border-radius: 3vw;
+        width: 10vw;
+        height: 10vw;
+    }
+
+    .estilo-item img {
+        width: 7vw;
+        height: 7vw;
+        padding: 0.5vh;
+    }
+
+    .guardar-boton {
+        font-size: 3vh;
+        padding: 2vh 4vw;
+        border-radius: 10vw;
     }
     
+}
+
+
+/*MOVIL*/
+@media screen and (max-width: 480px) {
+
+    .instrucciones-texto2 h2{
+        margin-top: 25vh;
+    }
+    
+
+    .instrucciones-texto2 p{
+        font-size: 2vh;
+    }
+    
+
+    .botones {
+        display: flex;
+        align-items: center;
+    }
+
+    .botones-columna{
+        gap: 3vw;
+        top: 110%;
+        left: -80%;
+        right: 0;
+        width: 100vw;
+        flex-direction: row;
+    }
+
+    .botones-fila{
+        gap: 3vw;
+        top: 150%;
+        left: -80%;
+        right: 0;
+        width: 100vw;
+        flex-direction: row;
+    }
+
+    .elfo-button {
+        border-radius: 3vw;
+        padding: 0.5vw;
+        width: 15vw;
+        height: 15vw;
+    }
+
+    .elfo-button-img {
+        width: auto;
+        height: 5.5vw;
+    }
+
+    
+    /*COSAS DE EL ELFO*/
+    /* Posicionamiento para cada parte */
+    #elfo-piel {
+        width: 35vw;
+    }
+
+    #elfo-ojos {
+        top: 26%; 
+        left: 18%;
+        width: 65%;
+    }
+    
+    #elfo-pecas {
+        top: 31%; 
+        left: 10%;
+        width: 81%;
+    }
+    
+    #elfo-nariz{
+        top: 34%; 
+        left: 47.5%;
+        width: 8.5%;
+    }
+    
+    #elfo-boca {
+        top: 40%;
+        left: 39%;
+        width: 28%;
+    }
+    
+    #elfo-pelo {
+        top: 0;
+        left: 10%; 
+        width: 70%;
+    }
+    
+    #elfo-camiseta {
+        top: 48%;
+        left: -6.5%;
+        width: 114%;
+    }
+    
+    #elfo-pantalon { 
+        top: 69%;
+        left: 17%;
+        width: 69%;
+    }
+    
+    #elfo-gafas {
+        top: 21%;
+        left: -2%;
+        width: 105%;
+    }
+    
+    #elfo-gorro {
+        top: -4%;
+        left: -15%;
+        width: 152%;
+    }
+
+    /* Popup de estilos (oculto inicialmente) */
+    .estilos-popup {
+        z-index: 2;
+        top: 15%;
+        left: -40%;
+        width: 52.5vw;
+        height: 26vh;
+    }
+
+    /* Grid de estilos dentro del popup */
+    .estilos-grid {
+        width:100%;
+        gap: 15px;
+    }
+
+    /* Botones de los estilos */
+    .estilo-item {
+        width: 12vw;
+        height: 12vw;
+    }
+
+    .estilo-item img {
+        width: 8.5vw;
+        height: 8.5vw;
+    }
+
+    .guardar-boton {
+        margin-top: 30vh;
+        z-index: 0;
+        margin-bottom: 10vh;
+        font-size: 2vh;
+        padding: 2vh 4vw;
+        border-radius: 10vw;
+    }
     
 }
-/*MOVIL*/
