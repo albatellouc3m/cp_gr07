@@ -3,10 +3,19 @@ body {
     margin: 0;
     padding: 0;
     font-size: 2vh;
-    background-color: white;
+    background-color: #F2F7EF;
     color: black;
 }
 
+button {
+    font-family: 'cookies', Verdana;
+    background-color: transparent; /* fondo transparente */
+    border: transparent; /* borde transparente */
+    cursor: pointer; /* para que se ponga el cursor de ratón encima de los botones */
+    background-color: transparent;
+    color: white;
+    text-align: center;
+}
 
 * {
     box-sizing: border-box;
@@ -100,7 +109,6 @@ nav {
 
 /*JUEGA*/
 #juega{
-    background-color: white;
     background-image: url(../images/fondoJuego.svg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -177,45 +185,17 @@ nav {
 /*para que salga la imagen del juego que queremos*/
 .img-juego{   
     display: none; /*por ahora no sale porque no hemos pulsado el link*/
+    border-radius: 0.75rem;
 }
 
 /*RESPONSIVE*/
 /*TABLET*/
 
 /*MOVIL*/
-@media screen and (max-width: 850px){
-    .games{
-        display: flex;
-        flex-direction: column; /*que se organice en columnas*/
-        align-items: center;
-    }
-
-    .columna1{
-        height: auto;
-        padding: 0;
-        margin:0;
-    }
-
-    .columna2{
-        width: 100vw;
-        height: auto;
-        display: flex;
-        align-items: center;  
-        justify-content: center;
-        margin-top: 10vh;
-        z-index: 200;
-    }
-
-    .columna1 li {
-        font-size: 5vw;
-        text-align: center;
-        width: 100%;
-    }
+@media screen and (max-width: 900px){
 
     .columna1 li button{
-        font-size: 5vw;
-        width: 100%;
-        padding: 2vh 10vw;
+        font-size: 2.5vw;
     }
 
     .columna1 ul {
@@ -223,19 +203,11 @@ nav {
         flex-direction: column;
         align-items: center;
     }
-    .contenedor-juego1 {
-        width: 100%; 
-        height: 100%;
-        margin-bottom: 5vh;
-    }
-}
 
-/*MOVIL*/
-@media screen and (max-width: 480px){
-    .columna2{
-        height: 50vh;
-        padding: 0 5vw;
+    #mensaje-final3 {
+        font-size: 5vw;
     }
+    
 }
 
 
@@ -259,8 +231,6 @@ nav {
     display: flex;
     flex-direction: column;
     position: relative;
-    border: 2px solid black;
-    box-shadow: 0 3px 6px black; /*Consultado en w3schools box shadow*/
 }
 
 #juego1-inicio h1, #juego2-inicio h1, #juego3-inicio h1 {
@@ -269,7 +239,7 @@ nav {
 
 #timer_container {
     position: absolute;
-    font-size: 1.953vw; /* 1.25rem convertido a vw */
+    font-size: 2vw;
     font-family: 'Righteous';
     color: black;
     top: 0;
@@ -281,7 +251,7 @@ nav {
 
 #score_container {
     position: absolute;
-    font-size: 1.953vw; /* 1.25rem convertido a vw */
+    font-size: 2vw;
     font-family: 'Righteous';
     color: black;
     top: 0;
@@ -295,21 +265,21 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     height: 100%;
     margin-bottom: 0;
 }
 
 #puntos_finales {
-    font-size: 2.5vw; /* 1.85rem convertido a vw */
+    font-size: 2.5vw;
     font-family: 'Lobster';
     color: rgb(91, 122, 125);
     display: none;
 }
 
 #regalo {
-    width: 3.5vw; /* 3.5rem convertido a vw */
-    height: 3.5vw; /* 3.5rem convertido a vw */
+    width: 3.5vw;
+    height: 3.5vw;
     position: absolute;
     cursor: pointer;
     display: none;
@@ -317,25 +287,17 @@ nav {
 
 
 .btnEmpezar {
+    margin-top: 1vw;
     color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease; /*Transicion consultada con IA Generativa*/
-    position: relative;
-    display: inline-block;
-    outline: none;  /* Consultado*/
-    border-radius: 5px;
-    border: none;
-    box-shadow: 2px 2px 2px 0px rgba(255,255,255,.5); 
-    background: #57cc99;
-    border-radius: 0.75rem;
-    padding: 0.75rem 1.25rem;
-    margin-top: 3vh;
+    padding: 0 1.25vw;
+    border-radius: 10vw;
+    height: 5vh;
+    background-color:#606959;
 }
 
 .btnEmpezar:hover {
-    background-color: #80ed99;
-    top: 2px;
+    text-decoration: none;
+    background-color:  #4D5447;
 }
 
 /** Juego 2 */
@@ -345,8 +307,6 @@ nav {
     width: 50vw; 
     height: 35vw; 
     position: relative; /* relativa como antes, para los hijos absolutos */
-    border: 2px solid black;
-    box-shadow: 0 3px 6px black; /*Consultado en w3schools box shadow*/
   }
 
 .game-board2 {
@@ -405,32 +365,6 @@ nav {
     right: 1vw;
     z-index: 200;
 }
-/*RESPONSIVE*/
-/*TABLET Y MOVIL*/
-@media screen and (max-width: 500px) {
-    .contenedor-juego2 {
-        display: block;
-        width: 80%;
-        height: 80%;
-    }
-
-    #juega h1{
-        font-size: 4vh;
-    }
-
-    .game-board2 {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    .card {
-        width: 65px;
-        height: 65px;
-    }
-
-    .card-back {
-        padding: 2vh;
-    }
-}
 
 /*JUEGO 3*/
 
@@ -438,8 +372,6 @@ nav {
     color: rgb(15, 54, 33);
     width: 50vw;
     height: 35vw;
-    border: 2px solid black;
-    box-shadow: 0 3px 6px black; /*Consultado en w3schools box shadow*/
     position: relative;
     text-align: center;
     display: flex;
@@ -468,8 +400,8 @@ nav {
 }
 
 .personaje {
-    width: 45px;
-    height: 45px;
+    width: 3vw;
+    height: 3vw;
     position: absolute;
     background-size: contain;
     background-repeat: no-repeat;
@@ -505,14 +437,75 @@ nav {
 
 /* Ajustes responsivos */
 @media screen and (max-width: 500px) {
+    .games{
+        display: flex;
+        flex-direction: column; /*que se organice en columnas*/
+        align-items: center;
+    }
+
+    .columna1 li button{
+        font-size: 3vw;
+        width: 25vw;
+    }
+
+    .contenedor-juego1 {
+        width: 90vw;
+        height: 80vw;
+        margin: 0 auto;
+    }
+    #regalo {
+        width: 7vw;
+        height: 7vw;
+    }
+    #timer_container {
+        font-size: 3vw;
+    }
+    
+    #score_container {
+        font-size: 3vw;
+    }
+
+    #puntos_finales {
+        font-size: 4vw;
+    }
+
+    .btnEmpezar {
+        margin-top: 3vw;
+    }
+    .contenedor-juego2 {
+        width: 90vw;
+        height: 90vw;
+        margin: 0 auto;
+    }
     .contenedor-juego3 {
         width: 90vw;
         height: 90vw;
         margin: 0 auto;
     }
+
+    #mensaje-final3 {
+        font-size: 4vw;
+    }
     
     .personaje {
         width: 35px;
         height: 35px;
+    }
+    
+    #juega h1{
+        font-size: 4vh;
+    }
+
+    .game-board2 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .card {
+        width: 65px;
+        height: 65px;
+    }
+
+    .card-back {
+        padding: 2vh;
     }
 }
