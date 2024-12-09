@@ -209,8 +209,8 @@ input[type=submit]:hover {
     
     .enviar {
         font-size: 4vw;
-        margin-top: 0;
-        width: 100%;
+        margin-top: 3vw;
+        width: 25vw;
         padding: 3vh 0;
     }
 }
