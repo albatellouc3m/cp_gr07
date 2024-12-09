@@ -157,10 +157,10 @@ nav {
     background-color: #4D5447;
     grid-column: 1; 
     grid-row: 1; 
-    width: 12.2vw;
-    height: 5.8vw;
+    width: 85%;
+    height: 100%;
     margin-top: 0;
-    margin-left: 1.8vw;
+    margin-left: 13%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -176,10 +176,10 @@ nav {
     background-color: #4D5447;
     grid-column: 2; 
     grid-row: 1; 
-    width: 7.7vw;
-    height: 5.8vw;
+    width: 41%;
+    height: 100%;
     margin-top: 0;
-    margin-left: 1.2vw;
+    margin-left: 7%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -196,10 +196,10 @@ nav {
     background-color: #4D5447;
     grid-column: 3; 
     grid-row: 1; 
-    width: 7.7vw;
-    height: 5.8vw;
+    width: 60%;
+    height: 100%;
     margin-top: 0;
-    margin-left: -8.1vw;
+    margin-left: -63%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -215,10 +215,10 @@ nav {
     background-color: #4D5447;
     grid-column: 4; 
     grid-row: 1; 
-    width: 17.1vw;
-    height: 5.8vw;
+    width: 120%;
+    height: 100%;
     margin-top: 0;
-    margin-left: -11.9vw;
+    margin-left: -84%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -235,10 +235,10 @@ nav {
     background-color: #4D5447;
     grid-column: 5; 
     grid-row: 1; 
-    width: 7.7vw;
-    height: 5.8vw;
+    width: 510%;
+    height: 100%;
     margin-top: 0;
-    margin-left: -7.6vw;
+    margin-left: -520%;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -762,4 +762,245 @@ img{
 @keyframes animatezoom {
     from {transform: scale(0)}
     to {transform: scale(1)}
+}
+
+/*RESPONSIVE*/
+/*TABLET*/
+@media screen and (max-width: 800px){
+    #numero6{
+        margin-top: -3vh;
+    }
+    #numero7{
+        margin-top: -3vh;
+    }
+    #numero8{
+        margin-top: -3vh;
+    }
+    #numero9{
+        margin-top: -3vh;
+    }
+    #numero10{
+        margin-top: -4.5vh;
+    }
+    #numero11{
+        margin-top: -4.5vh;
+    }
+    #numero12{
+        margin-top: -6vh;
+    }
+    #numero13{
+        margin-top: -4.5vh;
+    }
+    #numero14{
+        margin-top: -4.5vh;
+    }
+    #numero15{
+        margin-top: -4.5vh;
+    }
+    #numero16{
+        margin-top: -8vh;
+    }
+    #numero17{
+        margin-top: -8vh;
+    }
+    #numero18{
+        margin-top: -14vh;
+    }
+    #numero19{
+        margin-top: -14vh;
+    }
+    #numero20{
+        margin-top: -9.5vh;
+    }
+    #numero21{
+        margin-top: -9.5vh;
+    }
+    #numero22{
+        margin-top: -9.5vh;
+    }
+    #numero23{
+        margin-top: -5vh;
+    }
+    #numero24{
+        margin-top: -6vh;
+    }
+    #numero25{
+        margin-top: -16vh;
+    }
+}
+
+/*MOVIL*/
+@media screen and (max-width: 480px) {
+
+    .contenedor {
+    flex-direction: column;
+    }
+
+    .texto p{
+        font-size: 3vh;
+        margin-bottom: 10vh;
+        width: 40vw;
+    }
+
+    .calendario{
+        width: 80vw;
+        height: 80vw;
+    }
+
+    #numero1{
+        width: 16.8vw;
+        height: 10.2vw;
+        margin-top: 1vh;
+        margin-left: 0;
+    }
+    #numero2{
+        width: 10.5vw;
+        height: 10.2vw;
+        margin-top: 1vh;
+        margin-left: 2.3vw;
+    }
+    #numero3{
+        width: 10.5vw;
+        height: 10.2vw;
+        margin-top: 1vh;
+        margin-left: -11vw;
+    }
+    #numero4{
+        width: 24vw;
+        height: 10.2vw;
+        margin-top: 1vh;
+        margin-left: -16.6vw;
+    }
+    #numero5{
+        width: 9vw;
+        height: 10.2vw;
+        margin-top: 1vh;
+        margin-left: -8.8vw;
+    }
+    #numero6{
+        width: 17vw;
+        height: 10vw;
+        margin-top: -1.3vh;
+        margin-left: -0.1vw;
+    }
+    #numero7{
+        width: 17vw;
+        height: 10vw;
+        margin-top: -1.3vh;
+        margin-left: 1.8vw;
+    }
+    #numero8{
+        width: 18vw;
+        height: 10vw;
+        margin-top: -1.3vh;
+        margin-left: -5vw;
+    }
+    #numero9{
+        width: 22vw;
+        height: 10vw;
+        margin-top: -1.3vh;
+        margin-left: -22.5vw;
+    }
+    #numero10{
+        width: 17vw;
+        height: 21vw;
+        margin-top: -4vh;
+        margin-left: 0;
+    }
+    #numero11{
+        width: 24vw;
+        height: 9.8vw;
+        margin-top: -4vh;
+        margin-left: 2vw;
+    }
+    #numero12{
+        width: 24vw;
+        height: 9.8vw;
+        margin-top: -6.5vh;
+        margin-left: 2vw;
+    }
+    #numero13{
+        width: 11.2vw;
+        height: 14.2vw;
+        margin-top: -4vh;
+        margin-left: 2.5vw;
+    }
+    #numero14{
+        width: 11.2vw;
+        height: 14.2vw;
+        margin-top: -4vh;
+        margin-left: -3vw;
+    }
+    #numero15{
+        width: 9.2vw;
+        height: 14.2vw;
+        margin-top: -4vh;
+        margin-left: -9.5vw;
+    }
+    #numero16{
+        width: 16.6vw;
+        height: 10.7vw;
+        margin-top: -10vh;
+        margin-left: 0vw;
+    }
+    #numero17{
+        width: 24vw;
+        height: 10.7vw;
+        margin-top: -10vh;
+        margin-left: 2vw;
+    }
+    #numero18{
+        width: 15.7vw;
+        height: 10vw;
+        margin-top: -15.3vh;
+        margin-left: 2.8vw;
+    }
+    #numero19{
+        width: 15.7vw;
+        height: 10vw;
+        margin-top: -15.3vh;
+        margin-left: 3vw;
+    }
+    #numero20{
+        width: 16.6vw;
+        height: 15.2vw;
+        margin-top: -12.5vh;
+        margin-left: 0vw;
+    }
+    #numero21{
+        width: 10.5vw;
+        height: 15.2vw;
+        margin-top: -12.5vh;
+        margin-left: 2vw;
+    }
+    #numero22{
+        width: 10.5vw;
+        height: 15.2vw;
+        margin-top: -12.5vh;
+        margin-left: -10.3vw;
+    }
+    #numero23{
+        width: 12vw;
+        height: 11.6vw;
+        margin-top: -7vh;
+        margin-left: 3vw;
+    }
+    #numero23 p{
+        margin-bottom: 7vw;
+    }
+    #numero24{
+        width: 11.5vw;
+        height: 11.2vw;
+        margin-top: -9.3vh;
+        margin-left: 3vw;
+    }
+    #numero24 p{
+        margin-bottom: 7vw;
+    }
+    #numero25{
+        width: 19.3vw;
+        height: 23.6vw;
+        margin-top: -18.3vh;
+        margin-left: -2.6vw;
+    }
 }
