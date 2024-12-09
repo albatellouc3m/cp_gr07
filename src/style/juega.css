@@ -138,7 +138,6 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
   }
 
 /*un poco de decoracion de la lista global de juegos*/
@@ -155,7 +154,7 @@ nav {
     font-style: bold;
     font-size: 2vw;
     width: 100%;    
-    background-color: #Bf3f34;
+    background-color: #737E6B;
     padding: 3vh 5vw;
     margin: 1vh 0;
     border-radius: 20px;
@@ -163,7 +162,7 @@ nav {
 }
 
 .columna1 li button:hover{
-    background-color: #A23F34;
+    background-color: #4D5447;
     color: white;
 }
 
@@ -173,13 +172,6 @@ nav {
     justify-content: center;
     text-decoration: none;
     color: white;
-}
-
-/*columna de las imagenes de los juegos*/
-.columna2{
-    display: flex;
-    align-items: center;  
-    justify-content: center;
 }
 
 /*para que salga la imagen del juego que queremos*/
@@ -216,6 +208,10 @@ nav {
     font-size: 6vh;
     margin: 0;
     padding: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    margin: 0 8vw;
 }
 
 /* Juego 1 */
@@ -272,8 +268,6 @@ nav {
 
 #puntos_finales {
     font-size: 2.5vw;
-    font-family: 'Lobster';
-    color: rgb(91, 122, 125);
     display: none;
 }
 
@@ -302,23 +296,21 @@ nav {
 
 /** Juego 2 */
 .contenedor-juego2 {
-    /* LO AZUL */
-    color: rgb(15, 54, 33);
-    width: 50vw; 
-    height: 35vw; 
-    position: relative; /* relativa como antes, para los hijos absolutos */
+      width: 667px; 
+      height: 667px; 
+      position: relative; /* relativa como antes, para los hijos absolutos */
   }
 
 .game-board2 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 1vw;
-    margin: 10px 40px;
+    margin-bottom: 20px;
 }
 
 .card {
-    width: 8vw;
-    height: 15vh;
+    width: 150px;
+    height: 150px;
     perspective: 1000px;
     cursor: pointer;
 }
@@ -347,11 +339,11 @@ nav {
 }
 
 .card-front {
-    background-color: #BFD9D1;
+    background-color: #CBDFBD;
 }
 
 .card-back {
-    background-color: #EFF6F4;
+    background-color: #d9e4d1;
     transform: rotateY(180deg); /*para que se vea la parte de atras*/
     padding: 3vh;
 }
@@ -365,6 +357,7 @@ nav {
     right: 1vw;
     z-index: 200;
 }
+
 
 /*JUEGO 3*/
 
@@ -389,7 +382,7 @@ nav {
 #tablero {
     width: 100%;
     height: 100%;
-    background-color: #BFD9D1;
+    background-color: #CBDFBD;
     background-image: url('../images/fondoJuego3.jpg');
     background-size: cover;
     background-position: center;
@@ -431,11 +424,12 @@ nav {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #bfd9d1;
+    background-color: #CBDFBD;
     z-index: 10;
 }
 
 /* Ajustes responsivos */
+/*MOVIL*/
 @media screen and (max-width: 500px) {
     .games{
         display: flex;
@@ -453,6 +447,14 @@ nav {
         height: 80vw;
         margin: 0 auto;
     }
+
+
+    .contenedor-juego2 {
+        display: block;
+        width: 300px;
+        height: 300px;
+    }
+    
     #regalo {
         width: 7vw;
         height: 7vw;
@@ -472,11 +474,8 @@ nav {
     .btnEmpezar {
         margin-top: 3vw;
     }
-    .contenedor-juego2 {
-        width: 90vw;
-        height: 90vw;
-        margin: 0 auto;
-    }
+
+
     .contenedor-juego3 {
         width: 90vw;
         height: 90vw;
@@ -496,6 +495,10 @@ nav {
         font-size: 4vh;
     }
 
+    #juega h1{
+        font-size: 4vh;
+    }
+
     .game-board2 {
         grid-template-columns: repeat(4, 1fr);
     }
@@ -507,5 +510,10 @@ nav {
 
     .card-back {
         padding: 2vh;
+    }
+
+    img {
+        width: 10vw;
+        height: auto;
     }
 }
