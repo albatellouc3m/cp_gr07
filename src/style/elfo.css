@@ -542,7 +542,7 @@ nav {
 @media screen and (max-width: 480px) {
 
     .instrucciones-texto2 h2{
-        margin-top: 25vh;
+        margin-top: 30vh;
     }
     
 
@@ -674,7 +674,7 @@ nav {
     }
 
     .guardar-boton {
-        margin-top: 30vh;
+        margin-top: 40vh;
         z-index: 0;
         margin-bottom: 10vh;
         font-size: 2vh;

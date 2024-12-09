@@ -186,14 +186,6 @@ nav {
 /*RESPONSIVE*/
 /*TABLET*/
 @media screen and (max-width: 850px){
-    .casa {
-        width: 7vw;
-        max-width: 40px;
-        height: auto;
-    }
-    .main-menu_link {
-        font-size: 5vw;
-    }
     /* Contenedor principal */
     .contenedor {
         flex-direction: column; /* Apilar elementos verticalmente */
@@ -232,14 +224,6 @@ nav {
 
 /*MOVIL*/
 @media screen and (max-width: 500px) {
-    .casa {
-        width: 8vw;
-        max-width: 30px;
-        height: auto;
-    }
-    .main-menu_link {
-        font-size: 7vw;
-    }
     /* Contenedor de canciones */
     .contenedor-canciones {
         width: 100%; /* Ocupa todo el ancho */
