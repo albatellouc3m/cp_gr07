@@ -214,7 +214,6 @@ function cargarElfosGuardados() {
 
         elfoDiv.innerHTML = `
         <div class="titulo"> 
-            <h3 class="elfo-titulo">Elfo ${index + 1}</h3>
             <button class="elfo-borrar" onclick="borrarElfo(${index})">
                 <img src="images/cerrar.svg" alt="Borrar elfo" class="borrar">
             </button>
@@ -224,6 +223,8 @@ function cargarElfosGuardados() {
                     <img src="${parte.src}" id="${parte.id}" class="elfo-imagen-things" style="display: ${parte.visible === false ? 'none' : 'block'};">
                 `).join('')}
             </div>
+            <h3 class="elfo-titulo">Elfo ${index + 1}</h3>
+
         `;
 
         elfosContainer.appendChild(elfoDiv);
