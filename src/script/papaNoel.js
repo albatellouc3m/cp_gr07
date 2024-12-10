@@ -31,8 +31,8 @@
         });
 
         $(window).on('resize', function() {
-            states = getStates();
-            move();
+            // Recargar la página cuando se detecte un cambio en el tamaño de la ventana
+            location.reload();
         });
 
         $ele.on('mouseenter', function() {
