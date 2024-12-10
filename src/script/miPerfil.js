@@ -213,10 +213,12 @@ function cargarElfosGuardados() {
         elfoDiv.classList.add('elfo-guardado');
 
         elfoDiv.innerHTML = `
+        <div class="titulo"> 
             <h3 class="elfo-titulo">Elfo ${index + 1}</h3>
             <button class="elfo-borrar" onclick="borrarElfo(${index})">
                 <img src="images/cerrar.svg" alt="Borrar elfo" class="borrar">
             </button>
+        </div>
             <div class="elfo">
                 ${elfo.map(parte => `
                     <img src="${parte.src}" id="${parte.id}" class="elfo-imagen-things" style="display: ${parte.visible === false ? 'none' : 'block'};">
@@ -226,4 +228,32 @@ function cargarElfosGuardados() {
 
         elfosContainer.appendChild(elfoDiv);
     });
+}
+
+function borrarElfo(index) {
+    const loggedInUser = localStorage.getItem('loggedInUser');
+    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || {};
+
+    if (!loggedInUser || !usuarios[loggedInUser]) {
+        alert("No hay datos de usuario disponibles.");
+        return;
+    }
+
+    const userElfos = usuarios[loggedInUser].elfos || [];
+
+    if (index < 0 || index >= userElfos.length) {
+        alert("El índice del elfo es inválido.");
+        return;
+    }
+
+    if (confirm("¿Estás seguro/a de que quieres borrar este elfo?")){
+        // Elimina el elfo del array
+        userElfos.splice(index, 1);
+
+        // Actualiza el almacenamiento local
+        usuarios[loggedInUser].elfos = userElfos;
+        localStorage.setItem('usuarios', JSON.stringify(usuarios));
+    }
+    // Vuelve a cargar los elfos en la interfaz
+    cargarElfosGuardados();
 }

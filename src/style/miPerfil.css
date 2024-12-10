@@ -8,6 +8,16 @@ body {
 }
 
 
+
+button {
+    font-family: 'cookies', Verdana;
+    background-color: transparent; /* fondo transparente */
+    border: transparent; /* borde transparente */
+    cursor: pointer; /* para que se ponga el cursor de ratón encima de los botones */
+    background-color: transparent;
+    color: white;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -177,6 +187,7 @@ margin-right: 10vw;
     width: 2vw;
     height: auto;
 }
+
 #profile-dropdown-btn {
     position: absolute;
     top: 0;
@@ -242,13 +253,99 @@ margin-right: 10vw;
     opacity: 0.8;
 }
 
+/*RESPONSIVE PERFIL*/
+/*TABLET*/
+@media screen and (max-width: 800px) {
+    h2{
+        font-size: 6vh;
+        padding-top: 0;
+        margin-bottom: 5vh;
+    }
+    .foto-usuario{
+        width: 30vw;
+        height: 30vw;
+        border-radius: 100%;
+        margin-top: 10vh
+    }
+
+    .profile-edit-btn{
+        margin-top: 10vh;
+        width: 4vh;
+    }
+
+    .profile-dropdown-menu {
+        top: 10vw; 
+    }
+    
+    
+    .profile-dropdown-menu button {
+        font-size: 1.5vh;
+    }
+    
+    /*el input del perfil pa editar*/
+    input[type=text], input[type=password], input[type=email] {
+        width: 100%;
+        padding: 1.5vh;
+    }
+
+    .forms{
+        font-size: 2vw;
+    }
+
+    .formulario{
+    width: 30vw;
+    margin-right: 10vw;
+    margin-left: 10vw;
+    }
+
+}
+
+/*MOVIL*/
+@media screen and (max-width: 480px) {
+    h2{
+        font-size: 5vh;
+    }
+    .perfil{
+        padding: 4vh;
+    }
+
+    .container{
+        flex-direction: column;
+    }
+
+    .foto-usuario{
+        margin-top: 0;
+        margin-bottom: 5vh;
+    }
+
+    .profile-edit-btn{
+        margin-top: 0;
+        width: 4vw;
+    }
+
+    .profile-dropdown-menu {
+        top: 5vw; 
+    }
+
+    .formulario{
+        width: 35vw;
+        margin-right: 10vw;
+        margin-left: 10vw;
+    }
+
+    .forms{
+        font-size: 2vh;
+    }
+}
+
+
 /*PARA LOS REGALITOS*/
 .regalos-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2vw;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 4vw;
     justify-content: center;
-    padding: 2vh;
+    padding: 10vh;
 }
 
 .regalos-container p{
@@ -263,7 +360,7 @@ margin-right: 10vw;
     border-radius: 2vw;
     padding: 2vh;
     text-align: center;
-    width: 17vw;
+    width: auto;
     background-color: #F2F7EF;
 }
 
@@ -291,6 +388,52 @@ margin-right: 10vw;
     color: #555;
 }
 
+/*REGALOS RESPONSIVE*/
+/*TABLET*/
+@media screen and (max-width: 800px) {
+    .regalos-container{
+        grid-template-columns: repeat(4, 1fr);
+        padding: 10vh;
+    }
+
+    .regalos-container p{
+        font-size: 1.5vh;
+    }
+    
+    .regalo-img{
+        max-width: 10vw;
+        max-height: 15vh
+    }
+}
+
+/*MOVIL*/
+@media screen and (max-width: 480px) {
+    .regalos-container{
+        grid-template-columns: repeat(3, 1fr);
+        padding: 10vh;
+    }
+
+    .regalos-container p{
+        font-size: 1.5vh;
+    }
+    
+    .regalo-img{
+        max-width: 20vw;
+        max-height: 20vh
+    }
+}
+
+
+/*MIS ELFOS*/
+.borrar{
+    width: 2vw;
+}
+
+.titulo{
+    display: flex;
+    justify-content: space-between;
+}
+
 #elfos-section {
     margin-top: 10vh;
     background-color: #F2F7EF;
@@ -300,21 +443,19 @@ margin-right: 10vw;
     padding: 3vw;
     margin-bottom: 10vh;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5vw;
 }
 
+.elfo{
+    margin-right: 0;
+}
 
 .elfo-guardado{
     display: flex;
     flex-direction: column;
 }
 
-.elfo-borrar{
-    background: none;
-    width: 7vw;
-    height: 7vw;
-    cursor: pointer;
-}
 
 h3{
     font-family: 'CareAround', Verdana;
