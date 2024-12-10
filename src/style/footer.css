@@ -1,0 +1,52 @@
+.footer{
+    width: 100%;
+    background-color: #F2F7EF;
+    padding-top: 1rem;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra para separación visual */
+}
+
+.iconos-redes{
+    display: flex;
+    justify-content: center;
+}
+
+.enlace-icono{
+    list-style: none; /*Quitamos el formato para que quede visualmente mas limpio*/
+    margin: 0 20px; /*Es la distancia que existe entre los iconos*/
+}
+
+
+.icono img {
+    width: 3vw; 
+}
+
+.icono {
+    display: flex;
+    transition: 0.5s;
+}
+
+
+.icono:hover{
+    transform: translateY(-5px) /*Consultado en w3schools css 2d transforms y chatGPT, genera el movimiento hacia arriba al pasar el curso y es unicamente visual*/
+}
+
+.info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+    list-style:none ;
+}
+
+.elemento-info{
+    color: black;
+    font-size: 20px;
+    text-decoration: none; /*Quitamos el formato para evitar que salga la linea debajo*/
+}
+
+.derechos-autor{
+    color: black;
+    text-align: center;
+    margin-top:15px;
+    margin-bottom: 10px;
+}
