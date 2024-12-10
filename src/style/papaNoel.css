@@ -160,10 +160,11 @@ h3{
 
 .galeria {
     position: relative;
-    width: 754px;
-    height: 600px;
-    border-radius: 50px;
+    width: 100%;
+    max-width: 754px;
     margin: 115px auto 0;
+    border-radius: 50px;
+    height: auto;
 }
 
 #galeria {
@@ -171,48 +172,50 @@ h3{
     padding: 10px 10px 10px 10px;
 }
 
+#titulo-galeria {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 .galeria .galeria-prev,
 .galeria .galeria-next {
     position: absolute;
     top: 50%;
+    transform: translateY(-50%);
     width: 40px;
     height: 40px;
-    margin-top: -20px;
-    border-radius: 50px;
     line-height: 40px;
-    text-align: center;
-    cursor: pointer;
+    border-radius: 50%;
     background-color: #fff;
     color: #000;
-    transition: all 0.7s;
     font-size: 20px;
     font-weight: bold;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.3s;
 }
 
 .galeria .galeria-prev:hover,
 .galeria .galeria-next:hover {
-    background-color: #fff;
     opacity: 1;
 }
 
 .galeria .galeria-prev {
-    left: -100px;
-    top: 280px;
+    left: -80px; 
 }
 
 .galeria .galeria-prev::before {
-    content: '<';
+    content: '🡨';
     font-size: 50px;
     font-weight: bolder;
 }
 
 .galeria .galeria-next {
-    right: -100px;
-    top: 280px;
+    right: -70px; 
 }
 
 .galeria .galeria-next::before {
-    content: '>';
+    content: '🡪';
     font-size: 50px;
     font-weight: bolder;
 }
@@ -263,13 +266,42 @@ h3{
     .galeria {
         width: 100%; /* Ajusta el tamaño según sea necesario */
         height: auto;
+        justify-content: center;
+        align-items: center;
+        position: relative;
     }
     
     .galeria ul {
-        width: 100%;
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10vh 9vh 0; /* Centrar la lista horizontalmente */
+        padding: 0;
     }
+
     .galeria li {
         width: 100%;
+        margin: 0 5px;
+    }
+
+    .galeria img {
+        width: 100%; /* Ajustar el tamaño de las imágenes */
+        height: auto;
+    }
+
+    .galeria .galeria-prev {
+        margin-top: 10vh;
+        left: 20px;
+        top: 160px;
+        z-index: 10;
+    }
+    
+    .galeria .galeria-next {
+        margin-top: 10vh;
+        right: 40px; 
+        top: 160px;
+        z-index: 10;
     }
 }
 
@@ -341,21 +373,33 @@ h3{
         width: 100%;
         height: auto;
     }
-    .galeria .galeria-prev, .galeria .galeria-next {
-        top: 50%;
-        transform: translateY(-50%);
-        width: 40px;
-        height: 40px;
-        line-height: 40px;
-        font-size: 20px;
-    }
-    .galeria .galeria-prev {
-        display: none;
-        left: 5px;
-    }
+    .galeria .galeria-prev,
     .galeria .galeria-next {
-        display: none;
-        right: 5px;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 16px;
+    }
+
+    .galeria .galeria-prev {
+        left: 50px;
+        top: 80px;
+        z-index: 1;
+    }
+
+    .galeria .galeria-next {
+        right: 50px;
+        top: 80px;
+        z-index: 1;
+    }
+
+    .galeria .galeria-prev::before {
+        content: '🡫';
+    }
+    .galeria .galeria-next::before {
+        content: '🡩';
+        font-size: 50px;
+        font-weight: bolder;
     }
     
 }
