@@ -223,7 +223,7 @@ function cargarElfosGuardados() {
                     <img src="${parte.src}" id="${parte.id}" class="elfo-imagen-things" style="display: ${parte.visible === false ? 'none' : 'block'};">
                 `).join('')}
             </div>
-            <h3 class="elfo-titulo">Elfo ${index + 1}</h3>
+            <h4 class="elfo-titulo">Elfo ${index + 1}</h4>
 
         `;
 
