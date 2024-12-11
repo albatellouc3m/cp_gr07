@@ -287,7 +287,7 @@ nav {
 
 .guardar-boton {
     font-family: 'Cookies', Verdana;
-    background-color: #99A88E;
+    background-color: #606959;
     font-size: 2vh;
     color: white;
     border: none;
@@ -298,7 +298,7 @@ nav {
 }
 
 .guardar-boton:hover {
-    background-color: #5F6958;
+    background-color: #4D5447;
 }
 
 /* Popup de estilos (oculto inicialmente) */

@@ -220,7 +220,7 @@ function cargarElfosGuardados() {
         </div>
             <div class="elfo">
                 ${elfo.map(parte => `
-                    <img src="${parte.src}" id="${parte.id}" class="elfo-imagen-things" style="display: ${parte.visible === false ? 'none' : 'block'};">
+                    <img src="${parte.src}" id="${parte.id}" alt="${parte.id}" class="elfo-imagen-things" style="display: ${parte.visible === false ? 'none' : 'block'};">
                 `).join('')}
             </div>
             <h4 class="elfo-titulo">Elfo ${index + 1}</h4>
