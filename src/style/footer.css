@@ -1,11 +1,13 @@
-.footer{
+.footer {
     width: 100%;
     background-color: #F2F7EF;
-    padding-top: 1rem;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra para separación visual */
+    padding: 0.5rem 1rem;
+    box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 0.9rem;
+    margin-top: auto;
 }
 
 .iconos-redes{
@@ -20,7 +22,7 @@
 
 
 .icono img {
-    width: 3vw; 
+    width: 2vw; 
 }
 
 .icono {

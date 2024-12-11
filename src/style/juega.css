@@ -112,6 +112,7 @@ nav {
     background-image: url(../images/fondoJuego.svg);
     background-size: cover;
     background-repeat: no-repeat;
+    min-height: 100vh;
 }
 
 /*contenedor de seccion que engloba todos los juegos*/
