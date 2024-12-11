@@ -209,10 +209,10 @@ img.calendario{
 }
 
 .dropdown-content {
-    position: absolute; /* Posiciona el dropdown de manera absoluta */
-    right: 97%; /* Despliega hacia la derecha del contenedor */
-    top: 0; /* Alineado con la parte superior del enlace */
-    width: 100%; /* Ajusta el ancho según sea necesario */
+    position: absolute; 
+    right: 97%; 
+    top: 0; 
+    width: 100%; 
     height: auto;
     background-color: #CBDFBD;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -416,11 +416,10 @@ img.calendario{
         background-color: #CBDFBD;
         box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
         z-index: 1;
-        width: 7vw;
+        width: 70%; 
+        height: auto;
         border-radius: 4px;
         overflow: hidden;
-        height: 11.5vh;
-        /* Estilo para la transición */
         display: none;
         transform: translateY(-20px);
         transition: display 0.5s ease, transform 0.5s ;
@@ -432,8 +431,8 @@ img.calendario{
         transform: translateY(0);
     }
 
-    #dropdown-menu-juega, #dropdown-menu-perfil {
-        height: 15vh;
+   #dropdown-menu-perfil {
+        width: 80%;
     }
 
     .dropdown-icon-left{

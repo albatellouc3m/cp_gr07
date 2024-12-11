@@ -503,7 +503,7 @@ nav {
 /* Título del popup */
 h4 {
     font-size: 6vh;
-    font-family: 'Spiny Lobster', Verdana;
+    font-family: 'CareAround', Verdana;
     padding-top: 10vh;
     padding-bottom: 6vh;
     margin: 0;
@@ -520,7 +520,7 @@ h4 {
 
 /* Mensajes dentro del popup */
 .gift-message {
-    font-family: 'CareAround', Verdana;
+    font-family: 'Spiny Lobster', Verdana;
     font-size: 2.5vh;
     color: #737E6B;
     margin-bottom: 3vh;
