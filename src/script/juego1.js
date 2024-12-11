@@ -72,6 +72,14 @@
   function moverRegalo() {
       const contenedor = $('#juego1')[0];
       const regalo = $('#regalo')[0];
+
+        // Array con las rutas de los regalos
+        const rutasRegalos = [
+            'images/regalo1.svg',
+            'images/regalo2.svg',
+            'images/regalo3.svg',
+            'images/regalo4.svg'
+        ];
       
       // Obtiene el tamaño del contenedor y del regalo
       const tamaño_contenedor = contenedor.getBoundingClientRect();
@@ -88,6 +96,10 @@
           left: random_x + "px",
           top: random_y + "px"
       });
+
+      // Cambia el src del regalo a una ruta aleatoria
+        const randomIndex = Math.floor(Math.random() * rutasRegalos.length);
+        $(regalo).attr('src', rutasRegalos[randomIndex]);
   }
 
   // Funcion usada para mostrar el puntaje final y resetear el juego

@@ -234,9 +234,9 @@ nav {
 
 #timer_container {
     position: absolute;
-    font-size: 2vw;
-    font-family: 'Righteous';
+    font-family: 'Cookies', Verdana;
     color: black;
+    font-size: 2vh;
     top: 0;
     left: 0;
     margin-left: 5%;
@@ -246,9 +246,9 @@ nav {
 
 #score_container {
     position: absolute;
-    font-size: 2vw;
-    font-family: 'Righteous';
+    font-family: 'Cookies', Verdana;
     color: black;
+    font-size: 2vh;
     top: 0;
     right: 0;
     margin-right: 5%;
@@ -275,7 +275,7 @@ nav {
     height: 3.5vw;
     position: absolute;
     cursor: pointer;
-    display: none;
+    display: none;   
 }
 
 
@@ -357,6 +357,13 @@ nav {
     z-index: 200;
 }
 
+#mensaje-fracaso{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
 
 /*JUEGO 3*/
 .contenedor-juego3 {
@@ -381,7 +388,7 @@ nav {
     width: 100%;
     height: 100%;
     background-color: #CBDFBD;
-    background-image: url('../images/fondoJuego3.jpg');
+    background-image: url('../images/fondoJ2.svg');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -391,8 +398,8 @@ nav {
 }
 
 .personaje {
-    width: 3vw;
-    height: 3vw;
+    width: 5vw;
+    height: 5vw;
     position: absolute;
     background-size: contain;
     background-repeat: no-repeat;
@@ -402,7 +409,7 @@ nav {
 }
 
 #jugador {
-    background-image: url('../images/persona.webp');
+    background-image: url('../images/personaje.svg');
     z-index: 2;
 }
 
@@ -411,6 +418,11 @@ nav {
     z-index: 2;
 }
 
+.temporizador{
+    font-family: 'Cookies', Verdana;
+    color: white;
+    font-size: 2vh;
+}
 /* Ajustes para las pantallas de inicio y final */
 .pantalla-inicio, .pantalla-final {
     position: absolute;
