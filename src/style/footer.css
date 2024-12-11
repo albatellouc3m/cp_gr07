@@ -1,11 +1,8 @@
 .footer {
     width: 100%;
     background-color: #F2F7EF;
-    padding: 0.5rem 1rem;
+    padding-top: 0.5rem;
     box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     font-size: 0.9rem;
     margin-top: auto;
 }
@@ -29,7 +26,10 @@
 /* RESPONSIVE */
 @media screen and (max-width: 500px) {
     .icono img {
-        width: 15vw; /* Aumentar tamaño proporcional a la pantalla */
+        width: 5vw; /* Aumentar tamaño proporcional a la pantalla */
+    }
+    .iconos-redes {
+        gap: 5vw; /* Espaciado entre íconos */
     }
 }
 
@@ -46,4 +46,11 @@
     color: black;
     text-align: center;
     margin-left: 35px;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 500px) {
+    .derechos-autor {
+        font-size: 2.5vw;
+    }
 }
