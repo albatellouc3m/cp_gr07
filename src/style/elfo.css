@@ -115,7 +115,7 @@ nav {
     justify-content: center;
     margin: 10vh;
     margin-top: 20vh;
-    height: 30vw;
+    min-height: 100vh;
 }
 
 .elfo {

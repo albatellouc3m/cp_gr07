@@ -1,27 +1,36 @@
-.footer{
+.footer {
     width: 100%;
     background-color: #F2F7EF;
-    padding-top: 1rem;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra para separación visual */
+    padding: 0.5rem 1rem;
+    box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 0.9rem;
+    margin-top: auto;
 }
 
-.iconos-redes{
+.iconos-redes {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
+    gap: 3vw; /* Espaciado entre íconos */
 }
 
-.enlace-icono{
-    list-style: none; /*Quitamos el formato para que quede visualmente mas limpio*/
-    margin: 0 20px; /*Es la distancia que existe entre los iconos*/
+.enlace-icono {
+    list-style: none; /* Quitamos el formato */
 }
-
 
 .icono img {
-    width: 2.5vw; 
-    height: 2.5vw;
+    width: 2vw; /* Escala automática en pantallas grandes */
+    max-width: 50px; /* Límite superior para íconos en pantallas grandes */
+    min-width: 25px; /* Límite inferior para íconos */
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 500px) {
+    .icono img {
+        width: 15vw; /* Aumentar tamaño proporcional a la pantalla */
+    }
 }
 
 .icono {
@@ -29,24 +38,12 @@
     transition: 0.5s;
 }
 
-
-.icono:hover{
-    transform: translateY(-5px) /*Consultado en w3schools css 2d transforms y chatGPT, genera el movimiento hacia arriba al pasar el curso y es unicamente visual*/
+.icono:hover {
+    transform: translateY(-5px); /* Movimiento hacia arriba */
 }
 
-
-.derechos-autor{
+.derechos-autor {
     color: black;
     text-align: center;
-    margin-top:15px;
-    margin-bottom: 15px;
-    margin-left: 30px;
-}
-
-/*RESPONSIVE*/
-@media screen and (max-width: 500px) {
-    .icono img {
-        width: 5vw;
-        height: 5vw;
-    }
+    margin-left: 35px;
 }
