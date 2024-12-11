@@ -101,8 +101,12 @@ nav {
 #cartas {
     background-color: #F2F7EF;
     padding-bottom: 10%;
+    height: auto;
 }
 
+#misCartas{
+    min-height: 100vh;
+}
 
 /*CARTITAS*/
 /*contenendor global de las cartas*/
