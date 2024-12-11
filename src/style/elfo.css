@@ -361,7 +361,7 @@ nav {
         align-items: center;
         justify-content: center;
         margin: 10vh;
-        margin-top: 20vh;
+        margin-top: 0;
         height: 30vw;
     }
 
@@ -381,7 +381,7 @@ nav {
     }
 
     .instrucciones-texto2 h2{
-        margin-top: 20vh;
+        margin-top: 10vh;
         display: block;
         font-family: 'Spiny Lobster', Verdana;
         font-size: 5vh;        
@@ -542,8 +542,13 @@ nav {
 @media screen and (max-width: 480px) {
 
     .instrucciones-texto2 h2{
-        margin-top: 30vh;
+        margin-top: 0;
     }
+
+    .elfo-container{
+        margin-top: 0;
+        margin-bottom: 20vh;
+        }
     
 
     .instrucciones-texto2 p{
@@ -674,7 +679,7 @@ nav {
     }
 
     .guardar-boton {
-        margin-top: 40vh;
+        margin-top: 30vh;
         z-index: 0;
         margin-bottom: 10vh;
         font-size: 2vh;
