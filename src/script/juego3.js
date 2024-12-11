@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let grinchPos = { x: 0, y: 0 };
     let tiempoRestante = 20;
     const velocidadJugador = 20;
-    const velocidadGrinch = 2;
+    const velocidadGrinch = 1;
     let intervalId = null;
     let animacionId = null;
 
