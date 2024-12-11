@@ -23,6 +23,14 @@ function mostrarJuego(idJuego) {
 
     // muestra la imagen del juego seleccionado
     document.getElementById(idJuego).style.display = 'block';
+
+    // cambia el color del botón seleccionado
+    const botones = document.querySelectorAll('.game-selec');
+    botones.forEach(boton => boton.classList.remove('selected'));
+    const botonSeleccionado = document.querySelector(`button[onclick="mostrarJuego('${idJuego}')"]`);
+    if (botonSeleccionado) {
+        botonSeleccionado.classList.add('selected');
+    }
 }
 
 // FUNCION PARA INICIAR EL JUEGO 1

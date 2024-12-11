@@ -174,9 +174,12 @@ nav {
     color: white;
 }
 
+.selected {
+    background-color: #4D5447 !important;
+}
+
 /*para que salga la imagen del juego que queremos*/
 .img-juego{   
-    display: none; /*por ahora no sale porque no hemos pulsado el link*/
     border-radius: 0.75rem;
 }
 
@@ -197,7 +200,7 @@ nav {
     }
 
     #mensaje-final3 {
-        font-size: 5vw;
+        font-size: 4vw;
     }
     
 }
@@ -205,31 +208,27 @@ nav {
 
 #juega h1{
     font-family: 'Cookies', Verdana;
-    font-size: 6vh;
+    font-size: 2vw;
     margin: 0;
     padding: 0;
     justify-content: center;
     align-items: center;
-    margin: 0 8vw;
+    margin: 0 0.8vw;
 }
 
 /* Juego 1 */
 /* Contenedor principal del juego */
 .contenedor-juego1 {
-    width: 50vw; 
+    width: 35vw; 
     height: 35vw;
     color: rgb(15, 54, 33);
-    background-image: url("../images/fondo_juego.jpg");
+    background-image: url("../images/fondoJ1.svg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
     display: flex;
     flex-direction: column;
     position: relative;
-}
-
-#juego1-inicio h1, #juego2-inicio h1, #juego3-inicio h1 {
-    font-size: 2.9vw;
 }
 
 #timer_container {
@@ -359,10 +358,9 @@ nav {
 
 
 /*JUEGO 3*/
-
 .contenedor-juego3 {
     color: rgb(15, 54, 33);
-    width: 50vw;
+    width: 35vw; 
     height: 35vw;
     position: relative;
     text-align: center;

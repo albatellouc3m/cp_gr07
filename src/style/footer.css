@@ -10,7 +10,7 @@
 
 .iconos-redes{
     display: flex;
-    justify-content: center;
+    justify-content: center; 
 }
 
 .enlace-icono{
@@ -20,7 +20,8 @@
 
 
 .icono img {
-    width: 3vw; 
+    width: 2.5vw; 
+    height: 2.5vw;
 }
 
 .icono {
@@ -46,5 +47,6 @@
 @media screen and (max-width: 500px) {
     .icono img {
         width: 5vw;
+        height: 5vw;
     }
 }
