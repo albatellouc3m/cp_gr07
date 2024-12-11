@@ -294,7 +294,6 @@ nav {
     cursor: pointer;
     padding: 4.5vh 7vw;
     border-radius: 10vw;
-    margin: 5vh 0 0 0;
 }
 
 .guardar-boton:hover {
@@ -679,9 +678,8 @@ nav {
     }
 
     .guardar-boton {
-        margin-top: 30vh;
+        margin-top: 38vh;
         z-index: 0;
-        margin-bottom: 10vh;
         font-size: 2vh;
         padding: 2vh 4vw;
         border-radius: 10vw;
