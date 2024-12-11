@@ -1,7 +1,8 @@
-// Almacenar los regalos y sus imágenes en localStorage al iniciar la aplicación
+// primero almacenamos todos los regalos en el local storage para tenerlos más a mano
 // si no pongo las N en mayúscula se ven al revés asi que aunque os de toc os jodeis calvas
 function inicializarRegalos() {
     const regalos = [
+        { nombre: "Web Papá Noel", imagen: "./images/regalos/portada.svg", descripcion: "Una página web de Papá Noel" },
         { nombre: "Chocolate", imagen: "./images/regalos/chocolate.svg", descripcion: "un chocolate bien rico de nuestros elfos" },
         { nombre: "ENtradas giNebras", imagen: "./images/regalos/ticket.svg", descripcion: "entradas para el concierto de la mejor banda del mundo" },
         { nombre: "ImaN", imagen: "./images/regalos/iman.svg", descripcion: "imán para ponerlo en la nevera y que te recuerde a la navidad" },
@@ -26,42 +27,41 @@ function inicializarRegalos() {
         { nombre: "BalóN", imagen: "./images/regalos/balon.jpg", descripcion: "Balón de España para echar una pachangüita con los colegas" },
         { nombre: "Nota de Arquitectura", imagen: "./images/regalos/10.jpg", descripcion: "Un 10 en Arquitectura de Computadores" },
         { nombre: "Peluche", imagen: "./images/regalos/peluche.jpg", descripcion: "Un peluche de chayanne para alegrarte los días" },
-        { nombre: "Web Papá Noel", imagen: "./images/regalos/portada.svg", descripcion: "Una página web de Papá Noel" },
 
     ];
-    localStorage.setItem("regalosDisponibles", JSON.stringify(regalos));
+    localStorage.setItem("regalosDisponibles", JSON.stringify(regalos)); // guardamos to
 }
 
-// Función para mostrar el popup para abrir el regalo
+// FUNCION PARA MOSTRAR EL POPUP DE ABRIR REGALO
 function mostrarPopupAbrirRegalo(dia) {
-    const currentDate = new Date();
-    const currentDay = currentDate.getDate();
+    const currentDate = new Date(); // fecha de today
+    const currentDay = currentDate.getDate(); // dia de today
     const openGiftPopup = document.getElementById('open-gift-popup');
 
-    // Verificar si el usuario ha iniciado sesión
+    // verificamos si el usuario ha iniciado sesión
     const loggedInUser = localStorage.getItem("loggedInUser");
     if (!loggedInUser) {
         alert("Por favor, inicia sesión para abrir el regalo.");
         return;
     }
 
-    // Verificar si se ha llegado al día para abrir el regalo
+    // ahora verificamos si ha llegado el día para poder abrir el regalo 
     if (dia <= currentDay) {
-        // Obtener los datos del usuario del localStorage
+        // obtenemos los datos del usuario
         let usuarios = JSON.parse(localStorage.getItem("usuarios")) || {};
-        let regalosRecogidos = usuarios[loggedInUser].regalosRecogidos || [];
+        let regalosRecogidos = usuarios[loggedInUser].regalosRecogidos || []; // lista de regalos que ha recogido
 
-        // Verificar si el regalo ya fue abierto
+        // verificamos si el regalo ha sido abierto 
         if (regalosRecogidos.includes(dia)) {
-            alert("Ya has recogido este regalo.");
+            alert("Ya has recogido este regalo."); // jo
             return;
         }
 
-        // Mostrar popup para abrir regalo
+        // si no se ha abierto el regalo todavía, abrimos le popup
         openGiftPopup.style.display = 'block';
-        openGiftPopup.setAttribute('data-dia', dia); // Guardamos el día actual para usarlo en abrirRegalo
+        openGiftPopup.setAttribute('data-dia', dia); // guardamos el día actual para usarlo en la funcion abrirRegalo
     } else {
-        // Mostrar un temporizador si aún no es el día
+        // si todavía no es el día para abrir el regalo, mostramos un temporizador de cuanto tiempo queda para abrirlo
         const timeLeft = new Date(currentDate.getFullYear(), 11, dia) - currentDate;
         const daysLeft = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
         const hoursLeft = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -72,42 +72,44 @@ function mostrarPopupAbrirRegalo(dia) {
     }
 }
 
-// Función para abrir el regalo
+// FUNCION PARA ABRIR EL REGALO
 function abrirRegalo() {
     const giftPopup = document.getElementById('gift-popup');
     const giftMessage = document.getElementById('gift-message');
-    const giftImage = document.getElementById('gift-image'); // Asumiendo que hay una imagen en el popup
+    const giftImage = document.getElementById('gift-image');
     const openGiftPopup = document.getElementById('open-gift-popup');
 
-    // Verificar si el usuario ha iniciado sesión
+    // verificamos si el usuario ha iniciado sesion
     const loggedInUser = localStorage.getItem("loggedInUser");
     if (!loggedInUser) {
         alert("Por favor, inicia sesión para abrir el regalo.");
         return;
     }
 
-    // Obtener el día actual del popup
+    // cogemos el dia (lo hemos guardado antes)
     const dia = parseInt(openGiftPopup.getAttribute('data-dia'));
 
-    // Obtener los regalos disponibles del localStorage
+    // cogemos los regalos disponibles que hay en local storage
     const regalos = JSON.parse(localStorage.getItem("regalosDisponibles"));
 
-    // Seleccionar el regalo correspondiente al día (puedes cambiar la lógica según tus preferencias)
+    // seleccionamos el regalo que toca ese dia
     const regalo = regalos[dia % regalos.length];
 
-    // Actualizar mensaje e imagen del regalo y mostrar el popup de regalo
+    // actualizamos el mensaje e imagen del regalo y mostrar el popup de regalo
     giftMessage.textContent = `¡Felicidades! Has recibido: ${regalo.nombre}`;
-    giftImage.src = regalo.imagen; // Mostrar la imagen correspondiente
+    giftImage.src = regalo.imagen; 
     giftPopup.style.display = 'block';
 
-    // Añadir el regalo a la lista de regalos recogidos en localStorage para el usuario actual
+    // añadimos el regalo a la lista de regalos recogidos en localStorage para el usuario actual
     let usuarios = JSON.parse(localStorage.getItem("usuarios")) || {};
     let usuarioActual = usuarios[loggedInUser];
 
+    // si no tiene lista se la creamos
     if (!usuarioActual.regalosRecogidos) {
         usuarioActual.regalosRecogidos = [];
     }
 
+    // si no tiene ese regalo lo metemos
     if (!usuarioActual.regalosRecogidos.includes(dia)) {
         usuarioActual.regalosRecogidos.push(dia);
     }
@@ -115,20 +117,20 @@ function abrirRegalo() {
     usuarios[loggedInUser] = usuarioActual;
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
-    // Cerrar el popup de abrir regalo
+    // cerramos el popup de abrir regalo
     openGiftPopup.style.display = 'none';
 }
 
-// Función para cerrar cualquier popup
+// FUNCION PARA CERRAR EL POPUP
 function cerrarPopup(popupId) {
     document.getElementById(popupId).style.display = 'none';
 }
 
-// Inicializar los regalos al cargar la página
+// inicializamos to
 window.onload = function () {
     inicializarRegalos();
 
-    // Event listeners para cada día del calendario
+    // event listeners para cada día del calendario (click)
     document.querySelectorAll('.numero').forEach(numero => {
         numero.addEventListener('click', function () {
             const dia = parseInt(this.id.replace('numero', ''));
@@ -136,7 +138,7 @@ window.onload = function () {
         });
     });
 
-    // Cerrar los popups al hacer clic fuera de ellos
+    // cerramos los popups al hacer click fuera
     window.onclick = function (event) {
         const openGiftPopup = document.getElementById('open-gift-popup');
         const giftPopup = document.getElementById('gift-popup');

@@ -1,52 +1,52 @@
-let popupAbierto = null; // Almacena el popup visible actualmente
+let popupAbierto = null; // constante que nos ayuda a que el popup se mantenga abierto jeje
 
-// Muestra el popup de estilos
+// FUNCION QUE MUESTRA EL POPUP CON LOS ESTILOS DEL ELFO (para cada id)
 function mostrarPopupEstilos(id, event) {
-    event.stopPropagation(); // Detiene la propagación para evitar que se cierre inmediatamente
+    event.stopPropagation(); // evita que se cierre inmediatamente
 
-    cerrarPopup(); // Cierra cualquier popup abierto previamente
+    cerrarPopup(); // cerramos cualquier popup abierto previamente
 
-    // Busca el popup correspondiente al ID
+    // buscamos el popup correspondiente al ID
     const popup = document.getElementById(`estilos-popup-${id}`);
     if (popup) {
-        popup.classList.add('visible'); // Muestra el popup
-        popupAbierto = popup; // Almacena el popup actualmente abierto
+        popup.classList.add('visible'); // si existe muestra ese popup
+        popupAbierto = popup; // almacena el popup que tenemos abierto en la constante para que no se cierre al hacer click dentro, que se cierra si solo es fuera el click
 
-        // Escucha clics en el documento para cerrar el popup si el clic es fuera
+        // event listener de clicks en el documento para cerrar el popup si el click es fuera
         document.addEventListener('click', cerrarPopupSiFuera);
     } else {
-        console.error(`Popup con ID estilos-popup-${id} no encontrado.`);
+        console.error(`Popup con ID estilos-popup-${id} no encontrado.`); // por si acaso abe
     }
 }
 
-// Cierra el popup si el clic ocurre fuera de él
+// FUNCION QUE CIERRA EL POPUP SI SE HACE CLICK FUERA DE ÉL
 function cerrarPopupSiFuera(event) {
     if (popupAbierto && !popupAbierto.contains(event.target)) {
         cerrarPopup();
     }
 }
 
-// Cierra el popup y elimina el evento global
+// CIERRA EL POPUP
 function cerrarPopup() {
     if (popupAbierto) {
-        popupAbierto.classList.remove('visible'); // Oculta el popup
-        popupAbierto = null; // Limpia la referencia
-        document.removeEventListener('click', cerrarPopupSiFuera); // Elimina el evento global
+        popupAbierto.classList.remove('visible'); // cierra el popup
+        popupAbierto = null; // actualizamos el valro de esta variable
+        document.removeEventListener('click', cerrarPopupSiFuera); // elimina el evento de ante
     }
 }
 
 
-// Función para seleccionar un estilo
+// FUNCION PARA SELECCIONAR UN ESTILO PARA EL ELFO
 function seleccionarEstilo(estilo) {
-    const [categoria, numero] = estilo.match(/([a-z]+)(\d+)/).slice(1);
-    const elementoId = `elfo-${categoria}`;
+    const [categoria, numero] = estilo.match(/([a-z]+)(\d+)/).slice(1);  // usamos una expresión regular para separar las letras ([a-z]+) y los números (\d+), y desestructuramos el resultado en dos variables.
+    const elementoId = `elfo-${categoria}`; // con la categoria que hemos obtenido antes 
     const elemento = document.getElementById(elementoId);
 
     if (elemento) {
         if (estilo === 'reiniciar') {
             elemento.style.display = 'none';
         } else {
-            elemento.src = `images/elfo/${estilo}.svg`;
+            elemento.src = `images/elfo/${estilo}.svg`; // ponemos la fotico del estilo seleccionado 
             elemento.style.display = 'block';
         }
     } else {
@@ -56,6 +56,7 @@ function seleccionarEstilo(estilo) {
     cerrarPopup();
 }
 
+// FUNCION PARA GUARDAR ELFOS EN MI PERFIL
 function guardarElfo() {
     const loggedInUser = localStorage.getItem('loggedInUser');
     const usuarios = JSON.parse(localStorage.getItem('usuarios')) || {};
@@ -65,6 +66,7 @@ function guardarElfo() {
         return;
     }
 
+    // partes de los elfos que van a ser necesarias para guardar cada cosica
     const partesElfo = [
         { id: 'elfo-ojos', src: document.getElementById('elfo-ojos').src },
         { id: 'elfo-boca', src: document.getElementById('elfo-boca').src, visible: document.getElementById('elfo-boca').style.display !== 'none' },
@@ -77,24 +79,24 @@ function guardarElfo() {
         { id: 'elfo-piel', src: document.getElementById('elfo-piel').src }
     ];
 
-    // Agrega el elfo al usuario actual
+    // añadimos el elfo al usuario actual
     if (!usuarios[loggedInUser].elfos) {
         usuarios[loggedInUser].elfos = [];
     }
-    usuarios[loggedInUser].elfos.push(partesElfo);
+    usuarios[loggedInUser].elfos.push(partesElfo); // pusheamos el elfo
 
-    // Guarda los datos actualizados en localStorage
+    // guarda los datos actualizados en localStorage
     localStorage.setItem('usuarios', JSON.stringify(usuarios));
     reiniciarEstilos();
 
-    alert("¡El elfo ha sido guardado en tu perfil!");
+    alert("¡El elfo ha sido guardado en tu perfil!"); // :)
 }
 
 
-
+// FUNCION PARA REINICIAR LOS ESTILOS DE LOS ELFOS (dependiendo de la categoria)
 function reiniciarEstilos(id) {
     if (id == 'reiniciar'){
-        confirm('¿Estás seguro de que deseas reiniciar los estilos?');
+        confirm('¿Estás seguro de que deseas reiniciar todos los estilos?');
         document.getElementById('elfo-ojos').src ='images/elfo/ojos2.svg';
         document.getElementById('elfo-pecas').src ='images/elfo/pecas1.svg';
         document.getElementById('elfo-camiseta').src ='images/elfo/camiseta.svg';

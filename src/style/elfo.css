@@ -136,7 +136,8 @@ nav {
 }
 
 /*COSAS DE EL ELFO*/
-/* Posicionamiento para cada parte */
+/* posicionamiento para cada parte */
+/* es como el calendario, todo se posiciona con respecto al contenedor de elfo*/
 #elfo-piel{
     margin-top: 4vh;
     bottom: 0;
@@ -145,15 +146,15 @@ nav {
 #elfo-ojos {
     position: absolute;
     z-index: 1;
-    top: 30%; /* Ajusta según la posición de los ojos */
-    left: 30%; /* Ajusta para centrar en el rostro */
-    width: 30%; /* Tamaño de los ojos */
+    top: 30%; 
+    left: 30%; 
+    width: 30%; 
 }
 
 #elfo-pecas {
     position: absolute;
     z-index: 1;
-    top: 34%; /* Ajusta según las mejillas */
+    top: 34%;
     left: 25%;
     width: 40%;
 }
@@ -161,24 +162,24 @@ nav {
 #elfo-nariz{
     position: absolute;
     z-index: 2;
-    top: 38%; /* Ajusta según la posición de los accesorios */
-    left: 44.5%; /* Ajusta para centrar */
+    top: 38%; 
+    left: 44.5%;
     width: 2.5%;
 }
 
 #elfo-boca {
     position: absolute;
     z-index: 2;
-    top: 43%; /* Ajusta para la posición de la boca */
-    left: 41%; /* Ajusta para centrar */
+    top: 43%; 
+    left: 41%; 
     width: 10%;
 }
 
 #elfo-pelo {
     position: absolute;
     z-index: 2;
-    top: 0; /* Ajusta para la posición del pelo */
-    left: 10%; /* Ajusta según la cabeza */
+    top: 0; 
+    left: 10%; 
     width: 70%;
 }
 
@@ -300,9 +301,9 @@ nav {
     background-color: #4D5447;
 }
 
-/* Popup de estilos (oculto inicialmente) */
+/* popup para los estilos del elfo */
 .estilos-popup {
-    display: none; /* Oculto por defecto */
+    display: none;
     position: absolute;
     top: 0;
     left: 0;
@@ -316,16 +317,14 @@ nav {
 
 }
 
-/* Grid de estilos dentro del popup */
 .estilos-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 40px; /* Espaciado entre las opciones */
+    gap: 40px; 
     justify-items: center;
     align-items: center;
 }
 
-/* Botones de los estilos */
 .estilo-item {
     background-color: #FFFFFF;
     border: 1vh solid #A8B99C;
@@ -344,7 +343,6 @@ nav {
 }
 
 
-/* Mostrar el popup */
 .estilos-popup.visible {
     display: block;
 }
@@ -501,7 +499,7 @@ nav {
         width: 110%;
     }
 
-    /* Popup de estilos (oculto inicialmente) */
+
     .estilos-popup {
         top: 20%;
         left: -35%;
@@ -509,13 +507,11 @@ nav {
         height: 20vh;
     }
 
-    /* Grid de estilos dentro del popup */
     .estilos-grid {
         width:100%;
         gap: 15px;
     }
 
-    /* Botones de los estilos */
     .estilo-item {
         border-radius: 3vw;
         width: 10vw;
@@ -651,7 +647,6 @@ nav {
         width: 152%;
     }
 
-    /* Popup de estilos (oculto inicialmente) */
     .estilos-popup {
         z-index: 2;
         top: 15%;
@@ -660,13 +655,12 @@ nav {
         height: 26vh;
     }
 
-    /* Grid de estilos dentro del popup */
     .estilos-grid {
         width:100%;
         gap: 15px;
     }
 
-    /* Botones de los estilos */
+
     .estilo-item {
         width: 12vw;
         height: 12vw;

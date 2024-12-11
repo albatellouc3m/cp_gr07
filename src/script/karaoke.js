@@ -1,27 +1,27 @@
 $(document).ready(function () {
     $(".cancion").click(function () {
-        // Obtén la URL del vídeo del atributo data-video
+        // obtenemos la URL del vídeo del atributo data-video
         const videoURL = $(this).data("video");
 
-        // Oculta las canciones y el personaje
+        // ocultamos las canciones y el elfo
         $(".contenedor-canciones").hide();
         $(".contenedor-personaje").hide();
 
-        // Muestra el contenedor del vídeo e inserta el archivo de vídeo
+        // mostramos el contenedor del video y la flecha
         $(".contenedor-video").show();
         $("#karaoke-video").attr("src", videoURL);
         $(".flecha").show();
     });
 
-    // Evento para la flecha que regresa a la vista de las canciones
+    // cuando se haga click en la flecha, volvemos a la pagina inicial de las canciones
     $(".flecha").click(function () {
-        // Muestra las canciones y el personaje
+        // muestra otra vez las canciones y el elfo
         $(".contenedor-canciones").show();
         $(".contenedor-personaje").show();
 
-        // Oculta el contenedor del vídeo, la flecha y detiene el vídeo
+        // ocultamos el contenedor del video y paramos el video
         $(".contenedor-video").hide();
         $(".flecha").hide();
-        $("#karaoke-video").attr("src", ""); // Detiene el vídeo limpiando el src
+        $("#karaoke-video").attr("src", ""); // para el video limpiando el src
     });
 });

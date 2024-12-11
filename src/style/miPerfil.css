@@ -199,9 +199,9 @@ margin-right: 10vw;
 
 .profile-dropdown-menu {
     position: absolute;
-    top: 2vw; /* Ajusta la posición según sea necesario */
+    top: 2vw; 
     right: 0;
-    background-color: #CBDFBD; /* Color de fondo del menú */
+    background-color: #CBDFBD; 
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1;

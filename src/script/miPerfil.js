@@ -111,17 +111,18 @@ function guardarCambiosPerfil() {
     }
 }
 
+// FUNCION QUE CARGA TO
 window.onload = function() {
     mostrarPerfil();
     generarRegalos();
-    cargarElfosGuardados(); // Cargar elfos guardados
+    cargarElfosGuardados(); 
 }
 
 
 if (sessionStorage.getItem('loadProfile') === 'true') {
     generarRegalos();
-    mostrarPerfil(); // Llamar a la función para mostrar el perfil del usuario
-    sessionStorage.removeItem('loadProfile'); // Limpiar la bandera para que no vuelva a cargar automáticamente
+    mostrarPerfil(); // llamar a la función para mostrar el perfil del usuario
+    sessionStorage.removeItem('loadProfile'); // limpiar la bandera para que no vuelva a cargar automáticamente
 }
 
 
@@ -165,19 +166,19 @@ function generarRegalos() {
 
 
 function toggleProfileDropdown(event) {
-    event.preventDefault(); // Evita el comportamiento por defecto del enlace o botón
-    event.stopPropagation(); // Evita que el clic cierre el menú inmediatamente
+    event.preventDefault();
+    event.stopPropagation(); // evita que el clic cierre el menú inmediatamente
     const profileDropdownMenu = document.getElementById("profile-dropdown-menu");
     profileDropdownMenu.style.display = profileDropdownMenu.style.display === "block" ? "none" : "block";
 }
 
 
-// Escuchar clics en el documento para cerrar el dropdown si el usuario hace clic fuera de él
+// event listener de clicks en el documento para cerrar el dropdown si el usuario hace click fuera del dropdpwm
 document.addEventListener('click', function(event) {
     const profileDropdownMenu = document.getElementById("profile-dropdown-menu");
     const profileDropdownBtn = document.getElementById("profile-dropdown-btn");
 
-    // Si el dropdown está abierto y el clic no fue en el botón ni en el menú, cierra el dropdown
+    // si el dropdown está abierto y el click no fue en el botón ni en el menú, cierra el dropdown
     if (profileDropdownMenu.style.display === "block" &&
         event.target !== profileDropdownMenu &&
         event.target !== profileDropdownBtn &&
@@ -186,7 +187,7 @@ document.addEventListener('click', function(event) {
     }
 });
 
-
+// FUNCION PARA MOSTRAR LOS ELFOS GUARDADOS EN EL PERFIL
 function cargarElfosGuardados() {
     const loggedInUser = localStorage.getItem('loggedInUser');
     const usuarios = JSON.parse(localStorage.getItem('usuarios')) || {};
@@ -196,22 +197,24 @@ function cargarElfosGuardados() {
         return;
     }
 
-    const userElfos = usuarios[loggedInUser].elfos || []; // Obtén los elfos del usuario
+    const userElfos = usuarios[loggedInUser].elfos || []; // obtenemos los elfos guardados del usuario
     const elfosContainer = document.getElementById('elfos-container');
 
-    // Limpia el contenedor de elfos
+    // limpiamos el contenedor por si acaso
     elfosContainer.innerHTML = '';
 
+    // si el usuario no tiene elfos todavia :(
     if (userElfos.length === 0) {
         elfosContainer.innerHTML = '<p>No tienes elfos guardados.</p>';
         return;
     }
 
-    // Genera los elfos guardados
+    // genera los elfos guardados del usuario
     userElfos.forEach((elfo, index) => {
         const elfoDiv = document.createElement('div');
         elfoDiv.classList.add('elfo-guardado');
 
+        // map itera por cada parte del elfo y join las une 
         elfoDiv.innerHTML = `
         <div class="titulo"> 
             <button class="elfo-borrar" onclick="borrarElfo(${index})">
@@ -219,6 +222,7 @@ function cargarElfosGuardados() {
             </button>
         </div>
             <div class="elfo">
+        
                 ${elfo.map(parte => `
                     <img src="${parte.src}" id="${parte.id}" alt="${parte.id}" class="elfo-imagen-things" style="display: ${parte.visible === false ? 'none' : 'block'};">
                 `).join('')}
@@ -231,6 +235,7 @@ function cargarElfosGuardados() {
     });
 }
 
+// FUNCION PARA BORRAR UN ELFO SELECCIONADO
 function borrarElfo(index) {
     const loggedInUser = localStorage.getItem('loggedInUser');
     const usuarios = JSON.parse(localStorage.getItem('usuarios')) || {};
@@ -240,7 +245,7 @@ function borrarElfo(index) {
         return;
     }
 
-    const userElfos = usuarios[loggedInUser].elfos || [];
+    const userElfos = usuarios[loggedInUser].elfos || []; 
 
     if (index < 0 || index >= userElfos.length) {
         alert("El índice del elfo es inválido.");
@@ -248,13 +253,12 @@ function borrarElfo(index) {
     }
 
     if (confirm("¿Estás seguro/a de que quieres borrar este elfo?")){
-        // Elimina el elfo del array
-        userElfos.splice(index, 1);
+        // elimina el elfo del array
+        userElfos.splice(index, 1); 
 
-        // Actualiza el almacenamiento local
+        // actualiza el local storage
         usuarios[loggedInUser].elfos = userElfos;
         localStorage.setItem('usuarios', JSON.stringify(usuarios));
     }
-    // Vuelve a cargar los elfos en la interfaz
     cargarElfosGuardados();
 }
