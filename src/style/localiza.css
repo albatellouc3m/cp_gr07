@@ -6,8 +6,8 @@ body {
     color: black;
     background-color: #F2F7EF;
     display: flex;
-    flex-direction: column; /* Coloca los elementos en columna */
-    min-height: 100vh; /* Asegura que el body llene la ventana */
+    flex-direction: column; /* Colocamos los elementos en columna */
+    min-height: 100vh; /* Aseguramos que el body llene la ventana */
 }
 
 
@@ -132,7 +132,7 @@ nav {
 }
 
 .intro button:active {
-    transform: scale(0.95); /* Ligeramente más pequeño */
+    transform: scale(0.95);
 }
 
 /* Pantalla de inicio */
@@ -155,14 +155,13 @@ nav {
 
 /* Pop up localiza */
 
-/* Fondo opaco para el pop-up */
 .popup-localiza {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro con opacidad */
+    background-color: rgba(0, 0, 0, 0.5);
     display: none; /* Inicialmente oculto */
     justify-content: center;
     align-items: center;
@@ -218,7 +217,7 @@ nav {
     animation: clickAnimation 0.6s ease-out;
 }
 
-/* Definimos la animación para el clic */
+/* Definición de la animación */
 @keyframes clickAnimation {
     0% {
         transform: scale(1.1) rotate(0deg);
@@ -260,13 +259,13 @@ nav {
     .global {
         display: flex;
         flex-direction: column; /* Cambia a columna */
-        align-items: center; /* Centra los elementos horizontalmente */
-        justify-content: center; /* Centra los elementos verticalmente */
+        align-items: center;
+        justify-content: center;
         gap: 15vw;
     } 
     .pantalla_inicio {
-        width: 60%; /* Asegura que ocupen un ancho consistente */
-        text-align: center; /* Asegura que el contenido interno también esté centrado */
+        width: 60%;
+        text-align: center; 
         display: flex;
         align-items: center;
         height: 50vw
@@ -274,7 +273,7 @@ nav {
     }
     .intro {
         max-width: 60%;
-        text-align: center; /* Asegura que el contenido interno también esté centrado */
+        text-align: center; 
         display: flex;
         align-items: center;
     }
@@ -301,6 +300,6 @@ nav {
     }
 
     #trineo-contenedor {
-        width: 17%; /* Ajusta el tamaño del trineo */
+        width: 17%;
     }
 }

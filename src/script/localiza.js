@@ -148,7 +148,7 @@ trineo.addEventListener('click', () => {
     // Después de la animación, quita la clase para que pueda repetirse
     setTimeout(() => {
         trineo.classList.remove('clicked');
-    }, 600); // Duración de la animación (0.6s)
+    }, 600); 
 
     // Acción adicional: mostrar un mensaje que siga a Papá Noel y reproducir audio
     const mensaje = "¡Ho Ho Ho! ¡Merry Christmas!";
@@ -162,7 +162,7 @@ function mostrarMensajeQueSigue(texto) {
         clearInterval(mensajeInterval); // Detiene el seguimiento anterior
     }
 
-    // Crear el mensaje
+    // Creamos el mensaje
     const mensaje = document.createElement('div');
     mensaje.textContent = texto;
     mensaje.style.position = 'absolute';
@@ -178,20 +178,20 @@ function mostrarMensajeQueSigue(texto) {
     mensaje.style.zIndex = '101';
     mensaje.style.display = 'none'
 
-    // Añadir el mensaje al contenedor del popup
+    // Añadimos el mensaje al contenedor del popup
     contenido.appendChild(mensaje);
 
-     // Actualizar la posición del mensaje constantemente usando posX y posY
+     // Actualizamos la posición del mensaje constantemente usando posX y posY
     mensajeInterval = setInterval(() => {
         mensaje.style.left = `${posX + papanoel.offsetWidth / 2 - mensaje.offsetWidth / 2}px`;
         mensaje.style.top = `${posY - mensaje.offsetHeight - 10}px`; // Encima de Papá Noel
         mensaje.style.display = 'block'
     }, 50);
 
-    // Guardar el mensaje activo
+    
     mensajeActivo = mensaje;
 
-    // Quitar el mensaje después de 2 segundos
+    // Quitamos el mensaje después de 2 segundos
     setTimeout(() => {
         mensaje.remove();
         clearInterval(mensajeInterval);

@@ -291,7 +291,7 @@ nav {
 
 .btnEmpezar:hover {
     text-decoration: none;
-    background-color:  #4D5447;
+    background-color:  #4D5447; /* Animación para que al pasar el ratón se cambie de color */
 }
 
 /** Juego 2 */

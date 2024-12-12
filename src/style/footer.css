@@ -7,29 +7,30 @@
     margin-top: auto;
 }
 
+/* Son los iconitos que salen como enlaces */
 .iconos-redes {
     display: flex;
     justify-content: center;
-    gap: 3vw; /* Espaciado entre íconos */
+    gap: 3vw;
 }
 
 .enlace-icono {
-    list-style: none; /* Quitamos el formato */
+    list-style: none;
 }
 
 .icono img {
-    width: 2vw; /* Escala automática en pantallas grandes */
-    max-width: 50px; /* Límite superior para íconos en pantallas grandes */
-    min-width: 25px; /* Límite inferior para íconos */
+    width: 2vw;
+    max-width: 50px; 
+    min-width: 25px; 
 }
 
 /* RESPONSIVE */
 @media screen and (max-width: 500px) {
     .icono img {
-        width: 5vw; /* Aumentar tamaño proporcional a la pantalla */
+        width: 5vw; 
     }
     .iconos-redes {
-        gap: 5vw; /* Espaciado entre íconos */
+        gap: 5vw;
     }
 }
 
@@ -39,9 +40,10 @@
 }
 
 .icono:hover {
-    transform: translateY(-5px); /* Movimiento hacia arriba */
+    transform: translateY(-5px); 
 }
 
+/* Es el texto que sale al final con los derechos de autor */
 .derechos-autor {
     color: black;
     text-align: center;

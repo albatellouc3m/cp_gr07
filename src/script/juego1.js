@@ -33,7 +33,7 @@
 
   // Función para iniciar el juego
   function startGame() {
-      // Reiniciar el puntaje y el tiempo
+      // Reiniciamos el puntaje y el tiempo
       score = 0;
       timeLeft = 30;
       $('#score').text(score);
@@ -58,7 +58,6 @@
           // Cuando el tiempo llega a 0, paramos
           if (timeLeft === 0) {
               clearInterval(timerInterval);
-              // El movimiento del regalo para
               clearInterval(movimiento); 
               endGame();
           }
