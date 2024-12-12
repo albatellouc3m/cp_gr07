@@ -141,6 +141,9 @@ nav {
     justify-content: center;
   }
 
+#juegoDef img{
+    width: 40vw;
+}
 /*un poco de decoracion de la lista global de juegos*/
 .columna1 ul {
     list-style-type: none;
