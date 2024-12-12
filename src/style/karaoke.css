@@ -104,7 +104,7 @@ nav {
     top: 11vh;
     left: 2vw; 
     cursor: pointer;
-    z-index: 10; /* Asegura que esté encima del vídeo */
+    z-index: 10; 
 }
 
 .flecha img {
@@ -114,7 +114,7 @@ nav {
 }
 
 .flecha img:hover {
-    transform: scale(1.1); /* Aumenta el tamaño al pasar el ratón */
+    transform: scale(1.1);
 }
 
 
@@ -131,7 +131,7 @@ nav {
 /* Contenedor de canciones */
 .contenedor-canciones {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    grid-template-columns: repeat(2, 1fr); 
     gap: 3vw;
     width: 45%;
 }
@@ -144,24 +144,24 @@ nav {
 }
 
 .cancion img:hover {
-    transform: scale(1.05); /* Animación al pasar el ratón */
+    transform: scale(1.05); 
 }
 
 /* Contenedor del personaje */
 .contenedor-personaje {
     width: 40%;
     height: auto;
-    display: flex; /* Usar Flexbox */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
     margin-right: 3vw;
 }
 
 /* Imagen dentro del contenedor */
 .contenedor-personaje img {
     width: 100%;
-    max-width: 100%; /* Asegura que la imagen no sobrepase el contenedor */
-    height: auto; /* Mantiene la proporción */
+    max-width: 100%; 
+    height: auto; 
 }
 
 .contenedor-video {
@@ -169,17 +169,17 @@ nav {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 85vh; /* Asegúrate de mantener el tamaño deseado */
+    height: 85vh; 
 }
 
 #karaoke-video {
     width: 100%;
     height: 100%;
-    max-width: 640px; /* Limita el tamaño máximo si es necesario */
+    max-width: 640px; 
     max-height: 360px; 
     object-fit: cover;
-    display: block; /* Garantiza que no haya espacio extra */
-    border: none; /* Quita bordes innecesarios del iframe */
+    display: block; 
+    border: none; 
 }
 
 
@@ -189,19 +189,19 @@ nav {
 @media screen and (max-width: 850px){
     /* Contenedor principal */
     .contenedor {
-        flex-direction: column; /* Apilar elementos verticalmente */
+        flex-direction: column; 
         padding: 2vh 5vw;
         justify-content: center;
         align-items: center;
         height: 90vh;
         display: flex;
-        flex-wrap: wrap; /* Permite que los elementos internos se ajusten en la línea */
-        overflow: hidden; /* Oculta cualquier contenido que se salga */
+        flex-wrap: wrap; 
+        overflow: hidden; 
     }
     .contenedor-canciones {
         width: 100%; 
-        max-width: 100%; /* Limita el ancho máximo al 100% */
-        gap: 3vw; /* Espacio entre las canciones */
+        max-width: 100%; 
+        gap: 3vw; 
         padding: 5vw;
     }
     .contenedor-personaje {
@@ -210,7 +210,7 @@ nav {
     /* Contenedor de canciones */
     .contenedor-canciones {
         width: 80%; 
-        gap: 15px; /* Espacio entre canciones */
+        gap: 15px; 
     }
     .flecha {
         top: 10vh;
@@ -227,7 +227,7 @@ nav {
 @media screen and (max-width: 500px) {
     /* Contenedor de canciones */
     .contenedor-canciones {
-        width: 100%; /* Ocupa todo el ancho */
-        gap: 3vh; /* Espacio entre canciones */
+        width: 100%;
+        gap: 3vh; 
     }
 }

@@ -112,7 +112,7 @@ nav {
 .intro button {
     font-family: 'Cookies', Verdana;
     width: 30%;
-    background-color: #99A88E;
+    background-color: #606959;
     font-size: 3vh;
     color: white;
     border: none;
@@ -127,7 +127,7 @@ nav {
 }
 
 .intro button:hover {
-    background-color: #737E6B; 
+    background-color:  #4D5447; 
     transform: scale(1.05);
 }
 

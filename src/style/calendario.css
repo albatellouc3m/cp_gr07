@@ -135,9 +135,8 @@ nav {
     position: relative;
 }
 
-/* Definimos un estilo base para todas las casillas de números */
 .numeros .numero {
-    width: 100%; /* Para que se adapten a su contenedor */
+    width: 100%; 
     cursor: pointer;
 }
 
@@ -160,6 +159,7 @@ nav {
 }
 
 /*ESTILOS PARA TODOS LOS NUMEROS*/
+/*estan puestos en una posicion absoluta con respecto al contenedor, por lo que como cada uno tiene un tamaño distinto hay que ponerles distintos valores*/
 #numero1{
     width: 20.3%;
     height: 11.6%;
@@ -509,7 +509,7 @@ h4 {
     margin: 0;
     display: flex;
     justify-content: center;
-    color: #4D5447; /* Mismo color del texto de navegación */
+    color: #4D5447; 
 }
 
 /* Contenedor del formulario del popup */

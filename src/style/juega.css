@@ -185,9 +185,7 @@ nav {
 }
 
 /*RESPONSIVE*/
-/*TABLET*/
-
-/*MOVIL*/
+/*TABLET Y MOVIL */
 @media screen and (max-width: 900px){
 
     .columna1 li button{
@@ -297,7 +295,7 @@ nav {
 .contenedor-juego2 {
       width: 667px; 
       height: 667px; 
-      position: relative; /* relativa como antes, para los hijos absolutos */
+      position: relative;
   }
 
 .game-board2 {
@@ -438,7 +436,7 @@ nav {
     z-index: 10;
 }
 
-/* Ajustes responsivos */
+/* RESPONSIVE*/
 /*MOVIL*/
 @media screen and (max-width: 500px) {
     .games{

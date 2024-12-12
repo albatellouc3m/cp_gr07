@@ -17,7 +17,7 @@
     <nav>
         <div id="toggle-menu" class="toggle-menu"> 
             <label for="toggle-menu-checkbox">
-                <img class="menuhamb" src="images/menuhamb.svg" alt="">
+                <img class="menuhamb" src="images/menuhamb.svg" alt="menu">
             </label>
         </div>
         <input type="checkbox" class="toggle-menu__checkbox" id="toggle-menu-checkbox">
@@ -94,6 +94,7 @@
             </div>
             <h4>REGÍSTRATE</h4>    
             <div class="imgcontainer">
+                <label for="foto" class="visually-hidden">Subir foto de perfil</label>
                 <img style="display: none" id="preview-avatar" src="images/foto-usuario.svg" alt="Avatar" class="foto-usuario">
                 <input style="display: none" type="file" id="foto" accept="image/*" onchange="previewImage(event)">
             </div>
