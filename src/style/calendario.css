@@ -122,8 +122,8 @@ nav {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
+    margin-top: 7vh;
+    margin-bottom: 7vh;
     height: 100vh;
 }
 
@@ -579,12 +579,16 @@ img{
 
 }
 /*MOVIL*/
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 500px) {
 
     .contenedor {
         flex-direction: column;
     }
 
+    .texto {
+        text-align: center;
+    }
+    
     .texto p{
         font-size: 3vh;
         margin-bottom: 10vh;

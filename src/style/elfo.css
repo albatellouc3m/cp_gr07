@@ -383,13 +383,13 @@ nav {
         margin-top: 10vh;
         display: block;
         font-family: 'Spiny Lobster', Verdana;
-        font-size: 5vh;        
+        font-size: 4vw;        
     }
 
     .instrucciones-texto2 p{
         display: block;
         font-family: Verdana;
-        font-size: 3vh;
+        font-size: 2vw;
         margin-bottom: 10vh;
     }
     
@@ -538,10 +538,11 @@ nav {
 
 
 /*MOVIL*/
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 500px) {
 
     .instrucciones-texto2 h2{
         margin-top: 0;
+        font-size: 5vw;
     }
 
     .elfo-container{
@@ -551,7 +552,7 @@ nav {
     
 
     .instrucciones-texto2 p{
-        font-size: 2vh;
+        font-size: 2.5vw;
     }
     
 
