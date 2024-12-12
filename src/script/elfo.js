@@ -56,6 +56,19 @@ function seleccionarEstilo(estilo) {
     cerrarPopup();
 }
 
+// Abrir el popup para introducir el nombre del elfo
+function mostrarPopupNombre() {
+    // Reiniciar el contenido del campo de entrada
+    document.getElementById('nombre-elfo').value = '';
+    
+    document.getElementById('popup-nombre-elfo').style.display = 'block';
+}
+
+// Cerrar el popup de nombre del elfo
+function cerrarPopupNombre() {
+    document.getElementById('popup-nombre-elfo').style.display = 'none';
+}
+
 // FUNCION PARA GUARDAR ELFOS EN MI PERFIL
 function guardarElfo() {
     const loggedInUser = localStorage.getItem('loggedInUser');
@@ -66,7 +79,7 @@ function guardarElfo() {
         return;
     }
 
-    // partes de los elfos que van a ser necesarias para guardar cada cosica
+    // Recolectar los datos del elfo
     const partesElfo = [
         { id: 'elfo-ojos', src: document.getElementById('elfo-ojos').src },
         { id: 'elfo-boca', src: document.getElementById('elfo-boca').src, visible: document.getElementById('elfo-boca').style.display !== 'none' },
@@ -79,17 +92,47 @@ function guardarElfo() {
         { id: 'elfo-piel', src: document.getElementById('elfo-piel').src }
     ];
 
-    // añadimos el elfo al usuario actual
+    // Guardar el elfo temporalmente hasta que se asigne un nombre
+    usuarios[loggedInUser].elfoTemporal = partesElfo;
+    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+
+    // Mostrar el popup para el nombre del elfo
+    mostrarPopupNombre();
+}
+
+// Guardar el nombre del elfo y actualizar los datos
+function guardarNombreElfo() {
+    const loggedInUser = localStorage.getItem('loggedInUser');
+    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || {};
+
+    const nombreElfo = document.getElementById('nombre-elfo').value.trim();
+    if (!nombreElfo) {
+        alert("Por favor, introduce un nombre para tu elfo.");
+        return;
+    }
+
+    if (!loggedInUser || !usuarios[loggedInUser] || !usuarios[loggedInUser].elfoTemporal) {
+        alert("No se encontró el elfo a guardar. Inténtalo nuevamente.");
+        return;
+    }
+
+    const elfo = {
+        nombre: nombreElfo,
+        partes: usuarios[loggedInUser].elfoTemporal
+    };
+
     if (!usuarios[loggedInUser].elfos) {
         usuarios[loggedInUser].elfos = [];
     }
-    usuarios[loggedInUser].elfos.push(partesElfo); // pusheamos el elfo
 
-    // guarda los datos actualizados en localStorage
+    usuarios[loggedInUser].elfos.push(elfo);
+    delete usuarios[loggedInUser].elfoTemporal;
+
     localStorage.setItem('usuarios', JSON.stringify(usuarios));
-    reiniciarEstilos();
+    cerrarPopupNombre();
+    alert(`¡Elfo "${nombreElfo}" guardado con éxito!`);
 
-    alert("¡El elfo ha sido guardado en tu perfil!"); // :)
+    reiniciarEstilos('guardado');
 }
 
 
@@ -125,6 +168,18 @@ function reiniciarEstilos(id) {
 
     if (id == 'accesorios'){
         document.getElementById('elfo-gorro').src ='images/elfo/gorro.svg';
+        document.getElementById('elfo-gafas').style ='display:none';
+    }
+
+    if (id == 'guardado'){
+        document.getElementById('elfo-ojos').src ='images/elfo/ojos2.svg';
+        document.getElementById('elfo-pecas').src ='images/elfo/pecas1.svg';
+        document.getElementById('elfo-camiseta').src ='images/elfo/camiseta.svg';
+        document.getElementById('elfo-pantalon').src ='images/elfo/pantalon.svg';
+        document.getElementById('elfo-gorro').src ='images/elfo/gorro.svg';
+        document.getElementById('elfo-nariz').src ='images/elfo/nariz1.svg';
+        document.getElementById('elfo-piel').src ='images/elfo/cuerpo.svg';
+        document.getElementById('elfo-boca').style ='display:none';
         document.getElementById('elfo-gafas').style ='display:none';
     }
 

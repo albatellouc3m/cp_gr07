@@ -7,6 +7,14 @@ body {
     color: black;
 }
 
+button {
+    font-family: 'cookies', Verdana;
+    background-color: transparent; /* fondo transparente */
+    border: transparent; /* borde transparente */
+    cursor: pointer; /* para que se ponga el cursor de ratón encima de los botones */
+    background-color: transparent;
+    color: white;
+}
 
 * {
     box-sizing: border-box;
@@ -343,9 +351,87 @@ nav {
 }
 
 
-.estilos-popup.visible {
-    display: block;
+/* popup para el nombre del elfo */
+.elfos-popup {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto;
+    backdrop-filter: blur(5px); 
+    padding-top: 60px;
 }
+
+.modal-content {
+    background-color: #E5EFDE;
+    margin: 5% auto;
+    width: 30%;
+    height: 50%;
+    border-radius: 2vw;
+    animation: animatezoom 0.6s;
+    padding: 2vw;
+    position: relative;
+}
+
+/* botones de cerrar y acciones dentro del popup */
+.closebtn {
+    position: absolute;
+    top: 1vh;
+    right: 0.5vw;
+    width: 3vw;
+    height: 3vw;
+    
+}
+.closebtn img{
+    width: 1.5vw;
+    height: 1.5vw;
+}
+
+.closebtn:hover {
+    opacity: 0.8;
+}
+
+.container-nombre h3 {
+    font-family: 'Spiny Lobster', Verdana;
+    text-align: center;
+    font-size: 4vh;
+    margin-bottom: 2vh;
+}
+
+.container-nombre p{
+    margin: 5vh 0;
+    font-size: 2vh;
+}
+
+.container-nombre input[type="text"] {
+    width: 100%;
+    padding: 2vh;
+    margin: 1vh 0 2vh 0;
+    border: 1px solid #99A88E;
+    box-sizing: border-box;
+    font-size: 1.5vh;
+    border-radius: 0.5vw;
+}
+
+.container-nombre button {
+    width: 10vw;
+    padding: 1.5vh;
+    background-color: #606959;
+    color: white;
+    font-size: 2vh;
+    border: none;
+    border-radius: 0.5vw;
+    cursor: pointer;
+    margin: 3vh 0;
+}
+
+.container-nombre button:hover {
+    background-color: #4D5447;
+}
+
 
 
 /*RESPONSIVEEEEEEEE*/
@@ -530,6 +616,41 @@ nav {
         border-radius: 10vw;
     }
     
+    /* popup para el nombre del elfo */
+    .modal-content {
+        width: 60%;
+        height: auto;
+    }
+
+    /* botones de cerrar y acciones dentro del popup */
+    .closebtn {
+        top: 2vh;
+        right: 2vw;
+    }
+
+    .closebtn img{
+        width: 3vw;
+        height: 3vw;
+    }
+
+    .container-nombre h3 {
+        font-size: 5vh;
+    }
+
+    .container-nombre p{
+        display: block;
+        font-size: 3vh;
+    }
+
+    .container-nombre input[type="text"] {
+        font-size: 2vh;
+    }
+
+    .container-nombre button {
+        width: 15vw;
+        font-size: 3vh;
+    }
+
 }
 
 
@@ -562,7 +683,7 @@ nav {
         top: 110%;
         left: -80%;
         right: 0;
-        width: 100vw;
+        width: 55vw;
         flex-direction: row;
     }
 
@@ -571,7 +692,7 @@ nav {
         top: 150%;
         left: -80%;
         right: 0;
-        width: 100vw;
+        width: 55vw;
         flex-direction: row;
     }
 
@@ -679,5 +800,45 @@ nav {
         padding: 2vh 4vw;
         border-radius: 10vw;
     }
+
+    /* popup para el nombre del elfo */
+    .modal-content {
+        width: 85%;
+        height: auto;
+        padding: 4vw;
+    }
+
+
+    
+
+    /* botones de cerrar y acciones dentro del popup */
+    .closebtn {
+        top: 2vh;
+        right: 4vw;
+    }
+
+    .closebtn img{
+        width: 4vw;
+        height: 4vw;
+    }
+
+    .container-nombre h3 {
+        font-size: 6vh;
+    }
+
+    .container-nombre p{
+        display: block;
+        font-size: 3vh;
+    }
+
+    .container-nombre input[type="text"] {
+        font-size: 2.5vh;
+    }
+
+    .container-nombre button {
+        width: 20vw;
+        font-size: 2.5vh;
+    }
+    
     
 }
