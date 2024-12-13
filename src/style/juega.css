@@ -42,6 +42,15 @@ nav {
 }
 
 
+@font-face {
+    font-family: 'CareAround';
+    src: url(../fonts/CareAround.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
 /*navegador principal*/
 .main-menu {
     padding-top: 0;
@@ -209,7 +218,7 @@ nav {
 
 
 #juega h2{
-    font-family: 'Cookies', Verdana;
+    font-family: 'Spiny Lobster', Verdana;
     font-size: 2vw;
     margin: 0;
     padding: 0;
@@ -438,6 +447,14 @@ nav {
     background-color: #CBDFBD;
     z-index: 10;
 }
+
+.instrucciones{
+    font-family: 'Cookies';
+    margin: 5vh 3vw;
+    font-size: 2vh;
+    text-align: center;
+}
+
 
 /* RESPONSIVE*/
 
