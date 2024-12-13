@@ -270,6 +270,10 @@ nav {
     height: 5vh;
 }
 
+.estilos-popup.visible{
+    display: block;
+}
+
 .instrucciones {
     width: 30vw;
     height: 31vw;
