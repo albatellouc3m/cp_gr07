@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Incializar elementos
     const btnEmpezar3 = document.getElementById('btnEmpezar3');
     const btnReiniciar3 = document.getElementById('btnReiniciar3');
     const pantallaInicio = document.getElementById('juego3-inicio');
@@ -9,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const grinch = document.getElementById('grinch');
     const tablero = document.getElementById('tablero');
 
+    // Variables de estado para el jeugo
     let juegoActivo = false;
     let jugadorPos = { x: 0, y: 0 };
     let grinchPos = { x: 0, y: 0 };
@@ -42,15 +44,18 @@ document.addEventListener('DOMContentLoaded', () => {
         
         actualizarPosiciones();
         
+        // Inicializar variables y eventos
         juegoActivo = true;
         tiempoRestante = 20;
         temporizador.textContent = tiempoRestante;
         
+        // Eventos
         window.addEventListener('keydown', manejarMovimiento);
         intervalId = setInterval(actualizarTemporizador, 1000);
         gameLoop();
     }
 
+    // Función para actualizar las posiciones de los personajes
     function actualizarPosiciones() {
         // Ajustar si están fuera del tablero
         jugadorPos.x = Math.min(Math.max(0, jugadorPos.x), tablero.clientWidth - jugador.offsetWidth);
@@ -66,13 +71,15 @@ document.addEventListener('DOMContentLoaded', () => {
         grinch.style.top = `${grinchPos.y}px`;
     }
     
-
+    // Función para manejar el movimiento del jugador
     function manejarMovimiento(event) {
         if (!juegoActivo) return;
-
+        
+        // Limites dentro del tablero
         const limiteX = tablero.clientWidth - 45;
         const limiteY = tablero.clientHeight - 45;
 
+        // Mover jugador
         switch (event.key) {
             case 'ArrowUp':
                 jugadorPos.y = Math.max(0, jugadorPos.y - velocidadJugador);
@@ -93,32 +100,35 @@ document.addEventListener('DOMContentLoaded', () => {
         actualizarPosiciones();
     }
 
+    // Función para mover al Grinch automáticamente
     function moverGrinch() {
         const dx = jugadorPos.x - grinchPos.x;
         const dy = jugadorPos.y - grinchPos.y;
         const distancia = Math.sqrt(dx * dx + dy * dy);
-        
+
         if (distancia > velocidadGrinch) {
             grinchPos.x += (dx / distancia) * velocidadGrinch;
             grinchPos.y += (dy / distancia) * velocidadGrinch;
         }
-        
+    
         actualizarPosiciones();
         comprobarColision();
     }
 
+    // Función para comprobar si el jugador y el Grinch colisionan
     function comprobarColision() {
         const distancia = Math.sqrt(
             Math.pow(jugadorPos.x - grinchPos.x, 2) + 
             Math.pow(jugadorPos.y - grinchPos.y, 2)
         );
         
+        // Si el grinch está muy cerca, finalizar el juego
         if (distancia < 30) {
             finalizarJuego('¡El Grinch te atrapó!');
         }
     }
 
-    // Resto de funciones sin cambios...
+    // Función para actualizar el temporizador
     function actualizarTemporizador() {
         tiempoRestante--;
         temporizador.textContent = tiempoRestante;
@@ -128,12 +138,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Función para finalizar el juego
     function finalizarJuego(mensaje) {
         juegoActivo = false;
         clearInterval(intervalId);
         cancelAnimationFrame(animacionId);
         window.removeEventListener('keydown', manejarMovimiento);
-        
+        // Mostrar mensaje final
         mensajeFinal.textContent = mensaje;
         pantallaFinal.style.display = 'flex';
         
@@ -142,6 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
         grinch.style.display = 'none';
     }
 
+    // Función para el loop del juego
     function gameLoop() {
         if (juegoActivo) {
             moverGrinch();
@@ -149,6 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Función para reiniciar el juego
     function reiniciarJuego() {
         pantallaFinal.style.display = 'none';
         pantallaInicio.style.display = 'flex';

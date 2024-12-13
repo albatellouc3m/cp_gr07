@@ -106,4 +106,10 @@
             }
         }
     }
+
+    // Aquí añadimos la inicialización de la galería cuando el documento esté listo
+    $(document).ready(function(){
+        $('.galeria').galeria();
+    });
+
 })(jQuery);
