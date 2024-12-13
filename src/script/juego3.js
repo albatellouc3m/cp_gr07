@@ -52,12 +52,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function actualizarPosiciones() {
-        // Usar left y top en lugar de transform para mejor compatibilidad
+        // Ajustar si están fuera del tablero
+        jugadorPos.x = Math.min(Math.max(0, jugadorPos.x), tablero.clientWidth - jugador.offsetWidth);
+        jugadorPos.y = Math.min(Math.max(0, jugadorPos.y), tablero.clientHeight - jugador.offsetHeight);
+    
+        grinchPos.x = Math.min(Math.max(0, grinchPos.x), tablero.clientWidth - grinch.offsetWidth);
+        grinchPos.y = Math.min(Math.max(0, grinchPos.y), tablero.clientHeight - grinch.offsetHeight);
+    
+        // Actualizar estilos
         jugador.style.left = `${jugadorPos.x}px`;
         jugador.style.top = `${jugadorPos.y}px`;
         grinch.style.left = `${grinchPos.x}px`;
         grinch.style.top = `${grinchPos.y}px`;
     }
+    
 
     function manejarMovimiento(event) {
         if (!juegoActivo) return;
