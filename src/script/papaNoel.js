@@ -1,16 +1,20 @@
 (function($) {
+    // Plugin jQuery para la galería
     $.fn.galeria = function(options) {
+        // Iterar sobre cada elemento seleccionado y aplicar la función slide
         $(this).each(function(index, ele) {
             slide(ele, options);
         });
         return this;
     };
 
+    // Función principal para manejar la galería
     function slide(ele, options) {
-        var $ele = $(ele);
-        var $lis = $ele.find('li');
-        var states = getStates();
+        var $ele = $(ele); // Elemento de la galería
+        var $lis = $ele.find('li'); // Elementos de la lista de imágenes
+        var states = getStates(); // Obtener los estados iniciales
 
+        // Configuración predeterminada y opciones personalizadas
         var setting = $.extend({
             width: 1000,
             height: 270,
@@ -18,49 +22,56 @@
             interval: 2000
         }, options);
 
-        var timer = null;
+        var timer = null; // Temporizador para el autoPlay
 
+        // Evento para el botón de navegación anterior
         $ele.find('.galeria-prev').on('click', function() {
-            states.push(states.shift());
-            move();
+            states.push(states.shift()); // Mover el primer estado al final
+            move(); // Actualizar la galería
         });
 
+        // Evento para el botón de navegación siguiente
         $ele.find('.galeria-next').on('click', function() {
-            states.unshift(states.pop());
-            move();
+            states.unshift(states.pop()); // Mover el último estado al principio
+            move(); // Actualizar la galería
         });
 
+        // Evento para recargar la página cuando se redimensiona la ventana
         $(window).on('resize', function() {
-            // Recargar la página cuando se detecte un cambio en el tamaño de la ventana
             location.reload();
         });
 
+        // Detener el autoPlay cuando el ratón entra en la galería
         $ele.on('mouseenter', function() {
             clearInterval(timer);
             timer = null;
         }).on('mouseleave', function() {
-            autoPlay();
+            autoPlay(); // Reanudar el autoPlay cuando el ratón sale de la galería
         });
 
-        move();
-        autoPlay();
+        move(); // Mover los elementos a sus posiciones iniciales
+        autoPlay(); // Iniciar el autoPlay
 
+        // Función para mover los elementos de la galería
         function move() {
             $lis.each(function(index, element) {
-                var state = states[index];
+                var state = states[index]; // Obtener el estado correspondiente
                 $(element).css('zIndex', state.$zIndex).finish().animate(state, setting.speed).find('img').css('opacity', state.$opacity);
             });
         }
 
+        // Función para mover al siguiente elemento
         function next() {
-            states.unshift(states.pop());
-            move();
+            states.unshift(states.pop()); // Mover el último estado al principio
+            move(); // Actualizar la galería
         }
 
+        // Función para iniciar el autoPlay
         function autoPlay() {
-            timer = setInterval(next, setting.interval);
+            timer = setInterval(next, setting.interval); // Mover al siguiente elemento en intervalos regulares
         }
 
+        // Función para obtener los estados de los elementos según el tamaño de la ventana
         function getStates() {
             if (window.innerWidth <= 500) {
                 return [
