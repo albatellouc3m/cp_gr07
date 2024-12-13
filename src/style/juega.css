@@ -208,7 +208,7 @@ nav {
 }
 
 
-#juega h1{
+#juega h2{
     font-family: 'Cookies', Verdana;
     font-size: 2vw;
     margin: 0;
@@ -452,10 +452,16 @@ nav {
         padding: 2vh;
     }
 
-    img {
-        width: 5vw;
-        height: auto;
+    .card img {
+        min-width: 7vw;
+        max-height: 7vw;
     }
+
+    #timeDisplay {
+        font-size: 2vh;
+        bottom: 0;
+        right: 0;
+      }
 }
 /*MOVIL*/
 @media screen and (max-width: 500px) {
@@ -519,13 +525,10 @@ nav {
         height: 35px;
     }
     
-    #juega h1{
-        font-size: 4vh;
+    #juega h2{
+        font-size: 3vh;
     }
 
-    #juega h1{
-        font-size: 4vh;
-    }
 
     .game-board2 {
         grid-template-columns: repeat(4, 1fr);
@@ -540,12 +543,18 @@ nav {
         padding: 2vh;
     }
 
-    img {
-        width: 10vw;
-        height: auto;
+    .card img {
+        min-width: 10vw;
+        max-height: 10vw;
     }
 
     #juegoDef img{
         width: 90vw;
     }
+
+    #timeDisplay {
+        font-size: 2vh;
+        bottom: 0;
+        right: 0;
+      }
 }

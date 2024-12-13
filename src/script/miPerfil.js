@@ -197,38 +197,32 @@ function cargarElfosGuardados() {
         return;
     }
 
-    const userElfos = usuarios[loggedInUser].elfos || []; // obtenemos los elfos guardados del usuario
+    const userElfos = usuarios[loggedInUser].elfos || [];
     const elfosContainer = document.getElementById('elfos-container');
 
-    // limpiamos el contenedor por si acaso
     elfosContainer.innerHTML = '';
 
-    // si el usuario no tiene elfos todavia :(
     if (userElfos.length === 0) {
         elfosContainer.innerHTML = '<p>No tienes elfos guardados.</p>';
         return;
     }
 
-    // genera los elfos guardados del usuario
     userElfos.forEach((elfo, index) => {
         const elfoDiv = document.createElement('div');
         elfoDiv.classList.add('elfo-guardado');
 
-        // map itera por cada parte del elfo y join las une 
         elfoDiv.innerHTML = `
-        <div class="titulo"> 
-            <button class="elfo-borrar" onclick="borrarElfo(${index})">
-                <img src="images/cerrar.svg" alt="Borrar elfo" class="borrar">
-            </button>
-        </div>
+            <div class="titulo"> 
+                <button class="elfo-borrar" onclick="borrarElfo(${index})">
+                    <img src="images/cerrar.svg" alt="Borrar elfo" class="borrar">
+                </button>
+            </div>
             <div class="elfo">
-        
-                ${elfo.map(parte => `
+                ${elfo.partes.map(parte => `
                     <img src="${parte.src}" id="${parte.id}" alt="${parte.id}" class="elfo-imagen-things" style="display: ${parte.visible === false ? 'none' : 'block'};">
                 `).join('')}
             </div>
-            <h4 class="elfo-titulo">Elfo ${index + 1}</h4>
-
+            <h4 class="elfo-titulo">${elfo.nombre}</h4>
         `;
 
         elfosContainer.appendChild(elfoDiv);

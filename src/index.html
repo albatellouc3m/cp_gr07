@@ -22,62 +22,66 @@
         </div>
         <input type="checkbox" class="toggle-menu__checkbox" id="toggle-menu-checkbox">
         <ul id="main-menu" class="main-menu">
-            <div class="main-division">
-                <li class="main-menu_item calendario-item">
-                    <a href="calendario.html" class="main-menu_link">
+    <li class="main-division">
+            <div class="main-menu_item calendario-item">
+                <a href="calendario.html" class="main-menu_link">
                     <img src="images/regalo.svg" alt="Calendario" class="calendario">
-                    </a>
-                </li>
+                </a>
             </div>
-            <div class="main-division links">
-                <li class="main-menu_item">
-                    <a class="main-menu_link" id="link" onclick="toggleDropdown(event)" data-dropdown="dropdown-menu-papaNoel">
-                        <span><img src="images/dropdown-left.svg" alt="dropdown-icon" class="dropdown-icon-left"> </span>
-                        PAPÁ NOEL
-                        <span><img src="images/dropdown.svg" alt="dropdown-icon" class="dropdown-icon"> </span>
-                    </a>
-                    <div id="dropdown-menu-papaNoel" class="dropdown-content">
-                        <a href="papaNoel.html">Papá Noel</a>
-                        <a href="localiza.html">Localiza</a>
-                    </div>
-                </li>
-                <li class="main-menu_item">
-                    <a class="main-menu_link" id="link"  onclick="toggleDropdown(event)" data-dropdown="dropdown-menu-cartas">
-                        <span><img src="images/dropdown-left.svg" alt="dropdown-icon" class="dropdown-icon-left"> </span>
-                        CARTAS
-                        <span> <img src="images/dropdown.svg" alt="dropdown-icon" class="dropdown-icon"> </span>
-                    </a>
-                    <div id="dropdown-menu-cartas" class="dropdown-content">
-                        <a href="enviaCarta.html">Envía tu Carta</a>
-                        <a href="verCartas.html">Ver Cartas</a>
-                    </div>
-                </li>
-                <li class="main-menu_item">
-                    <a class="main-menu_link" id="link"  onclick="toggleDropdown(event)" data-dropdown="dropdown-menu-juega">
-                        <span><img src="images/dropdown-left.svg" alt="dropdown-icon" class="dropdown-icon-left"> </span>
-                        ¡JUEGA!
-                        <span> <img src="images/dropdown.svg" alt="dropdown-icon" class="dropdown-icon"> </span>
-                    </a>
-                    <div id="dropdown-menu-juega" class="dropdown-content">
-                        <a href="creaElfo.html">Crea tu Elfo</a>
-                        <a href="karaoke.html">Karaoke</a>
-                        <a href="juega.html">Juega</a>
-                    </div>
-                </li>
-                <li class="main-menu_item" id="login-button">
-                    <button class="main-menu_link" onclick="document.getElementById('login-popup-id').style.display='block'">INICIA SESIÓN</button></li>
-                <li class="main-menu_item" id="register-button">
-                    <button class="main-menu_link" onclick="document.getElementById('register-popup-id').style.display='block'">REGÍSTRATE</button></li>
-                <li class="main-menu_item" id="perfil-img" style="display: none; cursor: pointer;">
-                    <img id="perfil-imagen" src="images/foto-usuario.svg" alt="Foto de perfil" onclick="toggleDropdown(event)" data-dropdown="dropdown-menu-perfil">                    
-                    <div id="dropdown-menu-perfil" class="dropdown-content">
-                        <a href="miPerfil.html" onclick="sessionStorage.setItem('loadProfile', 'true');">Mi Perfil</a>
-                        <a href="misCartas.html" onclick="mostrarCartas()">Mis Cartas</a>
-                        <a href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
-                    </div>
-                </li>
+    </li>
+
+    <li class="main-division links">
+        <div class="main-menu_item">
+            <a class="main-menu_link" id="link1" onclick="toggleDropdown(event)" data-dropdown="dropdown-menu-papaNoel">
+                <span><img src="images/dropdown-left.svg" alt="dropdown-icon" class="dropdown-icon-left"> </span>
+                PAPÁ NOEL
+                <span><img src="images/dropdown.svg" alt="dropdown-icon" class="dropdown-icon"> </span>
+            </a>
+            <div id="dropdown-menu-papaNoel" class="dropdown-content">
+                <a href="papaNoel.html">Papá Noel</a>
+                <a href="localiza.html">Localiza</a>
             </div>
-        </ul>
+        </div>
+        <div class="main-menu_item">
+            <a class="main-menu_link" id="link2" onclick="toggleDropdown(event)" data-dropdown="dropdown-menu-cartas">
+                <span><img src="images/dropdown-left.svg" alt="dropdown-icon" class="dropdown-icon-left"> </span>
+                CARTAS
+                <span> <img src="images/dropdown.svg" alt="dropdown-icon" class="dropdown-icon"> </span>
+            </a>
+            <div id="dropdown-menu-cartas" class="dropdown-content">
+                <a href="enviaCarta.html">Envía tu Carta</a>
+                <a href="verCartas.html">Ver Cartas</a>
+            </div>
+        </div>
+        <div class="main-menu_item">
+            <a class="main-menu_link" id="link3" onclick="toggleDropdown(event)" data-dropdown="dropdown-menu-juega">
+                <span><img src="images/dropdown-left.svg" alt="dropdown-icon" class="dropdown-icon-left"> </span>
+                ¡JUEGA!
+                <span> <img src="images/dropdown.svg" alt="dropdown-icon" class="dropdown-icon"> </span>
+            </a>
+            <div id="dropdown-menu-juega" class="dropdown-content">
+                <a href="creaElfo.html">Crea tu Elfo</a>
+                <a href="karaoke.html">Karaoke</a>
+                <a href="juega.html">Juega</a>
+            </div>
+        </div>
+        <div class="main-menu_item" id="login-button">
+            <button class="main-menu_link" onclick="document.getElementById('login-popup-id').style.display='block'">INICIA SESIÓN</button>
+        </div>
+        <div class="main-menu_item" id="register-button">
+            <button class="main-menu_link" onclick="document.getElementById('register-popup-id').style.display='block'">REGÍSTRATE</button>
+        </div>
+        <div class="main-menu_item" id="perfil-img" style="display: none; cursor: pointer;">
+            <img id="perfil-imagen" src="images/foto-usuario.svg" alt="Foto de perfil" onclick="toggleDropdown(event)" data-dropdown="dropdown-menu-perfil">
+            <div id="dropdown-menu-perfil" class="dropdown-content">
+                <a href="miPerfil.html" onclick="sessionStorage.setItem('loadProfile', 'true');">Mi Perfil</a>
+                <a href="misCartas.html" onclick="mostrarCartas()">Mis Cartas</a>
+                <a href="#" onclick="cerrarSesion()">Cerrar Sesión</a>
+            </div>
+        </div>
+    </li>
+</ul>
+
         <script src="script/nav.js"></script>
     </nav>
 
@@ -94,7 +98,7 @@
             </div>
             <h4>REGÍSTRATE</h4>    
             <div class="imgcontainer">
-                <label for="foto" class="visually-hidden">Subir foto de perfil</label>
+                <label for="foto" style="display: none">Subir foto de perfil</label>
                 <img style="display: none" id="preview-avatar" src="images/foto-usuario.svg" alt="Avatar" class="foto-usuario">
                 <input style="display: none" type="file" id="foto" accept="image/*" onchange="previewImage(event)">
             </div>

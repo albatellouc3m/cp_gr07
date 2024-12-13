@@ -166,7 +166,7 @@ img.calendario{
     opacity: 1; /* Mostrar el ícono suavemente al hacer hover */
 }
 
-.main-division.links{
+li.main-division.links{
     height: 100vh;
 }
 
@@ -253,7 +253,7 @@ img.calendario{
     width: 100%;
 }
 
-.main-division{
+li.main-division{
     padding-bottom: 5vh;
 }
 
@@ -271,7 +271,7 @@ img.calendario{
         top: 0;
     }
 
-    .main-division{
+    li.main-division{
         padding-bottom: 0;
     }
 
@@ -327,7 +327,7 @@ img.calendario{
         transition: all 0.3s ease;
     }
 
-    .main-division.links{
+    li.main-division.links{
         height: 5vh;
         display: flex;
         justify-content: center;
@@ -336,7 +336,7 @@ img.calendario{
 
 
     /* transicion tope guapa que sale debajo una linea*/
-    #link::after {
+    #link1::after, #link2::after, #link3::after {
         content: "";
         position: absolute;
         left: 0;
@@ -349,7 +349,7 @@ img.calendario{
         transition: transform 0.7s ease;
     }
 
-    #link:hover::after {
+    #link1:hover::after, #link2:hover::after, #link3:hover::after {
         transform: scaleX(1);
         transform-origin: left;
     }
