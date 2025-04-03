@@ -33,7 +33,7 @@ window.onclick = function() {
 
 // CONTADOR DE LA CUENTA ATRAS PAAR NAVIDAD :)))) (merry christmas guys)
 // inicializamos la fecha limite
-let countDownDate = new Date("Dec 24, 2024 23:59:59").getTime();
+let countDownDate = new Date("Dec 24, 2025 23:59:59").getTime();
 
 // funcion cuenta atras
 let x = setInterval(function() {
