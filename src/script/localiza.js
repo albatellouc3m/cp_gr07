@@ -73,8 +73,8 @@ function moverPapanoel() {
         // Límites ajustados para móviles
         limiteIzquierdo = 0;
         limiteDerecho = popupWidth;
-        limiteSuperior = (popup.offsetHeight - contenidoHeight) / 3;
-        limiteInferior = popup.offsetHeight - (popup.offsetHeight - contenidoHeight) / 3;
+        limiteSuperior = (popup.offsetHeight - contenidoHeight) / 2;
+        limiteInferior = popup.offsetHeight - (popup.offsetHeight - contenidoHeight) / 2;
     } else {
         // Límites generales para tablet y desktop
         limiteIzquierdo = popupWidth / 6;
